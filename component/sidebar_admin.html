@@ -1,0 +1,183 @@
+<style>
+    :root {
+        --utama: #cdcec9;
+        --hover: #bfb9b4;
+        --teks: #333333;
+    }
+
+    * {
+        box-sizing: border-box;
+        font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+    #layout-admin {
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .sidebar {
+        width: 200px;
+        background: var(--utama);
+        color: var(--teks);
+        flex-shrink: 0;
+        transition: all 0.3s ease;
+        height: 100vh;
+        overflow: hidden;
+        border-radius: 0 10px 10px 0;
+    }
+
+
+    .sidebar.closed {
+        width: 0;
+    }
+
+    .sidebar.closed .sidebar-header,
+    .sidebar.closed .menu {
+        display: none;
+    }
+
+    .sidebar-header {
+        background: var(--utama);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+        position: relative;
+        z-index: 2;
+    }
+
+    .sidebar-header img {
+        max-width: 72px;
+        transition: 0.3s;
+    }
+
+    .menu {
+        list-style: none;
+        padding: 10px 0;
+        margin: 0;
+    }
+
+    .menu li a {
+        display: block;
+        padding: 14px 22px;
+        color: var(--teks);
+        text-decoration: none;
+        font-size: 15.5px;
+        font-weight: 600;
+        white-space: nowrap;
+        transition: background 0.2s;
+    }
+
+
+    .menu li a:hover,
+    .menu li a.aktif {
+        background: var(--hover);
+    }
+
+    .content-wrapper {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        background: #ffffff;
+        height: 100vh;
+        width: 100%;
+    }
+
+    .navbar {
+        height: 56px;
+        background: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        width: 100%;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+        position: relative;
+        z-index: 2;
+    }
+
+    .navbar-left {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .toggle-btn {
+        font-size: 22px;
+        cursor: pointer;
+        color: var(--teks);
+        border: none;
+        background: none;
+    }
+
+    .page-title {
+        font-weight: 600;
+        color: var(--teks);
+    }
+
+    .navbar-right a {
+        text-decoration: none;
+        color: var(--teks);
+        font-weight: 600;
+        padding: 6px 14px;
+        border-radius: 6px;
+        transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .navbar-right a:hover {
+        background: var(--hover);
+        color: #000;
+    }
+
+
+    .konten {
+        padding: 25px;
+        flex: 1;
+        overflow-y: auto;
+        background: #f7f7f7;
+    }
+</style>
+
+<div id="layout-admin">
+
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="../aset/logo.JPG">
+        </div>
+
+        <ul class="menu">
+            <li><a href="dasbor.html">Dashboard</a></li>
+            <li><a href="manajemen_pengguna.html">Pengguna</a></li>
+            <li><a href="manajemen_petugas.html">Petugas</a></li>
+            <li><a href="manajemen_klien.html">Klien</a></li>
+            <li><a href="manajemen_proyek.html">Proyek</a></li>
+            <li><a href="manajemen_aset.html">Aset</a></li>
+        </ul>
+
+    </div>
+
+    <div class="content-wrapper">
+        <div class="navbar">
+            <div class="navbar-left">
+                <button class="toggle-btn" id="toggleSidebar">☰</button>
+                <span class="page-title" id="page-title">Title</span>
+            </div>
+            <div class="navbar-right">
+                <a href="profil.html">Profil</a>
+            </div>
+        </div>
+
+        <div class="konten" id="konten-halaman"></div>
+    </div>
+
+</div>

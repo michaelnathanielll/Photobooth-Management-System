@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Manajemen Petugas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/datatables.net-bs5@1.13.8/css/dataTables.bootstrap5.min.css"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        .btn-utama {
+            background: #cdcec9;
+            border: none;
+            color: #333;
+        }
+
+        .btn-utama:hover {
+            background: #bfb9b4;
+            color: #333;
+        }
+
+        table.dataTable thead th {
+            background: #cdcec9;
+            color: #333;
+        }
+
+        .aksi-btn {
+            width: 36px;
+            height: 36px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            background: #fff;
+            padding: 0;
+        }
+
+        .aksi-btn i {
+            font-size: 16px;
+            line-height: 1;
+        }
+
+        .btn-edit {
+            border: 1px solid #f1c40f;
+            color: #f1c40f;
+        }
+
+        .btn-nonaktif {
+            border: 1px solid #e74c3c;
+            color: #e74c3c;
+        }
+
+        .btn-aktif {
+            border: 1px solid #27ae60;
+            color: #27ae60;
+        }
+
+        .btn-detail {
+            border: 1px solid #3498db;
+            color: #3498db;
+        }
+
+        .modal-form .modal-content {
+            border-radius: 12px;
+        }
+
+        .judul-detail {
+            font-weight: 700;
+            color: #1f3b63;
+            margin-bottom: 10px;
+        }
+
+        .modal-hapus .modal-content {
+            border-radius: 12px;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .modal-hapus .icon-box {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 3px solid #e74c3c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px auto;
+            color: #e74c3c;
+            font-size: 32px;
+        }
+
+        .btn-tidak {
+            border: 1px solid #aaa;
+            background: #fff;
+            color: #555;
+            border-radius: 6px;
+            padding: 6px 22px;
+        }
+
+        .btn-iya {
+            border: 1px solid #e74c3c;
+            background: #fff;
+            color: #e74c3c;
+            border-radius: 6px;
+            padding: 6px 22px;
+        }
+
+        .btn-iya:hover {
+            background: #e74c3c;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="layout-admin"></div>
+
+    <div id="isi-halaman" style="display:none">
+
+        <div class="d-flex justify-content-end mb-3">
+            <button class="btn btn-utama" data-bs-toggle="modal" data-bs-target="#modalTambah">Tambah Petugas</button>
+        </div>
+
+        <table id="tabel-petugas" class="table table-striped align-middle w-100">
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>No HP</th>
+                    <th>Kepegawaian</th>
+                    <th>Keahlian</th>
+                    <th>Honor</th>
+                    <th>Skor</th>
+                    <th>Status Akun</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-status="aktif">
+                    <td>Budi Santoso</td>
+                    <td>08123456789</td>
+                    <td>Senior</td>
+                    <td>Operator, Printer</td>
+                    <td>Rp 150.000</td>
+                    <td>362</td>
+                    <td><span class="badge bg-success">Aktif</span></td>
+                    <td>
+                        <button class="aksi-btn btn-detail"
+                            onclick="openDetail('Budi Santoso','08123456789','Senior','Operator, Printer','150000')"
+                            data-bs-toggle="modal" data-bs-target="#modalDetail">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                        <button class="aksi-btn btn-edit" data-bs-toggle="modal" data-bs-target="#modalUbah">
+                            <i class="bi bi-pencil"></i>
+                        </button>
+                        <button class="aksi-btn btn-nonaktif btn-status" data-bs-toggle="modal"
+                            data-bs-target="#modalStatus">
+                            <i class="bi bi-person-x"></i>
+                        </button>
+                    </td>
+                </tr>
+
+                <tr data-status="nonaktif">
+                    <td>Sinta Lestari</td>
+                    <td>08987654321</td>
+                    <td>Junior</td>
+                    <td>Asisten, Operator</td>
+                    <td>Rp 100.000</td>
+                    <td>338</td>
+                    <td><span class="badge bg-secondary">Non-Aktif</span></td>
+                    <td>
+                        <button class="aksi-btn btn-detail"
+                            onclick="openDetail('Sinta Lestari','08987654321','Junior','Asisten, Operator','100000')"
+                            data-bs-toggle="modal" data-bs-target="#modalDetail">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                        <button class="aksi-btn btn-edit" data-bs-toggle="modal" data-bs-target="#modalUbah">
+                            <i class="bi bi-pencil"></i>
+                        </button>
+                        <button class="aksi-btn btn-aktif btn-status" data-bs-toggle="modal"
+                            data-bs-target="#modalStatus">
+                            <i class="bi bi-person-check"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+
+    <div class="modal fade modal-form" id="modalTambah" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content p-3">
+                <div class="modal-header">
+                    <h5 class="modal-title">Tambah Petugas</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+
+                    <label>Nama</label>
+                    <input class="form-control mb-2">
+
+                    <label>No HP</label>
+                    <input class="form-control mb-2">
+
+                    <label>Status Kepegawaian</label>
+                    <select class="form-control mb-2">
+                        <option>Senior</option>
+                        <option>Junior</option>
+                    </select>
+
+                    <label>Keahlian</label>
+                    <div class="form-control mb-2" style="height:auto">
+                        <div><input type="checkbox"> Operator</div>
+                        <div><input type="checkbox"> Printer</div>
+                        <div><input type="checkbox"> Asisten</div>
+                    </div>
+
+                    <label>Honor Standar</label>
+                    <select class="form-control">
+                        <option>100000</option>
+                        <option selected>150000</option>
+                        <option>175000</option>
+                        <option>200000</option>
+                    </select>
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-utama" data-bs-dismiss="modal">Simpan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade modal-form" id="modalUbah" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content p-3">
+                <div class="modal-header">
+                    <h5 class="modal-title">Ubah Petugas</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+
+                    <label>Nama</label>
+                    <input class="form-control mb-2" value="Budi Santoso">
+
+                    <label>No HP</label>
+                    <input class="form-control mb-2" value="08123456789">
+
+                    <label>Status Kepegawaian</label>
+                    <select class="form-control mb-2">
+                        <option selected>Senior</option>
+                        <option>Junior</option>
+                    </select>
+
+                    <label>Keahlian</label>
+                    <div class="form-control mb-2" style="height:auto">
+                        <div><input type="checkbox" checked> Operator</div>
+                        <div><input type="checkbox" checked> Printer</div>
+                        <div><input type="checkbox"> Asisten</div>
+                    </div>
+
+                    <label>Honor Standar</label>
+                    <select class="form-control">
+                        <option>100000</option>
+                        <option selected>150000</option>
+                        <option>175000</option>
+                        <option>200000</option>
+                    </select>
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-utama" data-bs-dismiss="modal">Simpan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="modalDetail" tabindex="-1">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content p-3">
+                <div class="modal-header">
+                    <h5 class="modal-title">Detail Petugas</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="judul-detail">Biodata</div>
+                            <div id="dNama"></div>
+                            <div id="dHP"></div>
+                            <div id="dStatus"></div>
+                            <div id="dKeahlian"></div>
+                            <div id="dHonor"></div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="judul-detail">Detail Skor Kinerja</div>
+                            <div id="sk1"></div>
+                            <div id="sk2"></div>
+                            <div id="sk3"></div>
+                            <div id="sk4"></div>
+                            <div id="skTotal" style="margin-top:8px;font-weight:bold;"></div>
+                        </div>
+
+                    </div>
+
+                    <hr>
+
+                    <div class="judul-detail">Riwayat Acara</div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Nama</th>
+                                <th>Tanggal</th>
+                                <th>Waktu</th>
+                                <th>Lokasi</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyAcara"></tbody>
+                    </table>
+
+                    <hr>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade modal-hapus" id="modalStatus" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="icon-box" id="iconStatus">
+                    <i class="bi bi-person-x"></i>
+                </div>
+                <h5 id="teksStatus"></h5>
+                <div class="mt-4 d-flex justify-content-center gap-3">
+                    <button class="btn-tidak" data-bs-dismiss="modal">Tidak</button>
+                    <button class="btn-iya" data-bs-dismiss="modal">Ya</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/datatables.net@1.13.8/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/datatables.net-bs5@1.13.8/js/dataTables.bootstrap5.min.js"></script>
+
+    <script>
+        const jadwalData = [
+            { nama: "Wedding Expo Jakarta", tanggal: "2026-02-10", waktu_mulai: "10:00", waktu_selesai: "20:00", lokasi: "JCC Senayan", status: "Pendaftaran" },
+            { nama: "Corporate Gathering Bandung", tanggal: "2026-03-05", waktu_mulai: "18:00", waktu_selesai: "22:00", lokasi: "Bandung Ballroom", status: "Berlangsung" },
+            { nama: "Birthday Party Aurel", tanggal: "2026-01-28", waktu_mulai: "15:00", waktu_selesai: "19:00", lokasi: "Jakarta Selatan", status: "Berlangsung" },
+            { nama: "Private Event Bali", tanggal: "2026-02-15", waktu_mulai: "16:00", waktu_selesai: "23:00", lokasi: "Bali Resort", status: "Selesai" }
+        ];
+
+        function openDetail(nama, hp, status, keahlian, honor) {
+            document.getElementById("dNama").innerHTML = "<b>Nama:</b> " + nama;
+            document.getElementById("dHP").innerHTML = "<b>No HP:</b> " + hp;
+            document.getElementById("dStatus").innerHTML = "<b>Status Kepegawaian:</b> " + status;
+            document.getElementById("dKeahlian").innerHTML = "<b>Keahlian:</b> " + keahlian;
+            document.getElementById("dHonor").innerHTML = "<b>Honor:</b> Rp " + Number(honor).toLocaleString("id-ID");
+
+            const tbody = document.getElementById("tbodyAcara");
+            tbody.innerHTML = "";
+            jadwalData.forEach(ev => {
+                tbody.innerHTML += `
+        <tr>
+            <td>${ev.nama}</td>
+            <td>${ev.tanggal}</td>
+            <td>${ev.waktu_mulai} - ${ev.waktu_selesai}</td>
+            <td>${ev.lokasi}</td>
+            <td>${ev.status}</td>
+        </tr>`;
+            });
+
+            const skor = { k1: 90, k2: 92, k3: 88, k4: 92 };
+            const total = skor.k1 + skor.k2 + skor.k3 + skor.k4;
+
+            document.getElementById("sk1").innerText = "Knowledge & Skill: " + skor.k1;
+            document.getElementById("sk2").innerText = "Communication & Teamwork: " + skor.k2;
+            document.getElementById("sk3").innerText = "Attitude & Work Time: " + skor.k3;
+            document.getElementById("sk4").innerText = "Problem Solving: " + skor.k4;
+            document.getElementById("skTotal").innerHTML = "<b>Total: " + total + " / 400</b>";
+        }
+
+        fetch("../component/sidebar_admin.html")
+            .then(r => r.text())
+            .then(html => {
+                document.getElementById("layout-admin").innerHTML = html;
+                document.getElementById("page-title").innerText = "Manajemen Petugas";
+                document.getElementById("konten-halaman").innerHTML = document.getElementById("isi-halaman").innerHTML;
+
+                const sidebar = document.getElementById("sidebar");
+                const toggle = document.getElementById("toggleSidebar");
+                toggle.addEventListener("click", () => sidebar.classList.toggle("closed"));
+
+                new DataTable('#tabel-petugas', { pageLength: 10 });
+
+                document.querySelectorAll(".btn-status").forEach(btn => {
+                    btn.addEventListener("click", function () {
+                        const row = this.closest("tr");
+                        const status = row.getAttribute("data-status");
+                        const teks = document.getElementById("teksStatus");
+                        const icon = document.getElementById("iconStatus");
+
+                        if (status === "aktif") {
+                            teks.innerHTML = "Nonaktifkan petugas ini?";
+                            icon.innerHTML = '<i class="bi bi-person-x"></i>';
+                            icon.style.borderColor = "#e74c3c";
+                            icon.style.color = "#e74c3c";
+                        } else {
+                            teks.innerHTML = "Aktifkan kembali petugas ini?";
+                            icon.innerHTML = '<i class="bi bi-person-check"></i>';
+                            icon.style.borderColor = "#27ae60";
+                            icon.style.color = "#27ae60";
+                        }
+                    });
+                });
+
+            });
+    </script>
+
+</body>
+
+</html>

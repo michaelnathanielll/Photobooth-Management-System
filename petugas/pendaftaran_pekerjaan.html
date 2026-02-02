@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pendaftaran Pekerjaan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        html,
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .filter-bar input,
+        .filter-bar select {
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 13px;
+        }
+
+        .event-grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        @media (max-width: 1200px) {
+            .event-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .event-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .event-card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 18px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            border-left: 6px solid #cdcec9;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .event-title {
+            font-size: large;
+            font-weight: 700;
+            color: #1f3b63;
+            margin-bottom: 6px;
+        }
+
+
+        .event-info {
+            margin: 3px 0;
+        }
+
+        .asset-title {
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 6px;
+        }
+
+        @media(max-width: 640px) {
+            .event-card {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .event-info {
+            font-size: 13px;
+            color: #555;
+            margin: 3px 0;
+        }
+
+        .event-info {
+            font-size: 13px;
+            color: #555;
+            margin: 3px 0;
+            display: flex;
+        }
+
+        .event-info b {
+            min-width: 70px;
+            display: inline-block;
+        }
+
+
+        .btn-daftar {
+            margin-top: 10px;
+            padding: 7px 14px;
+            border: none;
+            border-radius: 6px;
+            background: #7aa6d8;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .btn-batal {
+            margin-top: 10px;
+            padding: 7px 14px;
+            border: none;
+            border-radius: 6px;
+            background: #e3a2a2;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            font-weight: 600;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 3000;
+        }
+
+        .modal-box {
+            background: #fff;
+            border-radius: 14px;
+            padding: 22px;
+            width: 320px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .modal-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 4px solid #ffa726;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px auto;
+            color: #ffa726;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .modal-text {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .modal-actions {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-modal-no {
+            padding: 6px 14px;
+            border: 1px solid #ccc;
+            background: #fff;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+
+        .btn-modal-yes {
+            padding: 6px 14px;
+            border: none;
+            background: #ffa726;
+            color: #fff;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="navbar-petugas"></div>
+
+    <div class="konten-petugas">
+
+        <div class="filter-bar">
+            <select id="filterJenis">
+                <option value="">Semua Jenis</option>
+                <option value="wedding">Wedding</option>
+                <option value="birthday">Birthday</option>
+                <option value="corporate">Corporate</option>
+                <option value="private">Private</option>
+            </select>
+
+            <input type="date" id="filterTanggalMulai">
+            <input type="date" id="filterTanggalSelesai">
+
+            <select id="filterStatus">
+                <option value="">Semua Proyek</option>
+                <option value="belum">Belum Didaftar</option>
+                <option value="terdaftar">Dalam Pengajuan</option>
+            </select>
+
+            <input type="text" id="searchInput" placeholder="Cari event atau lokasi">
+        </div>
+
+        <div class="event-grid" id="eventContainer"></div>
+    </div>
+
+    <div class="loading-overlay" id="loadingPage">Memuat data...</div>
+
+    <div class="modal-overlay" id="modalConfirm">
+        <div class="modal-box">
+            <div class="modal-icon">!</div>
+            <div class="modal-text" id="modalText"></div>
+            <div class="modal-actions">
+                <button class="btn-modal-no" onclick="closeModal()">Tidak</button>
+                <button class="btn-modal-yes" id="modalYesBtn">Ya</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        fetch("../component/navbar_petugas.html")
+            .then(r => r.text())
+            .then(html => {
+                document.getElementById("navbar-petugas").innerHTML = html;
+                document.getElementById("navbarTitle").innerText = "Pendaftaran Pekerjaan";
+
+                const menuToggle = document.getElementById("menuToggle");
+                const sidebar = document.getElementById("sidebarPetugas");
+                const overlay = document.getElementById("overlayPetugas");
+                const sidebarClose = document.getElementById("sidebarClose");
+
+                function openSidebar() {
+                    sidebar.classList.add("show");
+                    overlay.classList.add("show");
+                }
+
+                function closeSidebar() {
+                    sidebar.classList.remove("show");
+                    overlay.classList.remove("show");
+                }
+
+                menuToggle.addEventListener("click", openSidebar);
+                sidebarClose.addEventListener("click", closeSidebar);
+                overlay.addEventListener("click", closeSidebar);
+            });
+
+
+        const dataEvent = [
+            {
+                id: 1,
+                nama: "Wedding Expo Jakarta",
+                jenis: "wedding",
+                tanggal: "2026-02-10",
+                waktu_mulai: "10:00",
+                waktu_selesai: "20:00",
+                lokasi: "JCC Senayan",
+                booth: "Twini Booth Silver",
+                kertas: "Stripe",
+                base: "Magnetic",
+                terdaftar: false
+            },
+            {
+                id: 2,
+                nama: "Corporate Gathering",
+                jenis: "corporate",
+                tanggal: "2026-03-05",
+                waktu_mulai: "18:00",
+                waktu_selesai: "22:00",
+                lokasi: "Bandung Ballroom",
+                booth: "Mingle",
+                kertas: "Half Frame",
+                base: "Basic",
+                terdaftar: true
+            },
+            {
+                id: 3,
+                nama: "Birthday Party Aurel",
+                jenis: "birthday",
+                tanggal: "2026-01-28",
+                waktu_mulai: "15:00",
+                waktu_selesai: "19:00",
+                lokasi: "Jakarta Selatan",
+                booth: "Pop Booth",
+                kertas: "4R",
+                base: "Stiki",
+                terdaftar: false
+            },
+            {
+                id: 4,
+                nama: "Private Event Bali",
+                jenis: "private",
+                tanggal: "2026-02-15",
+                waktu_mulai: "16:00",
+                waktu_selesai: "23:00",
+                lokasi: "Bali Resort",
+                booth: "Mirror Booth",
+                kertas: "Half Frame",
+                base: "Magnetic Cover",
+                terdaftar: false
+            },
+            {
+                id: 5,
+                nama: "Cam Photo Festival",
+                jenis: "corporate",
+                tanggal: "2026-03-12",
+                waktu_mulai: "09:00",
+                waktu_selesai: "17:00",
+                lokasi: "Surabaya Convention Hall",
+                booth: "Cam Photo",
+                kertas: "Stripe",
+                base: "Akrilik",
+                terdaftar: true
+            }
+        ];
+
+
+        const container = document.getElementById("eventContainer");
+        const searchInput = document.getElementById("searchInput");
+        const filterJenis = document.getElementById("filterJenis");
+        const filterTanggalMulai = document.getElementById("filterTanggalMulai");
+        const filterTanggalSelesai = document.getElementById("filterTanggalSelesai");
+        const filterStatus = document.getElementById("filterStatus");
+        const modal = document.getElementById("modalConfirm");
+        const modalText = document.getElementById("modalText");
+        const modalYesBtn = document.getElementById("modalYesBtn");
+        const loadingPage = document.getElementById("loadingPage");
+
+        function getBorderColor(jenis) {
+            switch (jenis) {
+                case "wedding": return "#e8c1c8";
+                case "birthday": return "#c8e6c9";
+                case "corporate": return "#cfd8dc";
+                case "private": return "#fff3c4";
+                default: return "#cdcec9";
+            }
+        }
+
+        function renderEvent() {
+            const keyword = searchInput.value.toLowerCase();
+            const jenis = filterJenis.value;
+            const tglMulai = filterTanggalMulai.value;
+            const tglSelesai = filterTanggalSelesai.value;
+            const status = filterStatus.value;
+
+            container.innerHTML = "";
+
+            const filtered = dataEvent.filter(ev => {
+                const matchSearch = ev.nama.toLowerCase().includes(keyword) || ev.lokasi.toLowerCase().includes(keyword);
+                const matchJenis = jenis === "" || ev.jenis === jenis;
+                const matchStatus = status === "" || (status === "belum" && !ev.terdaftar) || (status === "terdaftar" && ev.terdaftar);
+                const matchMulai = tglMulai === "" || ev.tanggal >= tglMulai;
+                const matchSelesai = tglSelesai === "" || ev.tanggal <= tglSelesai;
+                return matchSearch && matchJenis && matchStatus && matchMulai && matchSelesai;
+            });
+
+            filtered.forEach(ev => {
+                const card = document.createElement("div");
+                card.className = "event-card";
+                card.style.borderLeftColor = getBorderColor(ev.jenis);
+
+                const tombol = ev.terdaftar
+                    ? `<button class="btn-batal" onclick="openModal('batalkan',${ev.id})">Batalkan Pendaftaran</button>`
+                    : `<button class="btn-daftar" onclick="openModal('daftar',${ev.id})">Daftar Proyek</button>`;
+
+                card.innerHTML = `
+    <div class="event-title">${ev.nama}</div>
+
+<div class="event-info"><b>Jenis</b>: ${ev.jenis}</div>
+<div class="event-info"><b>Tanggal</b>: ${ev.tanggal}</div>
+<div class="event-info"><b>Waktu</b>: ${ev.waktu_mulai} - ${ev.waktu_selesai}</div>
+<div class="event-info"><b>Lokasi</b>: ${ev.lokasi}</div>
+
+<div class="asset-title" style="margin-top:10px;">Aset Event</div>
+<div class="event-info"><b>Booth</b>: ${ev.booth}</div>
+<div class="event-info"><b>Kertas</b>: ${ev.kertas}</div>
+<div class="event-info"><b>Base Print</b>: ${ev.base}</div>
+
+
+    ${tombol}
+`;
+
+
+                container.appendChild(card);
+            });
+        }
+
+        function openModal(action, id) {
+            modal.style.display = "flex";
+            modalText.innerText = action === "daftar"
+                ? "Apakah anda yakin akan mengajukan pendaftaran proyek ini?"
+                : "Apakah anda yakin akan membatalkan pendaftaran ini?";
+            modalYesBtn.onclick = function () {
+                modal.style.display = "none";
+                processAction(action, id);
+            }
+        }
+
+        function closeModal() { modal.style.display = "none"; }
+
+        function processAction(action, id) {
+            loadingPage.style.display = "flex";
+            setTimeout(() => {
+                const ev = dataEvent.find(e => e.id === id);
+                if (action === "daftar") ev.terdaftar = true;
+                if (action === "batalkan") ev.terdaftar = false;
+                loadingPage.style.display = "none";
+                renderEvent();
+            }, 800);
+        }
+
+        searchInput.addEventListener("input", renderEvent);
+        filterJenis.addEventListener("change", renderEvent);
+        filterTanggalMulai.addEventListener("change", renderEvent);
+        filterTanggalSelesai.addEventListener("change", renderEvent);
+        filterStatus.addEventListener("change", renderEvent);
+
+        window.onload = () => {
+            setTimeout(() => {
+                loadingPage.style.display = "none";
+                renderEvent();
+            }, 600);
+        };
+    </script>
+
+</body>
+
+</html>

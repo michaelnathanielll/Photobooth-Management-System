@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Dashboard Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            background: #fafafa;
+        }
+
+        .section-title {
+            font-weight: 700;
+            color: #1f3b63;
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        .dashboard-row {
+            min-height: 220px;
+            display: flex;
+            align-items: stretch;
+        }
+
+        .dashboard-row>[class*="col-"] {
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+        }
+
+        .summary-column {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            gap: .5rem;
+        }
+
+        .summary-box {
+            background: #fff;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, .06);
+            font-size: 12px;
+            font-weight: 600;
+            color: #444;
+            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .summary-value {
+            font-size: 16px;
+            font-weight: 700;
+            margin-top: 3px;
+            color: #222;
+        }
+
+        .chart-box {
+            background: #fff;
+            border-radius: 12px;
+            padding: 10px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, .06);
+            height: 220px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chart-inner {
+            position: relative;
+            flex: 1;
+        }
+
+        .chart-box canvas {
+            position: absolute;
+            inset: 0;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        .kanban-board {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 14px;
+        }
+
+        @media(max-width:1000px) {
+            .kanban-board {
+                grid-template-columns: 1fr;
+            }
+
+            .dashboard-row {
+                flex-direction: column;
+            }
+        }
+
+        .kanban-column {
+            border-radius: 14px;
+            padding: 12px;
+        }
+
+        .bg-perencanaan {
+            background: #e8f0ff;
+        }
+
+        .bg-pendaftaran {
+            background: #fff8e1;
+        }
+
+        .bg-berlangsung {
+            background: #e9f7ef;
+        }
+
+        .bg-selesai {
+            background: #eef1f4;
+        }
+
+        .bg-pending {
+            background: #ffe9e9;
+        }
+
+        .kanban-title {
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 4px;
+            color: #1f3b63;
+        }
+
+        .kanban-count {
+            font-size: 12px;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .event-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 8px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, .06);
+            font-size: 13px;
+        }
+
+        .event-name {
+            font-weight: 700;
+            color: #333;
+        }
+
+        .event-info {
+            font-size: 12px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="layout-admin"></div>
+
+    <div id="isi-halaman" style="display:none">
+
+        <div class="row g-2 mb-4 dashboard-row">
+            <div class="col-md-2">
+                <div class="summary-column">
+                    <div class="summary-box">Total Pengguna<div class="summary-value" id="totalUser">0</div>
+                    </div>
+                    <div class="summary-box">Total Petugas<div class="summary-value" id="totalPetugas">0</div>
+                    </div>
+                    <div class="summary-box">Total Klien<div class="summary-value" id="totalKlien">0</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="chart-box">
+                    <div class="section-title">Proyek</div>
+                    <div class="chart-inner"><canvas id="chartEvent"></canvas></div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="chart-box">
+                    <div class="section-title">Pendapatan</div>
+                    <div class="chart-inner"><canvas id="chartPendapatan"></canvas></div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="chart-box">
+                    <div class="section-title">Jumlah Proyek</div>
+                    <div class="chart-inner"><canvas id="chartProyek"></canvas></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title mb-2">Kanban Acara</div>
+
+        <div class="kanban-board">
+
+            <div class="kanban-column bg-perencanaan">
+                <div class="kanban-title">Perencanaan</div>
+                <div class="kanban-count" id="countPerencanaan">0 Event</div>
+                <div id="listPerencanaan"></div>
+            </div>
+
+            <div class="kanban-column bg-pendaftaran">
+                <div class="kanban-title">Pendaftaran</div>
+                <div class="kanban-count" id="countPendaftaran">0 Event</div>
+                <div id="listPendaftaran"></div>
+            </div>
+
+            <div class="kanban-column bg-berlangsung">
+                <div class="kanban-title">Berlangsung</div>
+                <div class="kanban-count" id="countBerlangsung">0 Event</div>
+                <div id="listBerlangsung"></div>
+            </div>
+
+            <div class="kanban-column bg-pending">
+                <div class="kanban-title">Selesai (Pending)</div>
+                <div class="kanban-count" id="countPending">0 Event</div>
+                <div id="listPending"></div>
+            </div>
+
+            <div class="kanban-column bg-selesai">
+                <div class="kanban-title">Selesai</div>
+                <div class="kanban-count" id="countSelesai">0 Event</div>
+                <div id="listSelesai"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const users = [{}, {}, {}, {}];
+        const petugas = [{}, {}, {}, {}, {}, {}];
+        const klien = [{}, {}, {}];
+
+        const events = [
+            { nama: "Wedding Expo Jakarta", jenis: "wedding", tanggal: "2026-02-10", status: "pendaftaran" },
+            { nama: "Corporate Gathering Bandung", jenis: "corporate", tanggal: "2026-03-05", status: "berlangsung" },
+            { nama: "Birthday Party Aurel", jenis: "birthday", tanggal: "2026-01-28", status: "perencanaan" },
+            { nama: "Private Event Bali", jenis: "private", tanggal: "2026-02-15", status: "selesai", data_lengkap: true },
+            { nama: "Wedding Fair Surabaya", jenis: "wedding", tanggal: "2026-04-12", status: "selesai", data_lengkap: false },
+
+            { nama: "Corporate Summit Jakarta", jenis: "corporate", tanggal: "2026-04-20", status: "pendaftaran" },
+            { nama: "Birthday Party Kevin", jenis: "birthday", tanggal: "2026-02-22", status: "berlangsung" },
+            { nama: "Private Yacht Event", jenis: "private", tanggal: "2026-03-18", status: "perencanaan" },
+            { nama: "Wedding Garden Party", jenis: "wedding", tanggal: "2026-05-02", status: "pendaftaran" },
+            { nama: "Corporate Awards Night", jenis: "corporate", tanggal: "2026-05-10", status: "selesai", data_lengkap: true },
+
+            { nama: "Birthday Surprise Sinta", jenis: "birthday", tanggal: "2026-03-12", status: "selesai", data_lengkap: false },
+            { nama: "Private Dinner Jakarta", jenis: "private", tanggal: "2026-03-25", status: "berlangsung" },
+            { nama: "Wedding Anniversary Gala", jenis: "wedding", tanggal: "2026-06-01", status: "perencanaan" },
+            { nama: "Corporate Team Building", jenis: "corporate", tanggal: "2026-04-05", status: "pendaftaran" },
+            { nama: "Birthday Kids Party", jenis: "birthday", tanggal: "2026-04-18", status: "pendaftaran" },
+
+            { nama: "Private Beach Party", jenis: "private", tanggal: "2026-06-10", status: "selesai", data_lengkap: true },
+            { nama: "Wedding Luxury Bali", jenis: "wedding", tanggal: "2026-07-02", status: "berlangsung" },
+            { nama: "Corporate Expo Surabaya", jenis: "corporate", tanggal: "2026-06-22", status: "perencanaan" },
+            { nama: "Birthday Party Rafi", jenis: "birthday", tanggal: "2026-05-28", status: "selesai", data_lengkap: true },
+            { nama: "Private Resort Gathering", jenis: "private", tanggal: "2026-06-18", status: "pendaftaran" }
+        ];
+
+
+        const labelBulan = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun"];
+        const pendapatanBulanan = [12000000, 15000000, 18000000, 14000000, 20000000, 22000000];
+        const proyekBulanan = [2, 3, 4, 3, 5, 6];
+
+        function renderSummary() {
+            document.getElementById("totalUser").innerText = users.length;
+            document.getElementById("totalPetugas").innerText = petugas.length;
+            document.getElementById("totalKlien").innerText = klien.length;
+        }
+
+        function renderKanban() {
+            const listPerencanaan = document.getElementById("listPerencanaan");
+            const listPendaftaran = document.getElementById("listPendaftaran");
+            const listBerlangsung = document.getElementById("listBerlangsung");
+            const listPending = document.getElementById("listPending");
+            const listSelesai = document.getElementById("listSelesai");
+
+            [listPerencanaan, listPendaftaran, listBerlangsung, listPending, listSelesai].forEach(el => el.innerHTML = "");
+
+            const perencanaan = events.filter(e => e.status === "perencanaan");
+            const pendaftaran = events.filter(e => e.status === "pendaftaran");
+            const berlangsung = events.filter(e => e.status === "berlangsung");
+            const pending = events.filter(e => e.status === "selesai" && e.data_lengkap === false);
+            const selesai = events.filter(e => e.status === "selesai" && e.data_lengkap !== false);
+
+            document.getElementById("countPerencanaan").innerText = perencanaan.length + " Event";
+            document.getElementById("countPendaftaran").innerText = pendaftaran.length + " Event";
+            document.getElementById("countBerlangsung").innerText = berlangsung.length + " Event";
+            document.getElementById("countPending").innerText = pending.length + " Event";
+            document.getElementById("countSelesai").innerText = selesai.length + " Event";
+
+            events.forEach(ev => {
+                const card = document.createElement("div");
+                card.className = "event-card";
+                card.innerHTML = `<div class="event-name">${ev.nama}</div><div class="event-info">${ev.tanggal}</div>`;
+
+                if (ev.status === "perencanaan") listPerencanaan.appendChild(card);
+                if (ev.status === "pendaftaran") listPendaftaran.appendChild(card);
+                if (ev.status === "berlangsung") listBerlangsung.appendChild(card);
+                if (ev.status === "selesai" && ev.data_lengkap === false) listPending.appendChild(card);
+                if (ev.status === "selesai" && ev.data_lengkap !== false) listSelesai.appendChild(card);
+            });
+        }
+
+        fetch("../component/sidebar_admin.html")
+            .then(r => r.text())
+            .then(html => {
+                document.getElementById("layout-admin").innerHTML = html;
+                document.getElementById("page-title").innerText = "Dashboard Admin";
+                document.getElementById("konten-halaman").innerHTML = document.getElementById("isi-halaman").innerHTML;
+
+                document.getElementById("toggleSidebar").addEventListener("click", () => sidebar.classList.toggle("closed"));
+
+                renderSummary();
+                renderKanban();
+
+                const countJenis = {
+                    wedding: events.filter(e => e.jenis === "wedding").length,
+                    birthday: events.filter(e => e.jenis === "birthday").length,
+                    corporate: events.filter(e => e.jenis === "corporate").length,
+                    private: events.filter(e => e.jenis === "private").length
+                };
+
+                new Chart(chartEvent, {
+                    type: "pie",
+                    data: {
+                        labels: ["Wedding", "Birthday", "Corporate", "Private"],
+                        datasets: [{
+                            data: [countJenis.wedding, countJenis.birthday, countJenis.corporate, countJenis.private],
+                            backgroundColor: ["#f8c8dc", "#ffe4a1", "#b8e0d2", "#d6e4ff"]
+                        }]
+                    },
+                    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: "bottom" } } }
+                });
+
+                new Chart(chartPendapatan, {
+                    type: "line",
+                    data: { labels: labelBulan, datasets: [{ data: pendapatanBulanan, borderColor: "#1f3b63", tension: .3, fill: false }] },
+                    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+                });
+
+                new Chart(chartProyek, {
+                    type: "line",
+                    data: { labels: labelBulan, datasets: [{ data: proyekBulanan, borderColor: "#0b8457", tension: .3, fill: false }] },
+                    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+                });
+            });
+    </script>
+
+</body>
+
+</html>

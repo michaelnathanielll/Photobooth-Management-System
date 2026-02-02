@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Manajemen Klien</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/datatables.net-bs5@1.13.8/css/dataTables.bootstrap5.min.css"
+        rel="stylesheet">
+
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        .btn-utama {
+            background: #cdcec9;
+            border: none;
+            color: #333;
+        }
+
+        .btn-utama:hover {
+            background: #bfb9b4;
+            color: #333;
+        }
+
+        table.dataTable thead th {
+            background: #cdcec9;
+            color: #333;
+        }
+
+        .aksi-btn {
+            width: 36px;
+            height: 36px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            background: #fff;
+        }
+
+        .btn-edit {
+            border: 1px solid #f1c40f;
+            color: #f1c40f;
+        }
+
+        .btn-hapus {
+            border: 1px solid #e74c3c;
+            color: #e74c3c;
+        }
+
+        .btn-detail {
+            border: 1px solid #3498db;
+            color: #3498db;
+        }
+
+        .modal-form .modal-content {
+            border-radius: 12px;
+        }
+
+        .modal-hapus .modal-content {
+            border-radius: 12px;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 3px solid #e74c3c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px auto;
+            color: #e74c3c;
+            font-size: 32px;
+        }
+
+        .judul-detail {
+            font-weight: 700;
+            color: #1f3b63;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="layout-admin"></div>
+
+    <div id="isi-halaman" style="display:none">
+
+        <div class="d-flex justify-content-end mb-3">
+            <button class="btn btn-utama" data-bs-toggle="modal" data-bs-target="#modalTambah">Tambah Klien</button>
+        </div>
+
+        <table id="tabel-klien" class="table table-striped align-middle w-100">
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Kontak</th>
+                    <th>Alamat</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Andi Pratama</td>
+                    <td>08123456789</td>
+                    <td>Jl. Merdeka No.10, Jakarta</td>
+                    <td>
+                        <button class="aksi-btn btn-detail"
+                            onclick="openDetail('Andi Pratama','08123456789','Jl. Merdeka No.10, Jakarta')"
+                            data-bs-toggle="modal" data-bs-target="#modalDetail">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                        <button class="aksi-btn btn-edit" data-bs-toggle="modal" data-bs-target="#modalUbah">
+                            <i class="bi bi-pencil"></i>
+                        </button>
+                        <button class="aksi-btn btn-hapus" data-bs-toggle="modal" data-bs-target="#modalHapus">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sinta Lestari</td>
+                    <td>08987654321</td>
+                    <td>Jl. Sudirman No.25, Bandung</td>
+                    <td>
+                        <button class="aksi-btn btn-detail"
+                            onclick="openDetail('Sinta Lestari','08987654321','Jl. Sudirman No.25, Bandung')"
+                            data-bs-toggle="modal" data-bs-target="#modalDetail">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                        <button class="aksi-btn btn-edit" data-bs-toggle="modal" data-bs-target="#modalUbah">
+                            <i class="bi bi-pencil"></i>
+                        </button>
+                        <button class="aksi-btn btn-hapus" data-bs-toggle="modal" data-bs-target="#modalHapus">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="modal fade modal-form" id="modalTambah" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content p-3">
+                <div class="modal-header">
+                    <h5 class="modal-title">Tambah Klien</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <label>Nama Klien</label>
+                    <input class="form-control mb-3">
+                    <label>Kontak</label>
+                    <input class="form-control mb-3">
+                    <label>Alamat</label>
+                    <textarea class="form-control mb-3"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-utama" data-bs-dismiss="modal">Simpan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-form" id="modalUbah" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content p-3">
+                <div class="modal-header">
+                    <h5 class="modal-title">Ubah Klien</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <label>Nama Klien</label>
+                    <input class="form-control mb-3" value="Andi Pratama">
+                    <label>Kontak</label>
+                    <input class="form-control mb-3" value="08123456789">
+                    <label>Alamat</label>
+                    <textarea class="form-control mb-3">Jl. Merdeka No.10, Jakarta</textarea>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-utama" data-bs-dismiss="modal">Simpan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-form" id="modalDetail" tabindex="-1">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content p-3">
+                <div class="modal-header">
+                    <h5 class="modal-title">Detail Klien</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="judul-detail">Biodata Klien</div>
+                    <div id="detailNama"></div>
+                    <div id="detailKontak"></div>
+                    <div id="detailAlamat"></div>
+
+                    <hr>
+
+                    <div class="judul-detail">Riwayat Acara</div>
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Nama Event</th>
+                                <th>Tanggal</th>
+                                <th>Waktu</th>
+                                <th>Lokasi</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyAcara"></tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-hapus" id="modalHapus" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="icon-box">
+                    <i class="bi bi-trash"></i>
+                </div>
+                <h5>Apakah anda yakin<br>akan menghapus data ini?</h5>
+                <div class="mt-4 d-flex justify-content-center gap-3">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Iya</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/datatables.net@1.13.8/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/datatables.net-bs5@1.13.8/js/dataTables.bootstrap5.min.js"></script>
+
+    <script>
+        const jadwalData = [
+            { id: 1, nama: "Wedding Expo Jakarta", tanggal: "2026-02-10", waktu_mulai: "10:00", waktu_selesai: "20:00", lokasi: "JCC Senayan", status: "pendaftaran" },
+            { id: 2, nama: "Corporate Gathering Bandung", tanggal: "2026-03-05", waktu_mulai: "18:00", waktu_selesai: "22:00", lokasi: "Bandung Ballroom", status: "berlangsung" },
+            { id: 3, nama: "Birthday Party Aurel", tanggal: "2026-01-28", waktu_mulai: "15:00", waktu_selesai: "19:00", lokasi: "Jakarta Selatan", status: "berlangsung" },
+            { id: 4, nama: "Private Event Bali", tanggal: "2026-02-15", waktu_mulai: "16:00", waktu_selesai: "23:00", lokasi: "Bali Resort", status: "selesai" }
+        ];
+
+        function openDetail(nama, kontak, alamat) {
+            document.getElementById("detailNama").innerHTML = "<b>Nama:</b> " + nama;
+            document.getElementById("detailKontak").innerHTML = "<b>Kontak:</b> " + kontak;
+            document.getElementById("detailAlamat").innerHTML = "<b>Alamat:</b> " + alamat;
+
+            const tbody = document.getElementById("tbodyAcara");
+            tbody.innerHTML = "";
+
+            jadwalData.forEach(ev => {
+                const row = `
+                <tr>
+                    <td>${ev.nama}</td>
+                    <td>${ev.tanggal}</td>
+                    <td>${ev.waktu_mulai} - ${ev.waktu_selesai}</td>
+                    <td>${ev.lokasi}</td>
+                    <td>${ev.status}</td>
+                </tr>
+            `;
+                tbody.innerHTML += row;
+            });
+        }
+
+        fetch("../component/sidebar_admin.html")
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById("layout-admin").innerHTML = html;
+                document.getElementById("page-title").innerText = "Manajemen Klien";
+                document.getElementById("konten-halaman").innerHTML = document.getElementById("isi-halaman").innerHTML;
+
+                document.querySelectorAll(".menu a").forEach(link => {
+                    if (link.getAttribute("href") === "manajemen_klien.html") {
+                        link.classList.add("aktif");
+                    }
+                });
+
+                const sidebar = document.getElementById("sidebar");
+                const toggle = document.getElementById("toggleSidebar");
+                toggle.addEventListener("click", () => sidebar.classList.toggle("closed"));
+
+                new DataTable('#tabel-klien', {
+                    pageLength: 10,
+                    language: {
+                        search: "Cari:",
+                        lengthMenu: "Tampilkan _MENU_ data",
+                        info: "Menampilkan _START_ sampai _END_ dari _TOTAL_ data",
+                        paginate: { next: "Berikutnya", previous: "Sebelumnya" }
+                    }
+                });
+            });
+    </script>
+
+</body>
+
+</html>

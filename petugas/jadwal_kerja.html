@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Jadwal Kerja</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+
+    <style>
+        html,
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .filter-bar input,
+        .filter-bar select {
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 13px;
+        }
+
+        .view-switch {
+            margin-left: auto;
+            display: flex;
+            gap: 6px;
+        }
+
+        .view-btn {
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            background: #fff;
+            font-size: 13px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .view-btn.active {
+            background: #cdcec9;
+            border-color: #cdcec9;
+            font-weight: 600;
+        }
+
+        .jadwal-grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        @media (max-width: 1200px) {
+            .jadwal-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .jadwal-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .jadwal-card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 18px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            border-left: 6px solid #cdcec9;
+        }
+
+        .jadwal-title {
+            font-size: large;
+            font-weight: 700;
+            color: #1f3b63;
+            margin-bottom: 6px;
+        }
+
+        .jadwal-info {
+            font-size: 13px;
+            color: #555;
+            margin: 3px 0;
+            display: flex;
+        }
+
+        .jadwal-info b {
+            min-width: 70px;
+        }
+
+        .asset-title {
+            font-weight: 700;
+            color: #333;
+            margin-top: 8px;
+            margin-bottom: 4px;
+        }
+
+        /* STATUS LABEL CENTER */
+        .status-label {
+            display: block;
+            margin-top: 10px;
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .status-pendaftaran {
+            background: #fff3c4;
+            color: #6b5b1f;
+        }
+
+        .status-berlangsung {
+            background: #c8e6c9;
+            color: #256029;
+        }
+
+        .status-selesai {
+            background: #cfd8dc;
+            color: #37474f;
+        }
+
+        #calendarFull {
+            background: #fff;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .fc-event-title {
+            color: #000 !important;
+            font-weight: 600;
+        }
+
+        .tooltip-event {
+            position: absolute;
+            background: #fff;
+            border-radius: 10px;
+            padding: 10px 12px;
+            font-size: 12px;
+            color: #333;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 9999;
+            width: 220px;
+            pointer-events: none;
+        }
+
+        .tooltip-title {
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #1f3b63;
+        }
+
+        .tooltip-row {
+            margin-bottom: 3px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="navbar-petugas"></div>
+
+    <div class="konten-petugas">
+
+        <div class="filter-bar">
+
+            <select id="filterJenis">
+                <option value="">Semua Jenis</option>
+                <option value="wedding">Wedding</option>
+                <option value="birthday">Birthday</option>
+                <option value="corporate">Corporate</option>
+                <option value="private">Private</option>
+            </select>
+
+            <input type="date" id="filterTanggalMulai">
+            <input type="date" id="filterTanggalSelesai">
+
+            <select id="filterStatus">
+                <option value="">Semua Status</option>
+                <option value="pendaftaran">Pendaftaran</option>
+                <option value="berlangsung">Berlangsung</option>
+                <option value="selesai">Selesai</option>
+            </select>
+
+            <input type="text" id="searchInput" placeholder="Cari event atau lokasi">
+
+            <div class="view-switch">
+                <button id="btnCard" class="view-btn active">
+                    <i class="bi bi-card-list"></i> Card
+                </button>
+                <button id="btnCalendar" class="view-btn">
+                    <i class="bi bi-calendar-event"></i> Kalender
+                </button>
+            </div>
+        </div>
+
+        <div class="jadwal-grid" id="jadwalContainer"></div>
+        <div id="calendarFull" style="display:none"></div>
+
+    </div>
+
+    <script>
+        fetch("../component/navbar_petugas.html")
+            .then(r => r.text())
+            .then(html => {
+                document.getElementById("navbar-petugas").innerHTML = html;
+                document.getElementById("navbarTitle").innerText = "Jadwal Kerja";
+            });
+
+        const jadwalData = [
+            { id: 1, nama: "Wedding Expo Jakarta", jenis: "wedding", tanggal: "2026-02-10", waktu_mulai: "10:00", waktu_selesai: "20:00", lokasi: "JCC Senayan", booth: "Twini Booth Silver", kertas: "Stripe", base: "Magnetic", status: "pendaftaran" },
+            { id: 2, nama: "Corporate Gathering Bandung", jenis: "corporate", tanggal: "2026-03-05", waktu_mulai: "18:00", waktu_selesai: "22:00", lokasi: "Bandung Ballroom", booth: "Mingle", kertas: "Half Frame", base: "Basic", status: "berlangsung" },
+            { id: 3, nama: "Birthday Party Aurel", jenis: "birthday", tanggal: "2026-01-28", waktu_mulai: "15:00", waktu_selesai: "19:00", lokasi: "Jakarta Selatan", booth: "Pop Booth", kertas: "4R", base: "Stiki", status: "berlangsung" },
+            { id: 4, nama: "Private Event Bali", jenis: "private", tanggal: "2026-02-15", waktu_mulai: "16:00", waktu_selesai: "23:00", lokasi: "Bali Resort", booth: "Mirror Booth", kertas: "Half Frame", base: "Magnetic Cover", status: "selesai" }
+        ];
+
+        const container = document.getElementById("jadwalContainer");
+        const calendarEl = document.getElementById("calendarFull");
+        const btnCard = document.getElementById("btnCard");
+        const btnCalendar = document.getElementById("btnCalendar");
+
+        const filterJenis = document.getElementById("filterJenis");
+        const filterTanggalMulai = document.getElementById("filterTanggalMulai");
+        const filterTanggalSelesai = document.getElementById("filterTanggalSelesai");
+        const filterStatus = document.getElementById("filterStatus");
+        const searchInput = document.getElementById("searchInput");
+
+        function getBorderColor(jenis) {
+            if (jenis === "wedding") return "#e8c1c8";
+            if (jenis === "birthday") return "#c8e6c9";
+            if (jenis === "corporate") return "#cfd8dc";
+            if (jenis === "private") return "#fff3c4";
+            return "#cdcec9";
+        }
+
+        function getStatusLabel(status) {
+            if (status === "pendaftaran") return ["status-pendaftaran", "Pendaftaran"];
+            if (status === "berlangsung") return ["status-berlangsung", "Berlangsung"];
+            return ["status-selesai", "Selesai"];
+        }
+
+        function getFilteredData() {
+            const keyword = searchInput.value.toLowerCase();
+            const jenis = filterJenis.value;
+            const tglMulai = filterTanggalMulai.value;
+            const tglSelesai = filterTanggalSelesai.value;
+            const status = filterStatus.value;
+
+            return jadwalData.filter(ev => {
+                const matchSearch = ev.nama.toLowerCase().includes(keyword) || ev.lokasi.toLowerCase().includes(keyword);
+                const matchJenis = jenis === "" || ev.jenis === jenis;
+                const matchStatus = status === "" || ev.status === status;
+                const matchMulai = tglMulai === "" || ev.tanggal >= tglMulai;
+                const matchSelesai = tglSelesai === "" || ev.tanggal <= tglSelesai;
+                return matchSearch && matchJenis && matchStatus && matchMulai && matchSelesai;
+            });
+        }
+
+        function renderCards() {
+            container.innerHTML = "";
+            getFilteredData().forEach(ev => {
+                const card = document.createElement("div");
+                card.className = "jadwal-card";
+                card.style.borderLeftColor = getBorderColor(ev.jenis);
+                const statusData = getStatusLabel(ev.status);
+
+                card.innerHTML = `
+                <div class="jadwal-title">${ev.nama}</div>
+                <div class="jadwal-info"><b>Jenis</b>: ${ev.jenis}</div>
+                <div class="jadwal-info"><b>Tanggal</b>: ${ev.tanggal}</div>
+                <div class="jadwal-info"><b>Waktu</b>: ${ev.waktu_mulai} - ${ev.waktu_selesai}</div>
+                <div class="jadwal-info"><b>Lokasi</b>: ${ev.lokasi}</div>
+                <div class="asset-title">Aset Event</div>
+                <div class="jadwal-info"><b>Booth</b>: ${ev.booth}</div>
+                <div class="jadwal-info"><b>Kertas</b>: ${ev.kertas}</div>
+                <div class="jadwal-info"><b>Base</b>: ${ev.base}</div>
+                <span class="status-label ${statusData[0]}">${statusData[1]}</span>
+            `;
+                container.appendChild(card);
+            });
+        }
+
+        let tooltip;
+
+        const calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            locale: 'id',
+            height: "auto",
+            events: [],
+            eventDidMount: function (info) {
+                info.el.addEventListener("mouseenter", function () {
+                    const ev = info.event.extendedProps;
+                    tooltip = document.createElement("div");
+                    tooltip.className = "tooltip-event";
+                    tooltip.innerHTML = `
+                    <div class="tooltip-title">${ev.nama}</div>
+                    <div class="tooltip-row"><b>Jenis:</b> ${ev.jenis}</div>
+                    <div class="tooltip-row"><b>Tanggal:</b> ${ev.tanggal}</div>
+                    <div class="tooltip-row"><b>Waktu:</b> ${ev.waktu_mulai} - ${ev.waktu_selesai}</div>
+                    <div class="tooltip-row"><b>Lokasi:</b> ${ev.lokasi}</div>
+                `;
+                    document.body.appendChild(tooltip);
+                    const rect = info.el.getBoundingClientRect();
+                    tooltip.style.left = rect.left + "px";
+                    tooltip.style.top = (rect.top - tooltip.offsetHeight - 8) + "px";
+                });
+                info.el.addEventListener("mouseleave", function () {
+                    if (tooltip) { tooltip.remove(); tooltip = null; }
+                });
+            }
+        });
+
+        function renderCalendar() {
+            calendar.removeAllEvents();
+            getFilteredData().forEach(ev => {
+                calendar.addEvent({
+                    title: ev.nama,
+                    start: ev.tanggal,
+                    backgroundColor: getBorderColor(ev.jenis),
+                    borderColor: getBorderColor(ev.jenis),
+                    textColor: "#000",
+                    extendedProps: ev
+                });
+            });
+            calendar.render();
+        }
+
+        btnCard.addEventListener("click", () => {
+            container.style.display = "grid";
+            calendarEl.style.display = "none";
+            btnCard.classList.add("active");
+            btnCalendar.classList.remove("active");
+        });
+
+        btnCalendar.addEventListener("click", () => {
+            container.style.display = "none";
+            calendarEl.style.display = "block";
+            btnCalendar.classList.add("active");
+            btnCard.classList.remove("active");
+            renderCalendar();
+        });
+
+        [filterJenis, filterTanggalMulai, filterTanggalSelesai, filterStatus, searchInput].forEach(el => {
+            el.addEventListener("input", () => {
+                renderCards();
+                if (calendarEl.style.display === "block") renderCalendar();
+            });
+        });
+
+        renderCards();
+    </script>
+
+</body>
+
+</html>

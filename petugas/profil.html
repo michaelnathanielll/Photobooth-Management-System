@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Profil Petugas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        html,
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 16px 18px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .card-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1f3b63;
+            margin-bottom: 10px;
+        }
+
+        .info-text {
+            font-size: 13px;
+            color: #555;
+            margin: 3px 0;
+        }
+
+        .bio-skill-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        @media(max-width:700px) {
+            .bio-skill-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            background: #e6e6e6;
+            color: #333;
+            margin: 3px 4px 0 0;
+        }
+
+        .score-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 15px;
+        }
+
+        @media(max-width:900px) {
+            .score-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .score-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .score-item {
+            background: #f6f6f6;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .score-item:hover {
+            background: #ededed;
+        }
+
+        .score-tooltip {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 110%;
+            background: #fff;
+            padding: 10px 12px;
+            border-radius: 10px;
+            font-size: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            width: 260px;
+            z-index: 100;
+        }
+
+        .score-item:hover .score-tooltip {
+            display: block;
+        }
+
+        .tooltip-row {
+            margin-bottom: 4px;
+        }
+
+        .summary-box {
+            background: #f7f7f7;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 13px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .summary-total {
+            margin-top: 6px;
+            padding-top: 6px;
+            border-top: 1px dashed #ccc;
+            font-weight: 700;
+            color: #1f3b63;
+        }
+
+        .logout-wrap {
+            text-align: right;
+        }
+
+        .btn-utama {
+            background: #cdcec9;
+            border: none;
+            color: #333;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 7px 14px;
+            border-radius: 6px;
+        }
+
+        .btn-utama:hover {
+            background: #bfb9b4;
+        }
+
+        .btn-keluar {
+            background: #fff;
+            border: 1px solid #e74c3c;
+            color: #e74c3c;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 7px 14px;
+            border-radius: 6px;
+        }
+
+        .btn-keluar:hover {
+            background: #e74c3c;
+            color: #fff;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.45);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 3000;
+        }
+
+        .modal-box {
+            background: #fff;
+            border-radius: 14px;
+            padding: 18px 20px;
+            width: 360px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .modal-title {
+            font-weight: 700;
+            color: #1f3b63;
+        }
+
+        .modal-close {
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .modal-box input {
+            width: 100%;
+            padding: 7px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            margin-top: 6px;
+            font-size: 13px;
+        }
+
+        .modal-footer {
+            margin-top: 12px;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="navbar-petugas"></div>
+
+    <div class="konten-petugas">
+        <div class="profile-container">
+
+            <div class="bio-skill-grid">
+
+                <div class="card">
+                    <div class="card-title">Biodata</div>
+                    <div class="info-text"><b>Nama:</b> Michael Nathanael</div>
+                    <div class="info-text"><b>No HP:</b> 0812-3456-7890</div>
+                    <div class="info-text"><b>Status Kepegawaian:</b> Tetap</div>
+                    <div class="info-text"><b>Honor Standar:</b> Rp 150.000 / Event</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Keahlian</div>
+                    <span class="badge">Operator</span>
+                    <span class="badge">Printer (Magnet)</span>
+                    <span class="badge">Asisten</span>
+                </div>
+
+            </div>
+            <div class="card">
+                <div class="card-title">Riwayat Skor Kinerja</div>
+
+                <div class="score-grid">
+                    <div class="score-list" id="scoreList"></div>
+
+                    <div class="summary-box" id="scoreSummary"></div>
+                </div>
+            </div>
+
+            <div class="logout-wrap">
+                <button class="btn-utama" onclick="openModal('modalProfil')">Ubah Profil</button>
+                <button class="btn-utama" onclick="openModal('modalPassword')">Ubah Kata Sandi</button>
+                <button class="btn-keluar" onclick="logout()">Keluar</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalProfil">
+        <div class="modal-box">
+            <div class="modal-header">
+                <div class="modal-title">Ubah Profil</div>
+                <div class="modal-close" onclick="closeModal('modalProfil')">✕</div>
+            </div>
+            <input type="text" value="Michael Nathanael">
+            <input type="text" value="0812-3456-7890">
+            <div class="modal-footer">
+                <button class="btn-utama" onclick="closeModal('modalProfil')">Simpan</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalPassword">
+        <div class="modal-box">
+            <div class="modal-header">
+                <div class="modal-title">Ubah Kata Sandi</div>
+                <div class="modal-close" onclick="closeModal('modalPassword')">✕</div>
+            </div>
+            <input type="password" placeholder="Password Lama">
+            <input type="password" placeholder="Password Baru">
+            <input type="password" placeholder="Ulangi Password Baru">
+            <div class="modal-footer">
+                <button class="btn-utama" onclick="closeModal('modalPassword')">Simpan</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        fetch("../component/navbar_petugas.html")
+            .then(r => r.text())
+            .then(html => {
+                document.getElementById("navbar-petugas").innerHTML = html;
+                document.getElementById("navbarTitle").innerText = "Profil Petugas";
+            });
+
+        function openModal(id) { document.getElementById(id).style.display = "flex"; }
+        function closeModal(id) { document.getElementById(id).style.display = "none"; }
+
+        const scoreData = [
+            {
+                id: 1,
+                event: "Wedding Expo Jakarta",
+                knowledge: 90,
+                communication: 92,
+                attitude: 95,
+                problem: 91
+            },
+            {
+                id: 2,
+                event: "Corporate Gathering",
+                knowledge: 85,
+                communication: 88,
+                attitude: 90,
+                problem: 87
+            },
+            {
+                id: 3,
+                event: "Birthday Party Aurel",
+                knowledge: 93,
+                communication: 96,
+                attitude: 97,
+                problem: 94
+            }
+        ];
+
+        const scoreListEl = document.getElementById("scoreList");
+        const summaryEl = document.getElementById("scoreSummary");
+
+        let sumK = 0, sumC = 0, sumA = 0, sumP = 0;
+
+        scoreData.forEach(sc => {
+            const total = sc.knowledge + sc.communication + sc.attitude + sc.problem;
+
+            sumK += sc.knowledge;
+            sumC += sc.communication;
+            sumA += sc.attitude;
+            sumP += sc.problem;
+
+            const div = document.createElement("div");
+            div.className = "score-item";
+            div.innerHTML = `
+        <span>${sc.event}</span>
+        <b>${total}</b>
+
+        <div class="score-tooltip">
+            <div class="tooltip-row"><b>Knowledge & Skill:</b> ${sc.knowledge}</div>
+            <div class="tooltip-row"><b>Communication & Teamwork:</b> ${sc.communication}</div>
+            <div class="tooltip-row"><b>Attitude & Work Time:</b> ${sc.attitude}</div>
+            <div class="tooltip-row"><b>Problem Solving & Decision:</b> ${sc.problem}</div>
+        </div>
+    `;
+            scoreListEl.appendChild(div);
+        });
+
+        const avgK = Math.round(sumK / scoreData.length);
+        const avgC = Math.round(sumC / scoreData.length);
+        const avgA = Math.round(sumA / scoreData.length);
+        const avgP = Math.round(sumP / scoreData.length);
+        const totalAvg = avgK + avgC + avgA + avgP;
+
+        summaryEl.innerHTML = `
+    <div class="summary-item"><span>Knowledge & Skill</span><b>${avgK}</b></div>
+    <div class="summary-item"><span>Communication & Teamwork</span><b>${avgC}</b></div>
+    <div class="summary-item"><span>Attitude & Work Time</span><b>${avgA}</b></div>
+    <div class="summary-item"><span>Problem Solving & Responsibility</span><b>${avgP}</b></div>
+    <div class="summary-item summary-total"><span>Total Skor Rata-rata</span><b>${totalAvg}</b></div>
+`;
+
+        function logout() {
+            alert("Logout berhasil!");
+            window.location.href = "../masuk.html";
+        }
+    </script>
+
+</body>
+
+</html>

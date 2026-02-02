@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Honorarium</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        html,
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .summary-box {
+            background: #f4f4f4;
+            border-radius: 10px;
+            padding: 10px 14px;
+            color: #333;
+            font-weight: 600;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .summary-value {
+            font-size: 16px;
+            margin-top: 4px;
+            font-weight: 700;
+        }
+
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .filter-bar input {
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 13px;
+        }
+
+        .honor-grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        @media (max-width:1200px) {
+            .honor-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width:640px) {
+            .honor-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .honor-card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 18px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            border-left: 6px solid #cdcec9;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .honor-title {
+            font-size: large;
+            font-weight: 700;
+            color: #1f3b63;
+            margin-bottom: 6px;
+        }
+
+        .honor-info {
+            font-size: 13px;
+            color: #555;
+            margin: 3px 0;
+        }
+
+        .honor-info {
+            font-size: 13px;
+            color: #555;
+            margin: 3px 0;
+            display: flex;
+        }
+
+        .honor-info b {
+            min-width: 70px;
+            display: inline-block;
+        }
+
+
+        .asset-title {
+            font-weight: 700;
+            color: #333;
+            margin-top: 10px;
+            margin-bottom: 6px;
+        }
+
+        .honor-amount {
+            margin-top: 10px;
+            font-weight: 700;
+            font-size: 15px;
+            color: #2f5f9e;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="navbar-petugas"></div>
+
+    <div class="konten-petugas">
+
+        <div class="summary-box">
+            Total Honor Keseluruhan
+            <div class="summary-value" id="totalHonor">Rp 0</div>
+        </div>
+
+        <div class="filter-bar">
+            <input type="date" id="filterTanggalMulai">
+            <input type="date" id="filterTanggalSelesai">
+            <input type="text" id="searchInput" placeholder="Cari event atau lokasi">
+        </div>
+
+        <div class="honor-grid" id="honorContainer"></div>
+    </div>
+
+    <script>
+        fetch("../component/navbar_petugas.html")
+            .then(r => r.text())
+            .then(html => {
+                document.getElementById("navbar-petugas").innerHTML = html;
+                document.getElementById("navbarTitle").innerText = "Honorarium";
+
+                const menuToggle = document.getElementById("menuToggle");
+                const sidebar = document.getElementById("sidebarPetugas");
+                const overlay = document.getElementById("overlayPetugas");
+                const sidebarClose = document.getElementById("sidebarClose");
+
+                function openSidebar() {
+                    sidebar.classList.add("show");
+                    overlay.classList.add("show");
+                }
+                function closeSidebar() {
+                    sidebar.classList.remove("show");
+                    overlay.classList.remove("show");
+                }
+
+                menuToggle.addEventListener("click", openSidebar);
+                sidebarClose.addEventListener("click", closeSidebar);
+                overlay.addEventListener("click", closeSidebar);
+            });
+
+        const honorData = [
+            {
+                id: 1,
+                nama: "Wedding Expo Jakarta",
+                jenis: "wedding",
+                tanggal: "2026-02-10",
+                waktu_mulai: "10:00",
+                waktu_selesai: "20:00",
+                lokasi: "JCC Senayan",
+                booth: "Twini Booth Silver",
+                kertas: "Stripe",
+                base: "Magnetic",
+                honor: 1500000
+            },
+            {
+                id: 2,
+                nama: "Corporate Gathering",
+                jenis: "corporate",
+                tanggal: "2026-03-05",
+                waktu_mulai: "18:00",
+                waktu_selesai: "22:00",
+                lokasi: "Bandung Ballroom",
+                booth: "Mingle",
+                kertas: "Half Frame",
+                base: "Basic",
+                honor: 1200000
+            },
+            {
+                id: 3,
+                nama: "Private Event Bali",
+                jenis: "private",
+                tanggal: "2026-01-20",
+                waktu_mulai: "16:00",
+                waktu_selesai: "23:00",
+                lokasi: "Bali Resort",
+                booth: "Mirror Booth",
+                kertas: "Half Frame",
+                base: "Magnetic Cover",
+                honor: 1000000
+            },
+            {
+                id: 4,
+                nama: "Birthday Party Aurel",
+                jenis: "birthday",
+                tanggal: "2026-01-28",
+                waktu_mulai: "15:00",
+                waktu_selesai: "19:00",
+                lokasi: "Jakarta Selatan",
+                booth: "Pop Booth",
+                kertas: "4R",
+                base: "Stiki",
+                honor: 900000
+            }
+        ];
+
+        const container = document.getElementById("honorContainer");
+        const searchInput = document.getElementById("searchInput");
+        const filterTanggalMulai = document.getElementById("filterTanggalMulai");
+        const filterTanggalSelesai = document.getElementById("filterTanggalSelesai");
+        const totalHonorEl = document.getElementById("totalHonor");
+
+        function getBorderColor(jenis) {
+            switch (jenis) {
+                case "wedding": return "#e8c1c8";
+                case "birthday": return "#c8e6c9";
+                case "corporate": return "#cfd8dc";
+                case "private": return "#fff3c4";
+                default: return "#cdcec9";
+            }
+        }
+
+        function hitungTotal(data) {
+            const total = data.reduce((sum, ev) => sum + ev.honor, 0);
+            totalHonorEl.innerText = "Rp " + total.toLocaleString();
+        }
+
+        function renderHonor() {
+            const keyword = searchInput.value.toLowerCase();
+            const tglMulai = filterTanggalMulai.value;
+            const tglSelesai = filterTanggalSelesai.value;
+
+            container.innerHTML = "";
+
+            const filtered = honorData.filter(ev => {
+                const matchSearch = ev.nama.toLowerCase().includes(keyword) || ev.lokasi.toLowerCase().includes(keyword);
+                const matchMulai = tglMulai === "" || ev.tanggal >= tglMulai;
+                const matchSelesai = tglSelesai === "" || ev.tanggal <= tglSelesai;
+                return matchSearch && matchMulai && matchSelesai;
+            });
+
+            hitungTotal(filtered);
+
+            filtered.forEach(ev => {
+                const card = document.createElement("div");
+                card.className = "honor-card";
+                card.style.borderLeftColor = getBorderColor(ev.jenis);
+
+                card.innerHTML = `
+            <div class="honor-title">${ev.nama}</div>
+
+            <div class="honor-info"><b>Jenis</b>: ${ev.jenis}</div>
+<div class="honor-info"><b>Tanggal</b>: ${ev.tanggal}</div>
+<div class="honor-info"><b>Waktu</b>: ${ev.waktu_mulai} - ${ev.waktu_selesai}</div>
+<div class="honor-info"><b>Lokasi</b>: ${ev.lokasi}</div>
+
+<div class="asset-title">Aset Event</div>
+<div class="honor-info"><b>Booth</b>: ${ev.booth}</div>
+<div class="honor-info"><b>Kertas</b>: ${ev.kertas}</div>
+<div class="honor-info"><b>Base Print</b>: ${ev.base}</div>
+
+
+            <div class="honor-amount">Rp ${ev.honor.toLocaleString()}</div>
+        `;
+
+                container.appendChild(card);
+            });
+        }
+
+        searchInput.addEventListener("input", renderHonor);
+        filterTanggalMulai.addEventListener("change", renderHonor);
+        filterTanggalSelesai.addEventListener("change", renderHonor);
+
+        renderHonor();
+    </script>
+
+</body>
+
+</html>

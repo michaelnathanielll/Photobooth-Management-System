@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Manajemen Proyek</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/datatables.net-bs5@1.13.8/css/dataTables.bootstrap5.min.css"
+        rel="stylesheet">
+
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        .btn-utama {
+            background: #cdcec9;
+            border: none;
+            color: #333;
+        }
+
+        .btn-utama:hover {
+            background: #bfb9b4;
+            color: #333;
+        }
+
+        table.dataTable,
+        table.dataTable tbody td {
+            background: #ffffff;
+        }
+
+        table.dataTable thead th {
+            background: #cdcec9;
+            color: #333;
+            border-bottom: none;
+        }
+
+        .dataTables_wrapper .dataTables_paginate .page-item.active .page-link {
+            background: #cdcec9;
+            border-color: #cdcec9;
+            color: #333;
+        }
+
+        .aksi-btn {
+            width: 36px;
+            height: 36px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            background: #fff;
+        }
+
+        .btn-edit {
+            border: 1px solid #f1c40f;
+            color: #f1c40f;
+        }
+
+        .btn-edit:hover {
+            background: #fff6c4;
+        }
+
+        .btn-hapus {
+            border: 1px solid #e74c3c;
+            color: #e74c3c;
+        }
+
+        .btn-hapus:hover {
+            background: #ffd6d1;
+        }
+
+        .btn-utama.aksi-btn {
+            border: 1px solid #455de1;
+            color: #455de1;
+        }
+
+        .btn-utama.aksi-btn:hover {
+            background: #b8bbcd;
+        }
+
+        .modal-form .modal-content {
+            border-radius: 12px;
+        }
+
+        .modal-form .modal-header {
+            border-bottom: 1px solid #cdcec9;
+        }
+
+        .modal-form label {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .modal-hapus .modal-content {
+            border-radius: 12px;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .modal-hapus .icon-box {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 3px solid #e74c3c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px auto;
+            color: #e74c3c;
+            font-size: 32px;
+        }
+
+        .btn-tidak {
+            border: 1px solid #aaa;
+            background: #fff;
+            color: #555;
+            border-radius: 6px;
+            padding: 6px 22px;
+        }
+
+        .btn-iya {
+            border: 1px solid #e74c3c;
+            background: #fff;
+            color: #e74c3c;
+            border-radius: 6px;
+            padding: 6px 22px;
+        }
+
+        .btn-iya:hover {
+            background: #e74c3c;
+            color: #fff;
+        }
+
+        .status-pendaftaran {
+            background: #fff3c4;
+            color: #6b5b1f;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .status-berlangsung {
+            background: #c8e6c9;
+            color: #256029;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .status-selesai {
+            background: #cfd8dc;
+            color: #37474f;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .status-perencanaan {
+            background: #d6e4ff;
+            color: #1a3d8f;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .status-pendaftaran {
+            background: #fff3c4;
+            color: #6b5b1f;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .status-selesai-belum {
+            background: #ffd6d6;
+            color: #8a1f1f;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="layout-admin"></div>
+
+    <div id="isi-halaman" style="display:none">
+
+        <div class="row g-2 align-items-end mb-3">
+            <div class="col-md-3">
+                <label class="form-label">Jenis Event</label>
+                <select id="filterJenis" class="form-control">
+                    <option value="">Semua</option>
+                    <option value="wedding">Wedding</option>
+                    <option value="corporate">Corporate</option>
+                    <option value="birthday">Birthday</option>
+                    <option value="private">Private</option>
+                </select>
+            </div>
+
+            <div class="col-md-2">
+                <label class="form-label">Tanggal Mulai</label>
+                <input type="date" id="filterTanggalMulai" class="form-control">
+            </div>
+
+            <div class="col-md-2">
+                <label class="form-label">Tanggal Selesai</label>
+                <input type="date" id="filterTanggalSelesai" class="form-control">
+            </div>
+
+            <div class="col-md-3">
+                <label class="form-label">Status</label>
+                <select id="filterStatus" class="form-control">
+                    <option value="">Semua</option>
+                    <option value="perencanaan">Perencanaan</option>
+                    <option value="pendaftaran">Pendaftaran</option>
+                    <option value="berlangsung">Berlangsung</option>
+                    <option value="selesai">Selesai</option>
+                    <option value="pending">Selesai (Pending)</option>
+                </select>
+            </div>
+
+
+            <div class="col-md-2">
+                <button class="btn btn-utama w-100" data-bs-toggle="modal" data-bs-target="#modalTambah">
+                    Tambah Proyek
+                </button>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table id="tabel-proyek" class="table table-striped align-middle w-100">
+                <thead>
+                    <tr>
+                        <th>Nama Event</th>
+                        <th>Jenis</th>
+                        <th>Tanggal</th>
+                        <th>Waktu</th>
+                        <th>Lokasi</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-event"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="modal fade modal-form" id="modalTambah" tabindex="-1">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content p-3">
+                <div class="modal-header">
+                    <h5 class="modal-title">Tambah Proyek</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row g-3">
+
+                        <!-- Kolom 1 -->
+                        <div class="col-md-4">
+                            <label>Nama Event</label>
+                            <input class="form-control">
+
+                            <label class="mt-2">Jenis Event</label>
+                            <select class="form-control">
+                                <option>wedding</option>
+                                <option>birthday</option>
+                                <option>corporate</option>
+                                <option>private</option>
+                            </select>
+
+                            <label class="mt-2">Klien</label>
+                            <select class="form-control">
+                                <option>Project Art</option>
+                                <option>Oneway</option>
+                                <option>Andi Wijaya</option>
+                                <option>Sinta Lestari</option>
+                            </select>
+
+                            <label class="mt-2">Tanggal Event</label>
+                            <input type="date" class="form-control">
+                        </div>
+
+                        <!-- Kolom 2 -->
+                        <div class="col-md-4">
+                            <label>Waktu Mulai</label>
+                            <input type="time" class="form-control">
+
+                            <label class="mt-2">Waktu Selesai</label>
+                            <input type="time" class="form-control">
+
+                            <label class="mt-2">Lokasi</label>
+                            <input class="form-control">
+
+                            <label class="mt-2">Jumlah Petugas</label>
+                            <input type="number" class="form-control" placeholder="Jumlah petugas">
+                        </div>
+
+                        <!-- Kolom 3 -->
+                        <div class="col-md-4">
+                            <label>Booth</label>
+                            <select class="form-control">
+                                <option>Twini Booth Silver</option>
+                                <option>Twini Booth Mirror</option>
+                                <option>Mini Booth</option>
+                                <option>Pop Booth</option>
+                                <option>Slide Booth</option>
+                                <option>Portraits</option>
+                                <option>Mingle</option>
+                                <option>Cam Photo</option>
+                            </select>
+
+                            <label class="mt-2">Status</label>
+                            <select class="form-control">
+                                <option value="perencanaan">Perencanaan</option>
+                                <option value="pendaftaran">Pendaftaran</option>
+                                <option value="berlangsung">Berlangsung</option>
+                                <option value="selesai">Selesai</option>
+                            </select>
+
+                            <label class="mt-2">Keterangan</label>
+                            <textarea class="form-control" rows="4"></textarea>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="modal-footer">
+                    <button class="btn btn-utama" data-bs-dismiss="modal">Simpan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-form" id="modalUbah" tabindex="-1">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content p-3">
+                <div class="modal-header">
+                    <h5 class="modal-title">Ubah Proyek</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row g-3">
+
+                        <div class="col-md-4">
+                            <label>Nama Event</label>
+                            <input class="form-control" value="Wedding Expo Jakarta">
+
+                            <label class="mt-2">Jenis Event</label>
+                            <select class="form-control">
+                                <option selected>wedding</option>
+                                <option>birthday</option>
+                                <option>corporate</option>
+                                <option>private</option>
+                            </select>
+
+                            <label class="mt-2">Klien</label>
+                            <select class="form-control">
+                                <option>Project Art</option>
+                                <option>Oneway</option>
+                                <option>Andi Wijaya</option>
+                                <option>Sinta Lestari</option>
+                            </select>
+
+                            <label class="mt-2">Tanggal Event</label>
+                            <input type="date" class="form-control" value="2026-02-10">
+                        </div>
+
+                        <!-- Kolom 2 -->
+                        <div class="col-md-4">
+                            <label>Waktu Mulai</label>
+                            <input type="time" class="form-control" value="10:00">
+
+                            <label class="mt-2">Waktu Selesai</label>
+                            <input type="time" class="form-control" value="20:00">
+
+                            <label class="mt-2">Lokasi</label>
+                            <input class="form-control" value="JCC Senayan">
+
+                            <label class="mt-2">Jumlah Petugas</label>
+                            <input type="number" class="form-control" value="6">
+                        </div>
+
+                        <!-- Kolom 3 -->
+                        <div class="col-md-4">
+                            <label>Booth</label>
+                            <select class="form-control">
+                                <option selected>Twini Booth Silver</option>
+                                <option>Twini Booth Mirror</option>
+                                <option>Mini Booth</option>
+                                <option>Pop Booth</option>
+                                <option>Slide Booth</option>
+                                <option>Portraits</option>
+                                <option>Mingle</option>
+                                <option>Cam Photo</option>
+                            </select>
+
+                            <label class="mt-2">Status</label>
+                            <select class="form-control">
+                                <option value="perencanaan">Perencanaan</option>
+                                <option value="pendaftaran" selected>Pendaftaran</option>
+                                <option value="berlangsung">Berlangsung</option>
+                                <option value="selesai">Selesai</option>
+                            </select>
+
+                            <label class="mt-2">Keterangan</label>
+                            <textarea class="form-control" rows="4">Photobooth + Crew</textarea>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="modal-footer">
+                    <button class="btn btn-utama" data-bs-dismiss="modal">Simpan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade modal-hapus" id="modalHapus" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="icon-box">
+                    <i class="bi bi-trash"></i>
+                </div>
+                <h5>Apakah anda yakin<br>menghapus proyek ini?</h5>
+                <div class="mt-4 d-flex justify-content-center gap-3">
+                    <button class="btn-tidak" data-bs-dismiss="modal">Tidak</button>
+                    <button class="btn-iya" data-bs-dismiss="modal">Ya</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/datatables.net@1.13.8/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/datatables.net-bs5@1.13.8/js/dataTables.bootstrap5.min.js"></script>
+
+    <script>
+        const dataEvent = [
+            { id: 1, nama: "Wedding Expo Jakarta", jenis: "wedding", tanggal: "2026-02-10", waktu_mulai: "10:00", waktu_selesai: "20:00", lokasi: "JCC Senayan", status: "pendaftaran" },
+            { id: 2, nama: "Corporate Gathering Bandung", jenis: "corporate", tanggal: "2026-03-05", waktu_mulai: "18:00", waktu_selesai: "22:00", lokasi: "Bandung Ballroom", status: "berlangsung" },
+            { id: 3, nama: "Birthday Party Aurel", jenis: "birthday", tanggal: "2026-01-28", waktu_mulai: "15:00", waktu_selesai: "19:00", lokasi: "Jakarta Selatan", status: "perencanaan" },
+            { id: 4, nama: "Private Event Bali", jenis: "private", tanggal: "2026-02-15", waktu_mulai: "16:00", waktu_selesai: "23:00", lokasi: "Bali Resort", status: "selesai", data_lengkap: true },
+            { id: 5, nama: "Wedding After Party Surabaya", jenis: "wedding", tanggal: "2026-03-20", waktu_mulai: "19:00", waktu_selesai: "23:00", lokasi: "Surabaya Convention Hall", status: "selesai", data_lengkap: false }
+        ];
+
+
+        function getStatus(event) {
+            if (event.status === "perencanaan")
+                return { text: "Perencanaan", class: "status-perencanaan" };
+            if (event.status === "pendaftaran")
+                return { text: "Pendaftaran", class: "status-pendaftaran" };
+            if (event.status === "berlangsung")
+                return { text: "Berlangsung", class: "status-berlangsung" };
+            if (event.status === "selesai") {
+                if (event.data_lengkap === false) {
+                    return { text: "Selesai (Pending)", class: "status-selesai-belum" };
+                }
+                return { text: "Selesai", class: "status-selesai" };
+            }
+        }
+
+
+        function renderTable() {
+            const jenisFilter = document.getElementById("filterJenis").value;
+            const tglMulai = document.getElementById("filterTanggalMulai").value;
+            const tglSelesai = document.getElementById("filterTanggalSelesai").value;
+            const statusFilter = document.getElementById("filterStatus").value;
+
+            const urutanStatus = { perencanaan: 1, pendaftaran: 2, berlangsung: 3, selesai: 4 };
+            let filteredData = [...dataEvent];
+
+            if (jenisFilter !== "")
+                filteredData = filteredData.filter(ev => ev.jenis === jenisFilter);
+
+            if (tglMulai !== "")
+                filteredData = filteredData.filter(ev => ev.tanggal >= tglMulai);
+
+            if (tglSelesai !== "")
+                filteredData = filteredData.filter(ev => ev.tanggal <= tglSelesai);
+
+            if (statusFilter !== "") {
+                filteredData = filteredData.filter(ev => {
+
+                    if (statusFilter === "pending") {
+                        return ev.status === "selesai" && ev.data_lengkap === false;
+                    }
+
+                    return ev.status === statusFilter;
+                });
+            }
+
+            filteredData.sort((a, b) => urutanStatus[a.status] - urutanStatus[b.status]);
+
+            const table = $('#tabel-proyek').DataTable();
+            table.clear();
+
+            filteredData.forEach(ev => {
+                const status = getStatus(ev);
+
+                const linkDetail =
+                    (ev.status === "selesai")
+                        ? `detail_proyek_selesai.html?id=${ev.id}`
+                        : `detail_proyek.html?id=${ev.id}`;
+
+                table.row.add([
+                    ev.nama,
+                    ev.jenis,
+                    ev.tanggal,
+                    `${ev.waktu_mulai} - ${ev.waktu_selesai}`,
+                    ev.lokasi,
+                    `<span class="${status.class}">${status.text}</span>`,
+                    `
+            <a href="${linkDetail}" class="aksi-btn btn-utama d-inline-flex align-items-center justify-content-center text-decoration-none">
+                <i class="bi bi-eye"></i>
+            </a>
+            <button class="aksi-btn btn-edit" data-bs-toggle="modal" data-bs-target="#modalUbah">
+                <i class="bi bi-pencil"></i>
+            </button>
+            <button class="aksi-btn btn-hapus" data-bs-toggle="modal" data-bs-target="#modalHapus">
+                <i class="bi bi-trash"></i>
+            </button>
+            `
+                ]);
+            });
+
+            table.draw();
+        }
+
+        function initSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            const toggle = document.getElementById("toggleSidebar");
+            function checkScreen() {
+                if (window.innerWidth < 500) sidebar.classList.add("closed");
+            }
+            toggle.addEventListener("click", () => sidebar.classList.toggle("closed"));
+            window.addEventListener("resize", checkScreen);
+            checkScreen();
+        }
+
+        fetch("../component/sidebar_admin.html")
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById("layout-admin").innerHTML = html;
+                document.getElementById("page-title").innerText = "Manajemen Proyek";
+                document.getElementById("konten-halaman").innerHTML = document.getElementById("isi-halaman").innerHTML;
+
+                document.querySelectorAll(".menu a").forEach(link => {
+                    if (link.getAttribute("href") === "manajemen_proyek.html") {
+                        link.classList.add("aktif");
+                    }
+                });
+
+                initSidebar();
+
+                new DataTable('#tabel-proyek', {
+                    pageLength: 10,
+                    order: [],
+                    language: {
+                        search: "Cari:",
+                        lengthMenu: "Tampilkan _MENU_ data",
+                        info: "Menampilkan _START_ sampai _END_ dari _TOTAL_ data",
+                        paginate: { next: "Berikutnya", previous: "Sebelumnya" }
+                    }
+                });
+
+                renderTable();
+
+                ["filterJenis", "filterStatus", "filterTanggalMulai", "filterTanggalSelesai"].forEach(id => {
+                    document.getElementById(id).addEventListener("change", renderTable);
+                });
+
+            });
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Petugas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        html,
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background: #fafafa;
+        }
+
+        .konten-petugas {
+            padding: 18px;
+        }
+
+        .greeting {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1f3b63;
+            margin-bottom: 12px;
+        }
+
+        .summary-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        @media(max-width:500px) {
+            .summary-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .summary-box {
+            background: #f2f2f2;
+            border-radius: 12px;
+            padding: 12px 16px;
+            color: #444;
+            font-weight: 600;
+            font-size: 12px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .summary-value {
+            font-size: 16px;
+            margin-top: 4px;
+            font-weight: 700;
+            color: #222;
+        }
+
+        .kanban-board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        @media(max-width: 900px) {
+            .kanban-board {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .kanban-column {
+            border-radius: 14px;
+            padding: 12px;
+        }
+
+        .bg-pendaftaran {
+            background: #fff8e1;
+        }
+
+        .bg-berlangsung {
+            background: #e9f7ef;
+        }
+
+        .bg-selesai {
+            background: #eef1f4;
+        }
+
+        .kanban-title {
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 6px;
+            color: #1f3b63;
+        }
+
+        .kanban-count {
+            font-size: 12px;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .event-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 10px 12px;
+            margin-bottom: 10px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
+            font-size: 13px;
+        }
+
+        .event-name {
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .event-info {
+            color: #555;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="navbar-petugas"></div>
+
+    <div class="konten-petugas">
+
+        <div class="greeting">
+            Hi, Michael Nathanael! 👋
+        </div>
+
+        <div class="summary-row">
+            <div class="summary-box">
+                Total Honor Keseluruhan
+                <div class="summary-value" id="totalHonor">Rp 0</div>
+            </div>
+
+            <div class="summary-box">
+                Event Tersedia Untuk Didaftar
+                <div class="summary-value" id="totalAvailable">0 Event</div>
+            </div>
+        </div>
+
+        <div class="kanban-board">
+
+            <div class="kanban-column bg-pendaftaran">
+                <div class="kanban-title">Pendaftaran</div>
+                <div class="kanban-count" id="countPendaftaran">0 Event</div>
+                <div id="listPendaftaran"></div>
+            </div>
+
+            <div class="kanban-column bg-berlangsung">
+                <div class="kanban-title">Berlangsung</div>
+                <div class="kanban-count" id="countBerlangsung">0 Event</div>
+                <div id="listBerlangsung"></div>
+            </div>
+
+            <div class="kanban-column bg-selesai">
+                <div class="kanban-title">Selesai</div>
+                <div class="kanban-count" id="countSelesai">0 Event</div>
+                <div id="listSelesai"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        fetch("../component/navbar_petugas.html")
+            .then(r => r.text())
+            .then(html => {
+                document.getElementById("navbar-petugas").innerHTML = html;
+                document.getElementById("navbarTitle").innerText = "Dashboard Petugas";
+
+                const menuToggle = document.getElementById("menuToggle");
+                const sidebar = document.getElementById("sidebarPetugas");
+                const overlay = document.getElementById("overlayPetugas");
+                const sidebarClose = document.getElementById("sidebarClose");
+
+                function openSidebar() {
+                    sidebar.classList.add("show");
+                    overlay.classList.add("show");
+                }
+                function closeSidebar() {
+                    sidebar.classList.remove("show");
+                    overlay.classList.remove("show");
+                }
+
+                menuToggle.addEventListener("click", openSidebar);
+                sidebarClose.addEventListener("click", closeSidebar);
+                overlay.addEventListener("click", closeSidebar);
+            });
+
+        const dashboardData = [
+            { id: 1, nama: "Wedding Expo Jakarta", tanggal: "2026-02-10", waktu: "10:00 - 20:00", status: "pendaftaran", honor: 1500000 },
+            { id: 2, nama: "Corporate Gathering Bandung", tanggal: "2026-03-05", waktu: "18:00 - 22:00", status: "berlangsung", honor: 1200000 },
+            { id: 3, nama: "Birthday Party Aurel", tanggal: "2026-01-28", waktu: "15:00 - 19:00", status: "berlangsung", honor: 1000000 },
+            { id: 4, nama: "Private Event Bali", tanggal: "2026-02-15", waktu: "16:00 - 23:00", status: "selesai", honor: 1300000 }
+        ];
+
+        function renderDashboard() {
+            const listPendaftaran = document.getElementById("listPendaftaran");
+            const listBerlangsung = document.getElementById("listBerlangsung");
+            const listSelesai = document.getElementById("listSelesai");
+
+            listPendaftaran.innerHTML = "";
+            listBerlangsung.innerHTML = "";
+            listSelesai.innerHTML = "";
+
+            const pendaftaran = dashboardData.filter(e => e.status === "pendaftaran");
+            const berlangsung = dashboardData.filter(e => e.status === "berlangsung");
+            const selesai = dashboardData.filter(e => e.status === "selesai");
+
+            document.getElementById("countPendaftaran").innerText = pendaftaran.length + " Event";
+            document.getElementById("countBerlangsung").innerText = berlangsung.length + " Event";
+            document.getElementById("countSelesai").innerText = selesai.length + " Event";
+
+            document.getElementById("totalAvailable").innerText = pendaftaran.length + " Event";
+
+            let totalHonor = dashboardData.reduce((sum, e) => sum + e.honor, 0);
+            document.getElementById("totalHonor").innerText = "Rp " + totalHonor.toLocaleString("id-ID");
+
+            dashboardData.forEach(ev => {
+                const card = document.createElement("div");
+                card.className = "event-card";
+                card.innerHTML = `
+                    <div class="event-name">${ev.nama}</div>
+                    <div class="event-info">${ev.tanggal}</div>
+                    <div class="event-info">${ev.waktu}</div>
+                `;
+
+                if (ev.status === "pendaftaran") listPendaftaran.appendChild(card);
+                if (ev.status === "berlangsung") listBerlangsung.appendChild(card);
+                if (ev.status === "selesai") listSelesai.appendChild(card);
+            });
+        }
+
+        renderDashboard();
+    </script>
+
+</body>
+
+</html>

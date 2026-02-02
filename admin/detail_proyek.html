@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Detail Proyek</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/datatables.net-bs5@1.13.8/css/dataTables.bootstrap5.min.css"
+        rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .section-title {
+            font-weight: 700;
+            color: #1f3b63;
+            font-size: 16px;
+        }
+
+        .aksi-btn {
+            width: 36px;
+            height: 36px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            background: #fff;
+        }
+
+        .btn-hapus {
+            border: 1px solid #e74c3c;
+            color: #e74c3c;
+        }
+
+        .btn-utama {
+            background: #cdcec9;
+            border: none;
+            color: #333;
+        }
+
+        .btn-utama:hover {
+            background: #bfb9b4;
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 18px;
+        }
+
+        @media(max-width:900px) {
+            .detail-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media(max-width:600px) {
+            .detail-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .detail-item {
+            font-size: 14px;
+            margin: 3px 0;
+        }
+
+        .detail-label {
+            display: inline-block;
+            width: 120px;
+            font-weight: 600;
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .hide-aksi {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="layout-admin"></div>
+
+    <div id="isi-halaman" style="display:none">
+
+        <div class="mb-3">
+            <div class="section-title mb-2">Detail Proyek</div>
+            <div class="card">
+                <div class="card-body" id="detailProyek"></div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <div class="section-title">Petugas Dalam Proyek</div>
+            <div id="btnPendaftar"></div>
+        </div>
+
+        <table id="tabel-petugas" class="table table-striped align-middle w-100">
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>No HP</th>
+                    <th>Kepegawaian</th>
+                    <th>Peran</th>
+                    <th>Honor</th>
+                    <th>Skor</th>
+                    <th id="thAksi">Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="tbodyPetugas"></tbody>
+        </table>
+
+    </div>
+
+    <div class="modal fade" id="modalHapusPetugas" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center p-4">
+                <div class="mb-3" style="font-size:32px;color:#e74c3c;">
+                    <i class="bi bi-trash"></i>
+                </div>
+                <h5>Hapus petugas dari proyek ini?</h5>
+                <div class="mt-4 d-flex justify-content-center gap-3">
+                    <button class="btn btn-light" data-bs-dismiss="modal">Tidak</button>
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Ya</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/datatables.net@1.13.8/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/datatables.net-bs5@1.13.8/js/dataTables.bootstrap5.min.js"></script>
+
+    <script>
+        const dataEvent = [
+            {
+                id: 1,
+                nama: "Wedding Expo Jakarta",
+                jenis: "Wedding",
+                klien: "Project Art",
+                tanggal: "2026-02-10",
+                waktu_mulai: "10:00",
+                waktu_selesai: "20:00",
+                lokasi: "JCC Senayan",
+                booth: "Twini Booth Silver",
+                kertas: "Stripe",
+                qty_kertas: 200,
+                base: "Magnetic",
+                qty_base: 200,
+                biaya_tambahan: 500000,
+                status: "Pendaftaran"
+            },
+            {
+                id: 2,
+                nama: "Corporate Gathering Bandung",
+                jenis: "Corporate",
+                klien: "Oneway",
+                tanggal: "2026-03-05",
+                waktu_mulai: "18:00",
+                waktu_selesai: "22:00",
+                lokasi: "Bandung Ballroom",
+                booth: "Mingle Booth",
+                kertas: "Half Frame",
+                qty_kertas: 150,
+                base: "Basic",
+                qty_base: 150,
+                biaya_tambahan: 300000,
+                status: "Berlangsung"
+            },
+            {
+                id: 3,
+                nama: "Birthday Party Aurel",
+                jenis: "Private",
+                klien: "Andi Wijaya",
+                tanggal: "2026-02-15",
+                waktu_mulai: "16:00",
+                waktu_selesai: "23:00",
+                lokasi: "Bali Resort",
+                booth: "Mirror Booth",
+                kertas: "4R",
+                qty_kertas: 200,
+                base: "Magnetic Cover",
+                qty_base: 200,
+                biaya_tambahan: 750000,
+                status: "Selesai"
+            }
+        ];
+
+        const dataPetugas = [
+            { event_id: 1, nama: "Budi Santoso", hp: "08123456789", kepeg: "Senior", peran: "Operator", honor: 150000, skor: 360 },
+            { event_id: 1, nama: "Sinta Lestari", hp: "08987654321", kepeg: "Junior", peran: "Asisten", honor: 100000, skor: 340 },
+            { event_id: 2, nama: "Andi Wijaya", hp: "082233445566", kepeg: "Senior", peran: "Printer (Magnet)", honor: 175000, skor: 355 }
+        ];
+
+        function getParamId() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return parseInt(urlParams.get("id")) || 1;
+        }
+
+        function renderDetail() {
+            const id = getParamId();
+            const ev = dataEvent.find(e => e.id === id);
+            const jumlahPetugas = dataPetugas.filter(p => p.event_id === id).length;
+
+            document.getElementById("detailProyek").innerHTML = `
+        <div class="detail-grid">
+            <div>
+                <div class="detail-item"><span class="detail-label">Nama Event</span>: ${ev.nama}</div>
+                <div class="detail-item"><span class="detail-label">Jenis Event</span>: ${ev.jenis}</div>
+                <div class="detail-item"><span class="detail-label">Klien</span>: ${ev.klien}</div>
+                <div class="detail-item"><span class="detail-label">Tanggal</span>: ${ev.tanggal}</div>
+            </div>
+            <div>
+                <div class="detail-item"><span class="detail-label">Waktu Mulai</span>: ${ev.waktu_mulai}</div>
+                <div class="detail-item"><span class="detail-label">Waktu Selesai</span>: ${ev.waktu_selesai}</div>
+                <div class="detail-item"><span class="detail-label">Jumlah Petugas</span>: ${jumlahPetugas} Orang</div>
+                <div class="detail-item"><span class="detail-label">Lokasi</span>: ${ev.lokasi}</div>
+            </div>
+            <div>
+                <div class="detail-item"><span class="detail-label">Booth</span>: ${ev.booth}</div>
+                <div class="detail-item"><span class="detail-label">Kertas</span>: ${ev.kertas} (${ev.qty_kertas})</div>
+                <div class="detail-item"><span class="detail-label">Base Print</span>: ${ev.base} (${ev.qty_base})</div>
+                <div class="detail-item"><span class="detail-label">Biaya Tambahan</span>: Rp ${ev.biaya_tambahan.toLocaleString("id-ID")}</div>
+                <div class="detail-item"><span class="detail-label">Status</span>: ${ev.status}</div>
+            </div>
+        </div>
+    `;
+
+            document.getElementById("btnPendaftar").innerHTML =
+                ev.status === "Pendaftaran"
+                    ? `<a href="pendaftar.html?id=${ev.id}" class="btn btn-utama btn-sm">
+             <i class="bi bi-people"></i> Pendaftar
+           </a>`
+                    : "";
+
+            const thAksi = document.getElementById("thAksi");
+            if (ev.status === "Pendaftaran") {
+                thAksi.classList.remove("hide-aksi");
+            } else {
+                thAksi.classList.add("hide-aksi");
+            }
+
+            const tbody = document.getElementById("tbodyPetugas");
+            tbody.innerHTML = "";
+
+            dataPetugas.filter(p => p.event_id === id).forEach(p => {
+
+                let row = `
+        <tr>
+            <td>${p.nama}</td>
+            <td>${p.hp}</td>
+            <td>${p.kepeg}</td>
+            <td>${p.peran}</td>
+            <td>Rp ${p.honor.toLocaleString("id-ID")}</td>
+            <td>${p.skor}</td>
+        `;
+
+                if (ev.status === "Pendaftaran") {
+                    row += `
+            <td>
+                <button class="aksi-btn btn-hapus" data-bs-toggle="modal" data-bs-target="#modalHapusPetugas">
+                    <i class="bi bi-trash"></i>
+                </button>
+            </td>`;
+                } else {
+                    row += `<td class="hide-aksi"></td>`;
+                }
+
+                row += "</tr>";
+                tbody.innerHTML += row;
+            });
+
+            new DataTable('#tabel-petugas', { pageLength: 10 });
+        }
+
+        fetch("../component/sidebar_admin.html")
+            .then(r => r.text())
+            .then(html => {
+                document.getElementById("layout-admin").innerHTML = html;
+                document.getElementById("page-title").innerText = "Detail Proyek";
+                document.getElementById("konten-halaman").innerHTML = document.getElementById("isi-halaman").innerHTML;
+
+                const sidebar = document.getElementById("sidebar");
+                const toggle = document.getElementById("toggleSidebar");
+                toggle.addEventListener("click", () => sidebar.classList.toggle("closed"));
+
+                renderDetail();
+            });
+    </script>
+
+</body>
+
+</html>

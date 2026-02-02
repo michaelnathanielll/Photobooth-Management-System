@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Masuk Petugas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: url("../aset/bg_login.png") no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+        }
+
+        .kartu-login {
+            width: 360px;
+            padding: 32px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+            text-align: center;
+        }
+
+        .logo {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 16px;
+            background: #ffffff;
+        }
+
+        .kartu-login h2 {
+            margin-bottom: 26px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .form-group input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+            padding: 8px 0;
+            color: #fff;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .opsi {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            margin-bottom: 22px;
+        }
+
+        .opsi a {
+            color: #ffffff;
+            text-decoration: none;
+            opacity: 0.85;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 11px;
+            border: none;
+            border-radius: 25px;
+            background: #ffffff;
+            color: #6b2d6c;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .pemisah {
+            text-align: center;
+            margin: 18px 0;
+            font-size: 13px;
+            opacity: 0.85;
+        }
+
+        .login-petugas {
+            display: block;
+            text-align: center;
+            font-size: 14px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 400;
+        }
+
+        .login-petugas strong {
+            font-weight: 700;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="kartu-login">
+        <img src="../aset/logo.jpeg" alt="Logo" class="logo">
+
+        <h2>Masuk Sebagai Petugas</h2>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="Masukkan email">
+        </div>
+
+        <div class="form-group">
+            <label>Kata Sandi</label>
+            <input type="password" placeholder="Masukkan kata sandi">
+        </div>
+
+        <div class="opsi">
+            <label>
+                <input type="checkbox"> Ingat Saya
+            </label>
+            <a href="#">Lupa Kata Sandi</a>
+        </div>
+
+        <button class="btn-login" onclick="masuk()">Masuk</button>
+
+        <div class="pemisah">atau</div>
+
+        <a href="../admin/masuk.html" class="login-petugas">
+            Masuk sebagai <strong>Admin</strong>
+        </a>
+    </div>
+
+    <script>
+        function masuk() {
+            window.location.href = "dasbor.html";
+        }
+    </script>
+
+</body>
+
+</html>
