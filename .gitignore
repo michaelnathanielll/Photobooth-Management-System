@@ -1,0 +1,30 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs & Temp
+*.log
+*.tmp
+*.bak
+
+# Environment / Config
+.env
+.env.*
+
+# Cache / Build (future-proof)
+dist/
+build/
+.cache/
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# Node.js
+node_modules/
+
+
+# Database 
+*.db
+*.sqlite
+*.sqlite3
