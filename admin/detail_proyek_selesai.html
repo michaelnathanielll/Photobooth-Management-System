@@ -199,6 +199,22 @@
             color: #c0392b;
             font-size: 15px;
         }
+
+        .tooltip-inner {
+            text-align: left;
+            max-width: 260px;
+        }
+
+        .tooltip .tooltip-inner {
+            background-color: #ffffff;
+            color: #000000;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .tooltip .tooltip-arrow::before {
+            border-top-color: #ffffff !important;
+        }
     </style>
 </head>
 
@@ -435,36 +451,77 @@
             };
 
             const dataPetugas = [
-                { nama: "Budi Santoso", hp: "08123456789", kepeg: "Senior", peran: "Operator", honor: 150000, skor_proyek: 380, jam_hadir: "10:00", ket_hadir: "" },
-                { nama: "Sinta Lestari", hp: "08987654321", kepeg: "Junior", peran: "Asisten", honor: 100000, skor_proyek: null, jam_hadir: null, ket_hadir: null },
-                { nama: "Andi Wijaya", hp: "082233445566", kepeg: "Senior", peran: "Printer (Magnet)", honor: 175000, skor_proyek: 360, jam_hadir: "10:05", ket_hadir: "Telat 5 menit" }
+                {
+                    nama: "Budi Santoso",
+                    hp: "08123456789",
+                    kepeg: "Senior",
+                    peran: "Operator",
+                    honor: 150000,
+                    skor_proyek: 380,
+
+                    skor_owner: 390,
+                    skor_admin: 360,
+                    skor_manager: 370,
+
+                    k1: 95,
+                    k2: 92,
+                    k3: 96,
+                    k4: 97,
+
+                    jam_hadir: "10:00",
+                    ket_hadir: ""
+                },
+                {
+                    nama: "Sinta Lestari",
+                    hp: "08987654321",
+                    kepeg: "Junior",
+                    peran: "Asisten",
+                    honor: 100000,
+                    skor_proyek: null,
+                    jam_hadir: null,
+                    ket_hadir: null
+                },
+                {
+                    nama: "Andi Wijaya",
+                    hp: "082233445566",
+                    kepeg: "Senior",
+                    peran: "Printer (Magnet)",
+                    honor: 175000,
+                    skor_proyek: 360,
+                    jam_hadir: "10:05",
+                    ket_hadir: "Telat 5 menit"
+                }
             ];
 
             function renderDetail() {
 
                 document.getElementById("detailProyek").innerHTML = `
         <div class="detail-grid">
-            <div>
-                <div class="detail-item"><span class="detail-label">Nama Event</span> : ${dataEvent.nama}</div>
-                <div class="detail-item"><span class="detail-label">Jenis Event</span> : ${dataEvent.jenis}</div>
-                <div class="detail-item"><span class="detail-label">Klien</span> : ${dataEvent.klien}</div>
-                <div class="detail-item"><span class="detail-label">Tanggal Event</span> : ${dataEvent.tanggal}</div>
-            </div>
-            <div>
-                <div class="detail-item"><span class="detail-label">Waktu Mulai</span> : ${dataEvent.waktu_mulai}</div>
-                <div class="detail-item"><span class="detail-label">Waktu Selesai</span> : ${dataEvent.waktu_selesai}</div>
-                <div class="detail-item"><span class="detail-label">Jumlah Petugas</span> : ${dataPetugas.length} Orang</div>
-                <div class="detail-item"><span class="detail-label">Lokasi</span> : ${dataEvent.lokasi}</div>
-            </div>
-            <div>
-                <div class="detail-item"><span class="detail-label">Booth</span> : ${dataEvent.booth}</div>
-                <div class="detail-item"><span class="detail-label">Kertas</span> : ${dataEvent.kertas} (${dataEvent.qty_kertas})</div>
-                <div class="detail-item"><span class="detail-label">Base Print</span> : ${dataEvent.base} (${dataEvent.qty_base})</div>
-                <div class="detail-item"><span class="detail-label">Biaya Tambahan</span> : Rp ${dataEvent.biaya_tambahan.toLocaleString("id-ID")}</div>
-                <div class="detail-item"><span class="detail-label">Status</span> : ${dataEvent.status}</div>
-            </div>
+               <div>
+        <div class="detail-item"><span class="detail-label">Nama Event</span>: ${dataEvent.nama}</div>
+        <div class="detail-item"><span class="detail-label">Jenis Event</span>: ${dataEvent.jenis}</div>
+        <div class="detail-item"><span class="detail-label">Paket</span>: ${dataEvent.paket ?? "-"}</div>
+        <div class="detail-item"><span class="detail-label">Klien</span>: ${dataEvent.klien}</div>
+        <div class="detail-item"><span class="detail-label">Biaya Tambahan</span>: Rp ${dataEvent.biaya_tambahan.toLocaleString("id-ID")}</div>
+    </div>
+
+    <div>
+        <div class="detail-item"><span class="detail-label">Lokasi</span>: ${dataEvent.lokasi}</div>
+        <div class="detail-item"><span class="detail-label">Tanggal</span>: ${dataEvent.tanggal}</div>
+        <div class="detail-item"><span class="detail-label">Waktu</span>: ${dataEvent.waktu_mulai} - ${dataEvent.waktu_selesai}</div>
+        <div class="detail-item"><span class="detail-label">Jumlah Petugas</span>: ${dataEvent.jumlahPetugas ?? "0"} Orang</div>
+            <div class="detail-item"><span class="detail-label">Status</span>: ${dataEvent.status}</div>
         </div>
-    `;
+
+    <div>
+        <div class="detail-item"><span class="detail-label">Booth</span>: ${dataEvent.booth}</div>
+        <div class="detail-item"><span class="detail-label">Kertas</span>: ${dataEvent.kertas} (${dataEvent.qty_kertas})</div>
+        <div class="detail-item"><span class="detail-label">Base Print</span>: ${dataEvent.base} (${dataEvent.qty_base})</div>
+        <div class="detail-item"><span class="detail-label">Keterangan</span>: ${dataEvent.keterangan ?? "-"}</div>
+    </div>
+
+</div>
+`;
 
                 const tbody = document.getElementById("tbodyPetugas");
                 tbody.innerHTML = "";
@@ -496,7 +553,25 @@
         <td>${p.kepeg}</td>
         <td>${p.peran}</td>
         <td>Rp ${p.honor.toLocaleString("id-ID")}</td>
-        <td>${p.skor_proyek ?? "-"}</td>
+        <td>
+${p.skor_proyek !== null ? `
+<span 
+data-bs-toggle="tooltip" 
+data-bs-html="true"
+title="
+<b>Skor Owner</b>: ${p.skor_owner ?? '-'} / 400<br>
+<b>Skor Admin</b>: ${p.skor_admin ?? '-'} / 400<br>
+<b>Skor Manager Proyek</b>: ${p.skor_manager ?? '-'} / 400
+<hr style='margin:4px 0'>
+<b>Knowledge & Skill</b>: ${p.k1 ?? '-'} / 100<br>
+<b>Communication & Teamwork</b>: ${p.k2 ?? '-'} / 100<br>
+<b>Attitude & Work Time</b>: ${p.k3 ?? '-'} / 100<br>
+<b>Problem Solving</b>: ${p.k4 ?? '-'} / 100
+">
+${p.skor_proyek}
+</span>
+` : "-"}
+</td>
         <td>${p.jam_hadir ?? "-"}</td>
         <td>${p.ket_hadir ?? "-"}</td>
         <td>${btnNilai + btnHadir}</td>
@@ -507,6 +582,9 @@
                 new DataTable('#tabel-petugas', { pageLength: 10 });
 
                 renderBiaya();
+
+                const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+                tooltipTriggerList.map(el => new bootstrap.Tooltip(el))
             }
 
             function renderBiaya() {
@@ -573,6 +651,9 @@ Rp ${totalRealisasi.toLocaleString("id-ID")}
   <hr>
 
 <div class="total-selisih">
+Selisih : Rp ${(totalEstimasi - totalRealisasi).toLocaleString("id-ID")}
+</div>
+<div class="total-selisih2">
 Selisih : Rp ${(totalEstimasi - totalRealisasi).toLocaleString("id-ID")}
 </div>
 

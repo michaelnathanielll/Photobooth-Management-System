@@ -1,0 +1,1 @@
+<2024-08-16 11:20:06>|| {REQUEST: uri: /ojol/api/v1/location/active, status: 404, ip:::1, Host:localhost:5867, ContentLength:, User-Agent:PostmanRuntime/7.41.1, Error:code=404, message=Not Found, Latency:0s, method:GET ,Protocol:HTTP/1.1, RequestId:, ResponseSize:0, custom-value: 42}

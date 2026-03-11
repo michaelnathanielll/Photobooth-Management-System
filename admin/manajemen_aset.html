@@ -94,7 +94,7 @@
 
         <div class="d-flex justify-content-between align-items-center mb-2">
             <div class="judul-aset">Booth</div>
-            <button class="btn btn-utama btn-sm" data-bs-toggle="modal" data-bs-target="#modalTambahBooth">Tambah
+            <button class="btn btn-utama btn-sm" data-bs-toggle="modal" data-bs-target="#modalTambahBooth" onclick="openTambah(1)">Tambah
                 Booth</button>
         </div>
 
@@ -111,7 +111,7 @@
 
         <div class="d-flex justify-content-between align-items-center mt-4 mb-2">
             <div class="judul-aset">Kertas</div>
-            <button class="btn btn-utama btn-sm" data-bs-toggle="modal" data-bs-target="#modalTambahKertas">Tambah
+            <button class="btn btn-utama btn-sm" data-bs-toggle="modal" data-bs-target="#modalTambahBooth" onclick="openTambah(2)">Tambah
                 Kertas</button>
         </div>
 
@@ -128,7 +128,7 @@
 
         <div class="d-flex justify-content-between align-items-center mt-4 mb-2">
             <div class="judul-aset">Base Print</div>
-            <button class="btn btn-utama btn-sm" data-bs-toggle="modal" data-bs-target="#modalTambahBase">Tambah Base
+            <button class="btn btn-utama btn-sm" data-bs-toggle="modal" data-bs-target="#modalTambahBooth" onclick="openTambah(3)">Tambah Base
                 Print</button>
         </div>
 
@@ -153,57 +153,20 @@
                     <button class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
+                    <input id="kategori-tambah" hidden>
                     <label>Nama</label>
-                    <input class="form-control">
+                    <input class="form-control" id="nama-tambah">
                     <label class="mt-2">Harga</label>
-                    <input type="number" class="form-control">
+                    <input type="number" class="form-control" id="harga-tambah">
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-utama" data-bs-dismiss="modal">Simpan</button>
+                    <button class="btn btn-utama" data-bs-dismiss="modal" onclick="inputAset()">Simpan</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="modal fade modal-form" id="modalTambahKertas" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content p-3">
-                <div class="modal-header">
-                    <h5 class="modal-title">Tambah Kertas</h5>
-                    <button class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <label>Nama</label>
-                    <input class="form-control">
-                    <label class="mt-2">Harga</label>
-                    <input type="number" class="form-control">
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-utama" data-bs-dismiss="modal">Simpan</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade modal-form" id="modalTambahBase" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content p-3">
-                <div class="modal-header">
-                    <h5 class="modal-title">Tambah Base Print</h5>
-                    <button class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <label>Nama</label>
-                    <input class="form-control">
-                    <label class="mt-2">Harga</label>
-                    <input type="number" class="form-control">
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-utama" data-bs-dismiss="modal">Simpan</button>
-                </div>
-            </div>
-        </div>
-    </div>
+  
 
     <div class="modal fade modal-form" id="modalUbah" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
@@ -213,13 +176,14 @@
                     <button class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
+                    <input id="id-ubah" hidden>
                     <label>Nama</label>
-                    <input class="form-control" value="Dummy">
+                    <input class="form-control" id="nama-ubah" >
                     <label class="mt-2">Harga</label>
-                    <input type="number" class="form-control" value="100000">
+                    <input type="number" class="form-control"  id="harga-ubah" >
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-utama" data-bs-dismiss="modal">Simpan</button>
+                    <button class="btn btn-utama" data-bs-dismiss="modal" onclick="updateAset()">Simpan</button>
                 </div>
             </div>
         </div>
@@ -232,9 +196,10 @@
                     <i class="bi bi-trash"></i>
                 </div>
                 <h5>Apakah anda yakin menghapus data ini?</h5>
+                <input id="id-hapus" hidden>
                 <div class="mt-4 d-flex justify-content-center gap-3">
                     <button class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
-                    <button class="btn btn-danger" data-bs-dismiss="modal">Ya</button>
+                    <button class="btn btn-danger" data-bs-dismiss="modal" onclick="deleteAset()">Ya</button>
                 </div>
             </div>
         </div>
@@ -244,78 +209,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/datatables.net@1.13.8/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/datatables.net-bs5@1.13.8/js/dataTables.bootstrap5.min.js"></script>
-
+    <script src="../js/sidebar-init.js"></script>
+    <script src="../js/fetchAPI.js"></script>
+    <script src="../js/admin/manajemen-aset.js"></script>
     <script>
-        const boothData = [
-            { nama: "Twini Booth Silver", harga: 1500000 },
-            { nama: "Twini Booth Mirror", harga: 2000000 },
-            { nama: "Mini Booth", harga: 1000000 },
-            { nama: "Pop Booth", harga: 1200000 },
-            { nama: "Slide Booth", harga: 1800000 },
-            { nama: "Portraits", harga: 1300000 },
-            { nama: "Mingle", harga: 1400000 },
-            { nama: "Cam Photo", harga: 1600000 }
-        ];
 
-        const kertasData = [
-            { nama: "Stripe", harga: 50000 },
-            { nama: "Half Frame", harga: 60000 },
-            { nama: "4R", harga: 70000 }
-        ];
 
-        const baseData = [
-            { nama: "Basic", harga: 80000 },
-            { nama: "Magnetic", harga: 120000 },
-            { nama: "Magnetic Cover", harga: 150000 },
-            { nama: "Stiki", harga: 100000 },
-            { nama: "Akrilik", harga: 180000 }
-        ];
-
-        function formatRupiah(num) {
-            return "Rp " + num.toLocaleString("id-ID");
-        }
-
-        function renderTable(id, data) {
-            const table = $(id).DataTable();
-            table.clear();
-            data.forEach(d => {
-                table.row.add([
-                    d.nama,
-                    formatRupiah(d.harga),
-                    `
-                <button class="aksi-btn btn-edit" data-bs-toggle="modal" data-bs-target="#modalUbah"><i class="bi bi-pencil"></i></button>
-                <button class="aksi-btn btn-hapus" data-bs-toggle="modal" data-bs-target="#modalHapus"><i class="bi bi-trash"></i></button>
-                `
-                ]);
-            });
-            table.draw();
-        }
-
-        fetch("../component/sidebar_admin.html")
-            .then(res => res.text())
-            .then(html => {
-                document.getElementById("layout-admin").innerHTML = html;
-                document.getElementById("page-title").innerText = "Manajemen Aset";
-                document.getElementById("konten-halaman").innerHTML = document.getElementById("isi-halaman").innerHTML;
-
-                document.querySelectorAll(".menu a").forEach(link => {
-                    if (link.getAttribute("href") === "manajemen_aset.html") {
-                        link.classList.add("aktif");
-                    }
-                });
-
-                const sidebar = document.getElementById("sidebar");
-                const toggle = document.getElementById("toggleSidebar");
-                toggle.addEventListener("click", () => sidebar.classList.toggle("closed"));
-
-                new DataTable('#tabel-booth', { pageLength: 5 });
-                new DataTable('#tabel-kertas', { pageLength: 5 });
-                new DataTable('#tabel-base', { pageLength: 5 });
-
-                renderTable('#tabel-booth', boothData);
-                renderTable('#tabel-kertas', kertasData);
-                renderTable('#tabel-base', baseData);
-            });
     </script>
 
 </body>

@@ -320,9 +320,21 @@
                 document.getElementById("page-title").innerText = "Dashboard Admin";
                 document.getElementById("konten-halaman").innerHTML = document.getElementById("isi-halaman").innerHTML;
 
-                document.getElementById("toggleSidebar").addEventListener("click", () => sidebar.classList.toggle("closed"));
+                const sidebar = document.getElementById("sidebar");
 
-                renderSummary();
+                document.getElementById("toggleSidebar")
+                    .addEventListener("click", () => {
+                        sidebar.classList.toggle("closed");
+                    });
+
+                document.querySelectorAll(".submenu-toggle")
+                    .forEach(btn => {
+                        btn.addEventListener("click", function (e) {
+                            e.preventDefault();
+                            this.parentElement.classList.toggle("open");
+                        });
+                    });
+
                 renderKanban();
 
                 const countJenis = {

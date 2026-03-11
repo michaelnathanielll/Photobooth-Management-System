@@ -1,0 +1,1 @@
+<2024-04-29 07:55:25>|| {REQUEST: uri: /ojol/api/v1/vehicleModel, status: 200, ip:::1, Host:localhost:5867, ContentLength:, User-Agent:PostmanRuntime/7.39.0, Error:<nil>, Latency:52.8625ms, method:GET ,Protocol:HTTP/1.1, RequestId:, ResponseSize:167, custom-value: 42}

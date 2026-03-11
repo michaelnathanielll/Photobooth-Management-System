@@ -1,0 +1,1 @@
+<2024-08-01 23:18:10>|| {REQUEST: uri: /ojol/api/v1/antrian/23, status: 405, ip:::1, Host:localhost:5867, ContentLength:, User-Agent:PostmanRuntime/7.40.0, Error:code=405, message=Method Not Allowed, Latency:0s, method:GET ,Protocol:HTTP/1.1, RequestId:, ResponseSize:0, custom-value: 42}

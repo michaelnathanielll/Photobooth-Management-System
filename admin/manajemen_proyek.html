@@ -276,18 +276,35 @@
                 <div class="modal-body">
                     <div class="row g-3">
 
-                        <!-- Kolom 1 -->
                         <div class="col-md-4">
                             <label>Nama Event</label>
                             <input class="form-control">
 
-                            <label class="mt-2">Jenis Event</label>
-                            <select class="form-control">
-                                <option>wedding</option>
-                                <option>birthday</option>
-                                <option>corporate</option>
-                                <option>private</option>
-                            </select>
+                            <div class="row mt-2">
+                                <div class="col-6">
+                                    <label>Jenis Event</label>
+                                    <select class="form-control">
+                                        <option>wedding</option>
+                                        <option>birthday</option>
+                                        <option>corporate</option>
+                                        <option>private</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-6">
+                                    <label>Paket</label>
+                                    <select class="form-control">
+                                        <option>Basic 100 Prints</option>
+                                        <option>Basic 250 Prints</option>
+                                        <option>Basic 2 Hours Unlimited</option>
+                                        <option>Basic 3 Hours Unlimited</option>
+                                        <option>Magnetic 100 Prints</option>
+                                        <option>Magnetic 250 Prints</option>
+                                        <option>Magnetic 2 Hours Unlimited</option>
+                                        <option>Magnetic 3 Hours Unlimited</option>
+                                    </select>
+                                </div>
+                            </div>
 
                             <label class="mt-2">Klien</label>
                             <select class="form-control">
@@ -297,26 +314,39 @@
                                 <option>Sinta Lestari</option>
                             </select>
 
+                            <label class="mt-2">Biaya Tambahan</label>
+                            <input type="number" class="form-control">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label>Lokasi</label>
+                            <select class="form-control">
+                                <option>JCC Senayan</option>
+                                <option>ICE BSD</option>
+                                <option>Grand Ballroom Surabaya</option>
+                                <option>Bali Resort</option>
+                                <option>Bandung Convention Center</option>
+                            </select>
+
                             <label class="mt-2">Tanggal Event</label>
                             <input type="date" class="form-control">
-                        </div>
 
-                        <!-- Kolom 2 -->
-                        <div class="col-md-4">
-                            <label>Waktu Mulai</label>
-                            <input type="time" class="form-control">
+                            <div class="row mt-2">
+                                <div class="col-6">
+                                    <label>Waktu Mulai</label>
+                                    <input type="time" class="form-control">
+                                </div>
 
-                            <label class="mt-2">Waktu Selesai</label>
-                            <input type="time" class="form-control">
-
-                            <label class="mt-2">Lokasi</label>
-                            <input class="form-control">
+                                <div class="col-6">
+                                    <label>Waktu Selesai</label>
+                                    <input type="time" class="form-control">
+                                </div>
+                            </div>
 
                             <label class="mt-2">Jumlah Petugas</label>
-                            <input type="number" class="form-control" placeholder="Jumlah petugas">
+                            <input type="number" class="form-control">
                         </div>
 
-                        <!-- Kolom 3 -->
                         <div class="col-md-4">
                             <label>Booth</label>
                             <select class="form-control">
@@ -330,6 +360,40 @@
                                 <option>Cam Photo</option>
                             </select>
 
+                            <div class="row mt-2">
+                                <div class="col-8">
+                                    <label>Kertas</label>
+                                    <select class="form-control">
+                                        <option>Stripe</option>
+                                        <option>Half Frame</option>
+                                        <option>4R</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-4">
+                                    <label>Qty</label>
+                                    <input type="number" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="row mt-2">
+                                <div class="col-8">
+                                    <label>Base Print</label>
+                                    <select class="form-control">
+                                        <option>Basic</option>
+                                        <option>Magnetic</option>
+                                        <option>Magnetic Cover</option>
+                                        <option>Stiki</option>
+                                        <option>Akrilik</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-4">
+                                    <label>Qty</label>
+                                    <input type="number" class="form-control">
+                                </div>
+                            </div>
+
                             <label class="mt-2">Status</label>
                             <select class="form-control">
                                 <option value="perencanaan">Perencanaan</option>
@@ -337,14 +401,15 @@
                                 <option value="berlangsung">Berlangsung</option>
                                 <option value="selesai">Selesai</option>
                             </select>
+                        </div>
 
-                            <label class="mt-2">Keterangan</label>
-                            <textarea class="form-control" rows="4"></textarea>
+                        <div class="col-md-12">
+                            <label>Keterangan</label>
+                            <textarea class="form-control" rows="3"></textarea>
                         </div>
 
                     </div>
                 </div>
-
 
                 <div class="modal-footer">
                     <button class="btn btn-utama" data-bs-dismiss="modal">Simpan</button>
@@ -352,7 +417,6 @@
             </div>
         </div>
     </div>
-
     <div class="modal fade modal-form" id="modalUbah" tabindex="-1">
         <div class="modal-dialog modal-xl modal-dialog-centered">
             <div class="modal-content p-3">
@@ -368,42 +432,73 @@
                             <label>Nama Event</label>
                             <input class="form-control" value="Wedding Expo Jakarta">
 
-                            <label class="mt-2">Jenis Event</label>
-                            <select class="form-control">
-                                <option selected>wedding</option>
-                                <option>birthday</option>
-                                <option>corporate</option>
-                                <option>private</option>
-                            </select>
+                            <div class="row mt-2">
+                                <div class="col-6">
+                                    <label>Jenis Event</label>
+                                    <select class="form-control">
+                                        <option selected>wedding</option>
+                                        <option>birthday</option>
+                                        <option>corporate</option>
+                                        <option>private</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-6">
+                                    <label>Paket</label>
+                                    <select class="form-control">
+                                        <option selected>Basic 250 Prints</option>
+                                        <option>Basic 100 Prints</option>
+                                        <option>Basic 2 Hours Unlimited</option>
+                                        <option>Basic 3 Hours Unlimited</option>
+                                        <option>Magnetic 100 Prints</option>
+                                        <option>Magnetic 250 Prints</option>
+                                        <option>Magnetic 2 Hours Unlimited</option>
+                                        <option>Magnetic 3 Hours Unlimited</option>
+                                    </select>
+                                </div>
+                            </div>
 
                             <label class="mt-2">Klien</label>
                             <select class="form-control">
-                                <option>Project Art</option>
+                                <option selected>Project Art</option>
                                 <option>Oneway</option>
                                 <option>Andi Wijaya</option>
                                 <option>Sinta Lestari</option>
                             </select>
 
-                            <label class="mt-2">Tanggal Event</label>
-                            <input type="date" class="form-control" value="2026-02-10">
+                            <label class="mt-2">Biaya Tambahan</label>
+                            <input type="number" class="form-control" value="100000">
                         </div>
 
-                        <!-- Kolom 2 -->
                         <div class="col-md-4">
-                            <label>Waktu Mulai</label>
-                            <input type="time" class="form-control" value="10:00">
+                            <label>Lokasi</label>
+                            <select class="form-control">
+                                <option selected>JCC Senayan</option>
+                                <option>ICE BSD</option>
+                                <option>Grand Ballroom Surabaya</option>
+                                <option>Bali Resort</option>
+                                <option>Bandung Convention Center</option>
+                            </select>
 
-                            <label class="mt-2">Waktu Selesai</label>
-                            <input type="time" class="form-control" value="20:00">
+                            <label class="mt-2">Tanggal Event</label>
+                            <input type="date" class="form-control" value="2026-02-10">
 
-                            <label class="mt-2">Lokasi</label>
-                            <input class="form-control" value="JCC Senayan">
+                            <div class="row mt-2">
+                                <div class="col-6">
+                                    <label>Waktu Mulai</label>
+                                    <input type="time" class="form-control" value="10:00">
+                                </div>
+
+                                <div class="col-6">
+                                    <label>Waktu Selesai</label>
+                                    <input type="time" class="form-control" value="20:00">
+                                </div>
+                            </div>
 
                             <label class="mt-2">Jumlah Petugas</label>
                             <input type="number" class="form-control" value="6">
                         </div>
 
-                        <!-- Kolom 3 -->
                         <div class="col-md-4">
                             <label>Booth</label>
                             <select class="form-control">
@@ -417,6 +512,40 @@
                                 <option>Cam Photo</option>
                             </select>
 
+                            <div class="row mt-2">
+                                <div class="col-8">
+                                    <label>Kertas</label>
+                                    <select class="form-control">
+                                        <option selected>Stripe</option>
+                                        <option>Half Frame</option>
+                                        <option>4R</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-4">
+                                    <label>Qty</label>
+                                    <input type="number" class="form-control" value="250">
+                                </div>
+                            </div>
+
+                            <div class="row mt-2">
+                                <div class="col-8">
+                                    <label>Base Print</label>
+                                    <select class="form-control">
+                                        <option selected>Basic</option>
+                                        <option>Magnetic</option>
+                                        <option>Magnetic Cover</option>
+                                        <option>Stiki</option>
+                                        <option>Akrilik</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-4">
+                                    <label>Qty</label>
+                                    <input type="number" class="form-control" value="250">
+                                </div>
+                            </div>
+
                             <label class="mt-2">Status</label>
                             <select class="form-control">
                                 <option value="perencanaan">Perencanaan</option>
@@ -424,14 +553,15 @@
                                 <option value="berlangsung">Berlangsung</option>
                                 <option value="selesai">Selesai</option>
                             </select>
+                        </div>
 
-                            <label class="mt-2">Keterangan</label>
-                            <textarea class="form-control" rows="4">Photobooth + Crew</textarea>
+                        <div class="col-md-12">
+                            <label>Keterangan</label>
+                            <textarea class="form-control" rows="3">Photobooth + Crew</textarea>
                         </div>
 
                     </div>
                 </div>
-
 
                 <div class="modal-footer">
                     <button class="btn btn-utama" data-bs-dismiss="modal">Simpan</button>
@@ -460,6 +590,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/datatables.net@1.13.8/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/datatables.net-bs5@1.13.8/js/dataTables.bootstrap5.min.js"></script>
+    <script src="../js/sidebar-init.js"></script>
 
     <script>
         const dataEvent = [
@@ -553,32 +684,21 @@
             table.draw();
         }
 
-        function initSidebar() {
-            const sidebar = document.getElementById("sidebar");
-            const toggle = document.getElementById("toggleSidebar");
-            function checkScreen() {
-                if (window.innerWidth < 500) sidebar.classList.add("closed");
-            }
-            toggle.addEventListener("click", () => sidebar.classList.toggle("closed"));
-            window.addEventListener("resize", checkScreen);
-            checkScreen();
-        }
-
         fetch("../component/sidebar_admin.html")
             .then(res => res.text())
             .then(html => {
+
+                /* inject sidebar */
                 document.getElementById("layout-admin").innerHTML = html;
-                document.getElementById("page-title").innerText = "Manajemen Proyek";
-                document.getElementById("konten-halaman").innerHTML = document.getElementById("isi-halaman").innerHTML;
 
-                document.querySelectorAll(".menu a").forEach(link => {
-                    if (link.getAttribute("href") === "manajemen_proyek.html") {
-                        link.classList.add("aktif");
-                    }
-                });
+                /* inject konten halaman */
+                document.getElementById("konten-halaman").innerHTML =
+                    document.getElementById("isi-halaman").innerHTML;
 
-                initSidebar();
+                /* 🔥 INIT SIDEBAR (1 BARIS SAJA) */
+                initSidebar("Manajemen Proyek");
 
+                /* ================= DATATABLE ================= */
                 new DataTable('#tabel-proyek', {
                     pageLength: 10,
                     order: [],
@@ -592,11 +712,14 @@
 
                 renderTable();
 
-                ["filterJenis", "filterStatus", "filterTanggalMulai", "filterTanggalSelesai"].forEach(id => {
-                    document.getElementById(id).addEventListener("change", renderTable);
-                });
+                ["filterJenis", "filterStatus", "filterTanggalMulai", "filterTanggalSelesai"]
+                    .forEach(id => {
+                        document.getElementById(id).addEventListener("change", renderTable);
+                    });
 
-            });
+            })
+            .catch(err => console.error("Sidebar gagal dimuat:", err));
+
     </script>
 
 

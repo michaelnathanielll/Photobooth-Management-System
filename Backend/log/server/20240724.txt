@@ -1,0 +1,1 @@
+<2024-07-24 10:42:04>|| {REQUEST: uri: /ojol/api/v1/order/histori/orderType/driver/16?id_order_type, status: 200, ip:::1, Host:localhost:5867, ContentLength:, User-Agent:PostmanRuntime/7.40.0, Error:<nil>, Latency:295.0971ms, method:GET ,Protocol:HTTP/1.1, RequestId:, ResponseSize:9296, custom-value: 42}

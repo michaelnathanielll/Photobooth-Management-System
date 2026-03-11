@@ -1,0 +1,1 @@
+<2024-11-28 17:41:57>|| {REQUEST: uri: /ojol/api/v1/searchHistory?jenis=penjemputan, status: 200, ip:::1, Host:localhost:5867, ContentLength:, User-Agent:PostmanRuntime/7.42.0, Error:<nil>, Latency:48.0065ms, method:GET ,Protocol:HTTP/1.1, RequestId:, ResponseSize:46, custom-value: 42}

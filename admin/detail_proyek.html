@@ -214,28 +214,33 @@
             const jumlahPetugas = dataPetugas.filter(p => p.event_id === id).length;
 
             document.getElementById("detailProyek").innerHTML = `
-        <div class="detail-grid">
-            <div>
-                <div class="detail-item"><span class="detail-label">Nama Event</span>: ${ev.nama}</div>
-                <div class="detail-item"><span class="detail-label">Jenis Event</span>: ${ev.jenis}</div>
-                <div class="detail-item"><span class="detail-label">Klien</span>: ${ev.klien}</div>
-                <div class="detail-item"><span class="detail-label">Tanggal</span>: ${ev.tanggal}</div>
-            </div>
-            <div>
-                <div class="detail-item"><span class="detail-label">Waktu Mulai</span>: ${ev.waktu_mulai}</div>
-                <div class="detail-item"><span class="detail-label">Waktu Selesai</span>: ${ev.waktu_selesai}</div>
-                <div class="detail-item"><span class="detail-label">Jumlah Petugas</span>: ${jumlahPetugas} Orang</div>
-                <div class="detail-item"><span class="detail-label">Lokasi</span>: ${ev.lokasi}</div>
-            </div>
-            <div>
-                <div class="detail-item"><span class="detail-label">Booth</span>: ${ev.booth}</div>
-                <div class="detail-item"><span class="detail-label">Kertas</span>: ${ev.kertas} (${ev.qty_kertas})</div>
-                <div class="detail-item"><span class="detail-label">Base Print</span>: ${ev.base} (${ev.qty_base})</div>
-                <div class="detail-item"><span class="detail-label">Biaya Tambahan</span>: Rp ${ev.biaya_tambahan.toLocaleString("id-ID")}</div>
-                <div class="detail-item"><span class="detail-label">Status</span>: ${ev.status}</div>
-            </div>
+<div class="detail-grid">
+
+    <div>
+        <div class="detail-item"><span class="detail-label">Nama Event</span>: ${ev.nama}</div>
+        <div class="detail-item"><span class="detail-label">Jenis Event</span>: ${ev.jenis}</div>
+        <div class="detail-item"><span class="detail-label">Paket</span>: ${ev.paket ?? "-"}</div>
+        <div class="detail-item"><span class="detail-label">Klien</span>: ${ev.klien}</div>
+        <div class="detail-item"><span class="detail-label">Biaya Tambahan</span>: Rp ${ev.biaya_tambahan.toLocaleString("id-ID")}</div>
+    </div>
+
+    <div>
+        <div class="detail-item"><span class="detail-label">Lokasi</span>: ${ev.lokasi}</div>
+        <div class="detail-item"><span class="detail-label">Tanggal</span>: ${ev.tanggal}</div>
+        <div class="detail-item"><span class="detail-label">Waktu</span>: ${ev.waktu_mulai} - ${ev.waktu_selesai}</div>
+        <div class="detail-item"><span class="detail-label">Jumlah Petugas</span>: ${jumlahPetugas} Orang</div>
+            <div class="detail-item"><span class="detail-label">Status</span>: ${ev.status}</div>
         </div>
-    `;
+
+    <div>
+        <div class="detail-item"><span class="detail-label">Booth</span>: ${ev.booth}</div>
+        <div class="detail-item"><span class="detail-label">Kertas</span>: ${ev.kertas} (${ev.qty_kertas})</div>
+        <div class="detail-item"><span class="detail-label">Base Print</span>: ${ev.base} (${ev.qty_base})</div>
+        <div class="detail-item"><span class="detail-label">Keterangan</span>: ${ev.keterangan ?? "-"}</div>
+    </div>
+
+</div>
+`;
 
             document.getElementById("btnPendaftar").innerHTML =
                 ev.status === "Pendaftaran"

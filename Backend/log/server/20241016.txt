@@ -1,0 +1,2 @@
+<2024-10-16 12:19:17>|| {REQUEST: uri: /ojol/api/v1/korlap/order/agent/16?limit&offset, status: 200, ip:::1, Host:localhost:5867, ContentLength:, User-Agent:PostmanRuntime/7.42.0, Error:<nil>, Latency:169.5664ms, method:GET ,Protocol:HTTP/1.1, RequestId:, ResponseSize:69, custom-value: 42}
+<2024-10-16 12:22:06>|| {REQUEST: uri: /ojol/api/v1/korlap/order/agent/16?limit&offset, status: 200, ip:::1, Host:localhost:5867, ContentLength:, User-Agent:PostmanRuntime/7.42.0, Error:<nil>, Latency:127.1348ms, method:GET ,Protocol:HTTP/1.1, RequestId:, ResponseSize:69, custom-value: 42}

@@ -1,0 +1,1 @@
+<2024-07-30 11:24:25>|| {REQUEST: uri: /ojol/api/v1/geofence/near?latitude=-7.379986559876187&longitude=112.79634265486555&id_mitra=1&id_order_type, status: 405, ip:::1, Host:localhost:5867, ContentLength:0, User-Agent:PostmanRuntime/7.40.0, Error:code=405, message=Method Not Allowed, Latency:519.6µs, method:POST ,Protocol:HTTP/1.1, RequestId:, ResponseSize:0, custom-value: 42}

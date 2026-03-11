@@ -15,10 +15,12 @@
     <style>
         html,
         body {
-            width: 100%;
-            height: 100%;
             margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            /* penting */
         }
+
 
         .btn-utama {
             background: #cdcec9;
@@ -154,7 +156,7 @@
                     <td>Senior</td>
                     <td>Operator, Printer</td>
                     <td>Rp 150.000</td>
-                    <td>362</td>
+                    <td>362 / 400</td>
                     <td><span class="badge bg-success">Aktif</span></td>
                     <td>
                         <button class="aksi-btn btn-detail"
@@ -178,7 +180,7 @@
                     <td>Junior</td>
                     <td>Asisten, Operator</td>
                     <td>Rp 100.000</td>
-                    <td>338</td>
+                    <td>338 / 400</td>
                     <td><span class="badge bg-secondary">Non-Aktif</span></td>
                     <td>
                         <button class="aksi-btn btn-detail"
@@ -369,6 +371,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/datatables.net@1.13.8/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/datatables.net-bs5@1.13.8/js/dataTables.bootstrap5.min.js"></script>
+    <script src="../js/sidebar-init.js"></script>
 
     <script>
         const jadwalData = [
@@ -401,48 +404,38 @@
             const skor = { k1: 90, k2: 92, k3: 88, k4: 92 };
             const total = skor.k1 + skor.k2 + skor.k3 + skor.k4;
 
-            document.getElementById("sk1").innerText = "Knowledge & Skill: " + skor.k1;
-            document.getElementById("sk2").innerText = "Communication & Teamwork: " + skor.k2;
-            document.getElementById("sk3").innerText = "Attitude & Work Time: " + skor.k3;
-            document.getElementById("sk4").innerText = "Problem Solving: " + skor.k4;
+            document.getElementById("sk1").innerText = "Knowledge & Skill: " + skor.k1 + " / 100";
+            document.getElementById("sk2").innerText = "Communication & Teamwork: " + skor.k2 + " / 100";
+            document.getElementById("sk3").innerText = "Attitude & Work Time: " + skor.k3 + " / 100";
+            document.getElementById("sk4").innerText = "Problem Solving: " + skor.k4 + " / 100";
+
             document.getElementById("skTotal").innerHTML = "<b>Total: " + total + " / 400</b>";
+
         }
 
         fetch("../component/sidebar_admin.html")
-            .then(r => r.text())
+            .then(res => res.text())
             .then(html => {
+
+                /* 1. inject layout sidebar */
                 document.getElementById("layout-admin").innerHTML = html;
-                document.getElementById("page-title").innerText = "Manajemen Petugas";
-                document.getElementById("konten-halaman").innerHTML = document.getElementById("isi-halaman").innerHTML;
 
-                const sidebar = document.getElementById("sidebar");
-                const toggle = document.getElementById("toggleSidebar");
-                toggle.addEventListener("click", () => sidebar.classList.toggle("closed"));
+                /* 2. inject konten */
+                document.getElementById("konten-halaman").innerHTML =
+                    document.getElementById("isi-halaman").innerHTML;
 
-                new DataTable('#tabel-petugas', { pageLength: 10 });
+                /* 3. init sidebar SETELAH ADA DI DOM */
+                initSidebar("Manajemen Petugas");
 
-                document.querySelectorAll(".btn-status").forEach(btn => {
-                    btn.addEventListener("click", function () {
-                        const row = this.closest("tr");
-                        const status = row.getAttribute("data-status");
-                        const teks = document.getElementById("teksStatus");
-                        const icon = document.getElementById("iconStatus");
-
-                        if (status === "aktif") {
-                            teks.innerHTML = "Nonaktifkan petugas ini?";
-                            icon.innerHTML = '<i class="bi bi-person-x"></i>';
-                            icon.style.borderColor = "#e74c3c";
-                            icon.style.color = "#e74c3c";
-                        } else {
-                            teks.innerHTML = "Aktifkan kembali petugas ini?";
-                            icon.innerHTML = '<i class="bi bi-person-check"></i>';
-                            icon.style.borderColor = "#27ae60";
-                            icon.style.color = "#27ae60";
-                        }
-                    });
+                /* 4. datatable */
+                new DataTable('#tabel-petugas', {
+                    pageLength: 10
                 });
 
             });
+
+
+
     </script>
 
 </body>

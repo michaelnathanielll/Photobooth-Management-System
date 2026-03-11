@@ -1,0 +1,3 @@
+<2024-10-11 10:27:04>|| {REQUEST: uri: /user/online, status: 200, ip:::1, Host:localhost:5867, ContentLength:, User-Agent:PostmanRuntime/7.42.0, Error:<nil>, Latency:2.3883ms, method:GET ,Protocol:HTTP/1.1, RequestId:, ResponseSize:48, custom-value: 42}
+<2024-10-11 11:17:14>|| {REQUEST: uri: /user/online, status: 200, ip:::1, Host:localhost:5867, ContentLength:, User-Agent:PostmanRuntime/7.42.0, Error:<nil>, Latency:9.2111ms, method:GET ,Protocol:HTTP/1.1, RequestId:, ResponseSize:48, custom-value: 42}
+<2024-10-11 11:18:01>|| {REQUEST: uri: /user/online, status: 200, ip:::1, Host:localhost:5867, ContentLength:, User-Agent:PostmanRuntime/7.42.0, Error:<nil>, Latency:785.2µs, method:GET ,Protocol:HTTP/1.1, RequestId:, ResponseSize:48, custom-value: 42}

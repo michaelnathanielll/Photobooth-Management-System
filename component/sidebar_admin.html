@@ -1,183 +1,302 @@
-<style>
-    :root {
-        --utama: #cdcec9;
-        --hover: #bfb9b4;
-        --teks: #333333;
-    }
+<!DOCTYPE html>
+<html lang="id">
 
-    * {
-        box-sizing: border-box;
-        font-family: "Segoe UI", Arial, sans-serif;
-    }
+<head>
+    <meta charset="UTF-8" />
+    <title>Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    html,
-    body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-    }
+    <style>
+        :root {
+            --utama: #cdcec9;
+            --hover: #bfb9b4;
+            --teks: #333333;
+        }
 
-    #layout-admin {
-        display: flex;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-    }
+        * {
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
 
-    .sidebar {
-        width: 200px;
-        background: var(--utama);
-        color: var(--teks);
-        flex-shrink: 0;
-        transition: all 0.3s ease;
-        height: 100vh;
-        overflow: hidden;
-        border-radius: 0 10px 10px 0;
-    }
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
 
+        /* ================= LAYOUT ================= */
 
-    .sidebar.closed {
-        width: 0;
-    }
+        #layout-admin {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
 
-    .sidebar.closed .sidebar-header,
-    .sidebar.closed .menu {
-        display: none;
-    }
+        /* ================= SIDEBAR ================= */
 
-    .sidebar-header {
-        background: var(--utama);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 15px;
-        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-        position: relative;
-        z-index: 2;
-    }
+        .sidebar {
+            width: 220px;
+            background: var(--utama);
+            color: var(--teks);
+            transition: all 0.3s ease;
+            height: 100vh;
+            overflow-y: auto;
+            border-radius: 0 10px 10px 0;
+        }
 
-    .sidebar-header img {
-        max-width: 72px;
-        transition: 0.3s;
-    }
+        .sidebar {
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
 
-    .menu {
-        list-style: none;
-        padding: 10px 0;
-        margin: 0;
-    }
-
-    .menu li a {
-        display: block;
-        padding: 14px 22px;
-        color: var(--teks);
-        text-decoration: none;
-        font-size: 15.5px;
-        font-weight: 600;
-        white-space: nowrap;
-        transition: background 0.2s;
-    }
+        .sidebar::-webkit-scrollbar {
+            display: none;
+            /* chrome/safari */
+        }
 
 
-    .menu li a:hover,
-    .menu li a.aktif {
-        background: var(--hover);
-    }
+        .sidebar.closed {
+            width: 0;
+        }
 
-    .content-wrapper {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        background: #ffffff;
-        height: 100vh;
-        width: 100%;
-    }
+        .sidebar.closed * {
+            display: none;
+        }
 
-    .navbar {
-        height: 56px;
-        background: #ffffff;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
-        width: 100%;
-        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-        position: relative;
-        z-index: 2;
-    }
+        .sidebar-header {
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+        }
 
-    .navbar-left {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .toggle-btn {
-        font-size: 22px;
-        cursor: pointer;
-        color: var(--teks);
-        border: none;
-        background: none;
-    }
-
-    .page-title {
-        font-weight: 600;
-        color: var(--teks);
-    }
-
-    .navbar-right a {
-        text-decoration: none;
-        color: var(--teks);
-        font-weight: 600;
-        padding: 6px 14px;
-        border-radius: 6px;
-        transition: background 0.2s ease, color 0.2s ease;
-    }
-
-    .navbar-right a:hover {
-        background: var(--hover);
-        color: #000;
-    }
+        .sidebar-header img {
+            max-width: 70px;
+        }
 
 
-    .konten {
-        padding: 25px;
-        flex: 1;
-        overflow-y: auto;
-        background: #f7f7f7;
-    }
-</style>
+        .menu {
+            list-style: none;
+            padding: 8px 0;
+            margin: 0;
+        }
 
-<div id="layout-admin">
+        .menu li a {
+            display: block;
+            padding: 13px 22px;
+            color: var(--teks);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            transition: 0.2s;
+        }
 
-    <div class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <img src="../aset/logo.JPG">
+        .menu li a:hover,
+        .menu li a.aktif {
+            background: var(--hover);
+        }
+
+        .menu {
+            flex: 1;
+            overflow-y: auto;
+
+            /* sembunyikan scrollbar */
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .menu::-webkit-scrollbar {
+            display: none;
+        }
+
+        .has-sub>.submenu-toggle {
+            cursor: pointer;
+        }
+
+        .submenu {
+            list-style: none;
+            padding-left: 0;
+            max-height: 0;
+            overflow: hidden;
+            background: #dcded8;
+            transition: 0.3s;
+        }
+
+        .has-sub.open .submenu {
+            max-height: 600px;
+        }
+
+        .submenu li a {
+            padding-left: 40px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .divider {
+            height: 1px;
+            background: #bcbcbc;
+            margin: 6px 12px;
+        }
+
+        .content-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+        }
+
+        .navbar {
+            height: 56px;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .toggle-btn {
+            font-size: 22px;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        .page-title {
+            font-weight: 600;
+        }
+
+        .navbar-right a {
+            text-decoration: none;
+            color: var(--teks);
+            font-weight: 600;
+        }
+
+        .konten {
+            padding: 25px;
+            flex: 1;
+            overflow-y: auto;
+            background: #f7f7f7;
+        }
+
+        .menu li a.submenu-toggle {
+            display: flex;
+            /* override block */
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chevron {
+            width: 10px;
+            height: 10px;
+            border-right: 2px solid var(--teks);
+            border-bottom: 2px solid var(--teks);
+
+            transform: rotate(45deg);
+            transition: transform 0.25s ease;
+
+            margin-left: 8px;
+            flex-shrink: 0;
+        }
+
+
+        .has-sub.open>a .chevron {
+            transform: rotate(-135deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="layout-admin">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar" id="sidebar">
+
+            <div class="sidebar-header">
+                <img src="../aset/logo.JPG" />
+            </div>
+
+            <ul class="menu">
+
+                <li><a href="dasbor.html">Dashboard</a></li>
+                <li><a href="manajemen_pengguna.html">Pengguna</a></li>
+                <li><a href="manajemen_petugas.html">Petugas</a></li>
+                <li><a href="manajemen_proyek.html">Proyek</a></li>
+
+                <li class="has-sub">
+                    <a href="javascript:void(0)" class="submenu-toggle">
+                        Master Data
+                        <span class="chevron"></span>
+                    </a>
+
+
+                    <ul class="submenu">
+                        <li><a href="manajemen_klien.html">Manajemen Klien</a></li>
+                        <li><a href="manajemen_aset.html">Manajemen Aset</a></li>
+
+                        <li class="divider"></li>
+
+                        <li><a href="master_paket.html">Master Paket</a></li>
+                        <li><a href="master_honor.html">Master Honor</a></li>
+                        <li><a href="master_jenis.html">Master Jenis</a></li>
+                        <li><a href="master_keahlian.html">Master Keahlian</a></li>
+                        <!-- <li><a href="master_kepegawaian.html">Master Kepegawaian</a></li> -->
+                        <li><a href="master_lokasi.html">Master Lokasi</a></li>
+                    </ul>
+                </li>
+
+
+            </ul>
+
         </div>
 
-        <ul class="menu">
-            <li><a href="dasbor.html">Dashboard</a></li>
-            <li><a href="manajemen_pengguna.html">Pengguna</a></li>
-            <li><a href="manajemen_petugas.html">Petugas</a></li>
-            <li><a href="manajemen_klien.html">Klien</a></li>
-            <li><a href="manajemen_proyek.html">Proyek</a></li>
-            <li><a href="manajemen_aset.html">Aset</a></li>
-        </ul>
+        <!-- CONTENT -->
+        <div class="content-wrapper">
 
-    </div>
+            <div class="navbar">
+                <div>
+                    <button class="toggle-btn" id="toggleSidebar">☰</button>
+                    <span class="page-title" id="page-title">Title</span>
+                </div>
+                <div class="navbar-right">
+                    <a href="profil.html">Profil</a>
+                </div>
+            </div>
 
-    <div class="content-wrapper">
-        <div class="navbar">
-            <div class="navbar-left">
-                <button class="toggle-btn" id="toggleSidebar">☰</button>
-                <span class="page-title" id="page-title">Title</span>
+            <div class="konten" id="konten-halaman">
+                Konten halaman disini...
             </div>
-            <div class="navbar-right">
-                <a href="profil.html">Profil</a>
-            </div>
+
         </div>
-
-        <div class="konten" id="konten-halaman"></div>
     </div>
 
-</div>
+    <script src="../js/sidebar-init.js"></script>
+
+
+    <script>
+        fetch("../component/sidebar_admin.html")
+            .then(res => res.text())
+            .then(html => {
+
+                /* inject sidebar */
+                document.getElementById("layout-admin").innerHTML = html;
+
+                /* inject konten dashboard */
+                document.getElementById("konten-halaman").innerHTML =
+                    document.getElementById("isi-halaman").innerHTML;
+
+                /* 🔥 cukup 1 baris */
+                initSidebar("Dashboard Admin");
+
+                /* === lanjut logic dashboard kamu di sini === */
+                renderSummary();
+                renderKanban();
+
+            })
+            .catch(err => console.error(err));
+    </script>

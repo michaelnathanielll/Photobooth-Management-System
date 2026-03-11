@@ -1,0 +1,61 @@
+{<2026-01-05 21:20:19>;Ip:::1;Nama API:TemplateProject/controler.Login;error:;}
+{<2026-01-05 21:20:22>;Ip:::1;Nama API:TemplateProject/controler.Login;error:;}
+{<2026-01-05 21:20:23>;Ip:::1;Nama API:TemplateProject/controler.Login;error:;}
+{<2026-01-05 21:20:29>;Ip:::1;Nama API:TemplateProject/controler.GetAllKaryawan;error:;}
+{<2026-01-05 21:20:30>;Ip:::1;Nama API:TemplateProject/controler.GetAllRetur;error:;}
+{<2026-01-05 21:20:30>;Ip:::1;Nama API:TemplateProject/controler.GetAllKaryawan;error:;}
+{<2026-01-05 21:20:31>;Ip:::1;Nama API:TemplateProject/controler.GetAllRetur;error:;}
+{<2026-01-05 21:25:47>;Ip:::1;Nama API:TemplateProject/controler.GetAllKaryawan;error:;}
+{<2026-01-05 21:25:47>;Ip:::1;Nama API:TemplateProject/controler.GetAllRetur;error:;}
+{<2026-01-05 21:25:50>;Ip:::1;Nama API:TemplateProject/controler.ReciveExportTikTok;error:request Content-Type isn't multipart/form-data;}
+{<2026-01-05 21:27:04>;Ip:::1;Nama API:TemplateProject/controler.GetAllKaryawan;error:;}
+{<2026-01-05 21:27:08>;Ip:::1;Nama API:TemplateProject/controler.ReciveExportTikTok;error:request Content-Type isn't multipart/form-data;}
+{<2026-01-05 21:29:02>;Ip:::1;Nama API:TemplateProject/controler.ReciveExportTikTok;error:;}
+{<2026-01-05 21:29:18>;Ip:::1;Nama API:TemplateProject/controler.GetAllKaryawan;error:;}
+{<2026-01-05 21:29:18>;Ip:::1;Nama API:TemplateProject/controler.GetAllRetur;error:;}
+{<2026-01-05 21:35:15>;Ip:::1;Nama API:TemplateProject/controler.GetAllKaryawan;error:;}
+{<2026-01-05 21:35:16>;Ip:::1;Nama API:TemplateProject/controler.GetAllRetur;error:;}
+{<2026-01-05 21:36:24>;Ip:::1;Nama API:TemplateProject/controler.GetAllKaryawan;error:;}
+{<2026-01-05 21:36:26>;Ip:::1;Nama API:TemplateProject/controler.GetAllKaryawan;error:;}
+{<2026-01-05 21:36:26>;Ip:::1;Nama API:TemplateProject/controler.GetAllRetur;error:;}
+{<2026-01-05 21:36:29>;Ip:::1;Nama API:TemplateProject/controler.GetAllRetur;error:;}
+{<2026-01-05 21:38:19>;Ip:::1;Nama API:TemplateProject/controler.GetAllKaryawan;error:;}
+{<2026-01-05 21:38:21>;Ip:::1;Nama API:TemplateProject/controler.GetAllKaryawan;error:;}
+{<2026-01-05 21:38:21>;Ip:::1;Nama API:TemplateProject/controler.GetAllRetur;error:;}
+{<2026-01-05 21:38:50>;Ip:::1;Nama API:TemplateProject/controler.GetAllRetur;error:;}
+{<2026-01-05 21:39:41>;Ip:::1;Nama API:TemplateProject/controler.GetAllKaryawan;error:;}
+{<2026-01-05 21:39:42>;Ip:::1;Nama API:TemplateProject/controler.GetAllRetur;error:Error 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND retur.tanggal_input >= DATE('2026-01-01') AND retur.tanngal_input <= DATE...' at line 1
+  at D:/FreeLance/Haewon/Code/Backend/dbmod/select.go:143
+  at D:/FreeLance/Haewon/Code/Backend/model/retur.go:128;}
+{<2026-01-05 21:41:03>;Ip:::1;Nama API:TemplateProject/controler.GetAllRetur;error:Error 1054 (42S22): Unknown column 'retur.tanngal_input' in 'where clause'
+  at D:/FreeLance/Haewon/Code/Backend/dbmod/select.go:143
+  at D:/FreeLance/Haewon/Code/Backend/model/retur.go:128;}
+{<2026-01-05 21:41:59>;Ip:::1;Nama API:TemplateProject/controler.GetAllKaryawan;error:;}
+{<2026-01-05 21:42:00>;Ip:::1;Nama API:TemplateProject/controler.GetAllRetur;error:Error 1054 (42S22): Unknown column 'retur.tangal_input' in 'where clause'
+  at D:/FreeLance/Haewon/Code/Backend/dbmod/select.go:143
+  at D:/FreeLance/Haewon/Code/Backend/model/retur.go:128;}
+{<2026-01-05 21:42:32>;Ip:::1;Nama API:TemplateProject/controler.GetAllKaryawan;error:;}
+{<2026-01-05 21:42:41>;Ip:::1;Nama API:TemplateProject/controler.GetAllRetur;error:;}
+{<2026-01-05 21:43:27>;Ip:::1;Nama API:TemplateProject/controler.GetAllRetur;error:;}
+{<2026-01-05 21:45:09>;Ip:::1;Nama API:TemplateProject/controler.GetAllRetur;error:;}
+{<2026-01-05 21:45:15>;Ip:::1;Nama API:TemplateProject/controler.GetAllRetur;error:;}
+{<2026-01-05 21:46:45>;Ip:::1;Nama API:TemplateProject/controler.GetStatusKomplain;error:;}
+{<2026-01-05 21:46:45>;Ip:::1;Nama API:TemplateProject/controler.GetAllKomplain;error:;}
+{<2026-01-05 21:46:45>;Ip:::1;Nama API:TemplateProject/controler.GetStatusKomplain;error:;}
+{<2026-01-05 21:46:45>;Ip:::1;Nama API:TemplateProject/controler.GetStatusKomplain;error:;}
+{<2026-01-05 21:47:15>;Ip:::1;Nama API:TemplateProject/controler.GetStatusKomplain;error:;}
+{<2026-01-05 21:48:22>;Ip:::1;Nama API:TemplateProject/controler.GetAllNeedVerified;error:;}
+{<2026-01-05 22:08:52>;Ip:::1;Nama API:TemplateProject/controler.GetAllRetur;error:;}
+{<2026-01-05 22:09:14>;Ip:::1;Nama API:TemplateProject/controler.InsertRetur;error:Error 1054 (42S22): Unknown column 'qty_terima' in 'field list'
+  at D:/FreeLance/Haewon/Code/Backend/dbmod/insert.go:29
+  at D:/FreeLance/Haewon/Code/Backend/model/retur.go:172;}
+{<2026-01-05 22:12:59>;Ip:::1;Nama API:TemplateProject/controler.InsertRetur;error:;}
+{<2026-01-05 22:12:59>;Ip:::1;Nama API:TemplateProject/controler.GetAllRetur;error:;}
+{<2026-01-05 22:13:12>;Ip:::1;Nama API:TemplateProject/controler.GetAllNeedVerified;error:;}
+{<2026-01-05 22:13:14>;Ip:::1;Nama API:TemplateProject/controler.GetAllRetur;error:;}
+{<2026-01-05 22:13:17>;Ip:::1;Nama API:TemplateProject/controler.GetAllRetur;error:;}
+{<2026-01-05 22:17:19>;Ip:::1;Nama API:TemplateProject/controler.InsertRetur;error:;}
+{<2026-01-05 22:17:19>;Ip:::1;Nama API:TemplateProject/controler.GetAllRetur;error:;}
+{<2026-01-05 22:19:03>;Ip:::1;Nama API:TemplateProject/controler.InsertRetur;error:;}
+{<2026-01-05 22:19:03>;Ip:::1;Nama API:TemplateProject/controler.GetAllRetur;error:;}
+{<2026-01-05 22:19:34>;Ip:::1;Nama API:TemplateProject/controler.GetAllRetur;error:;}

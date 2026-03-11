@@ -1,6 +1,6 @@
 // const urlBase = "https://ppm-rajasorong.com:2687/tambak/api/v1"
 // const urlBase = "http://192.168.1.154:2682/tambak/api/v1"
-const urlBase = "http://localhost:2682/haewon/api/v1"
+const urlBase = "http://localhost:2682/photobooth/api/v1"
 // apiService.js
 window.fetchAPI = async function (url, method = 'GET', body = null) {
     url = urlBase + url;

@@ -1,0 +1,10 @@
+{<2025-12-31 14:59:07>;Ip:::1;Nama API:TemplateProject/controler.Login;error:Error 1054 (42S22): Unknown column 'tipe' in 'field list'
+  at D:/Free Lance/Haewon/Code/Backend/dbmod/select.go:435
+  at D:/Free Lance/Haewon/Code/Backend/model/karyawan.go:86;}
+{<2025-12-31 15:00:14>;Ip:::1;Nama API:TemplateProject/controler.Login;error:;}
+{<2025-12-31 15:05:39>;Ip:::1;Nama API:TemplateProject/controler.ReciveExportTikTok;error:;}
+{<2025-12-31 15:06:08>;Ip:::1;Nama API:TemplateProject/controler.ReciveExportTikTok;error:;}
+{<2025-12-31 15:07:01>;Ip:::1;Nama API:TemplateProject/controler.ReciveExportTikTok;error:;}
+{<2025-12-31 15:23:09>;Ip:::1;Nama API:TemplateProject/controler.GetReturByResi;error:;}
+{<2025-12-31 15:24:00>;Ip:::1;Nama API:TemplateProject/controler.GetReturByResi;error:;}
+{<2025-12-31 15:35:23>;Ip:::1;Nama API:TemplateProject/controler.TerimaRetur;error:;}

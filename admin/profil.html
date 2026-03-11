@@ -201,34 +201,26 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script src="../js/sidebar-init.js"></script>
     <script>
         fetch("../component/sidebar_admin.html")
-            .then(r => r.text())
+            .then(res => res.text())
             .then(html => {
+
+                /* inject layout */
                 document.getElementById("layout-admin").innerHTML = html;
-                document.getElementById("page-title").innerText = "Profil";
+
+                /* inject konten */
                 document.getElementById("konten-halaman").innerHTML =
                     document.getElementById("isi-halaman").innerHTML;
 
-                const sidebar = document.getElementById("sidebar");
-                const toggle = document.getElementById("toggleSidebar");
+                /* 🔥 cukup 1 baris saja */
+                initSidebar("Profil");
 
-                function checkScreen() {
-                    if (window.innerWidth < 500) sidebar.classList.add("closed");
-                }
-
-                toggle.addEventListener("click", () => sidebar.classList.toggle("closed"));
-                window.addEventListener("resize", checkScreen);
-                checkScreen();
-
-                document.querySelectorAll(".menu a").forEach(link => {
-                    if (link.getAttribute("href") === "profil.html") {
-                        link.classList.add("aktif");
-                    }
-                });
-            });
+            })
+            .catch(err => console.error(err));
     </script>
+
 
 </body>
 

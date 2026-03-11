@@ -1,0 +1,23 @@
+{<2025-08-02 13:49:00>;Ip:::1;Nama API:TemplateProject/controler.Login;error:dial tcp: lookup ppm-rajasorong.com: no such host
+  at D:/pekerjaan/backendCCTV/cctv_be/dbmod/select.go:428
+  at D:/pekerjaan/backendCCTV/cctv_be/model/karyawan.go:86;}
+{<2025-08-02 13:49:06>;Ip:::1;Nama API:TemplateProject/controler.Login;error:dial tcp: lookup ppm-rajasorong.com: no such host
+  at D:/pekerjaan/backendCCTV/cctv_be/dbmod/select.go:428
+  at D:/pekerjaan/backendCCTV/cctv_be/model/karyawan.go:86;}
+{<2025-08-02 13:49:11>;Ip:::1;Nama API:TemplateProject/controler.Login;error:dial tcp: lookup ppm-rajasorong.com: no such host
+  at D:/pekerjaan/backendCCTV/cctv_be/dbmod/select.go:428
+  at D:/pekerjaan/backendCCTV/cctv_be/model/karyawan.go:86;}
+{<2025-08-02 13:49:39>;Ip:::1;Nama API:TemplateProject/controler.Login;error:dial tcp: lookup ppm-rajasorong.com: no such host
+  at D:/pekerjaan/backendCCTV/cctv_be/dbmod/select.go:428
+  at D:/pekerjaan/backendCCTV/cctv_be/model/karyawan.go:86;}
+{<2025-08-02 13:51:42>;Ip:::1;Nama API:TemplateProject/controler.Login;error:dial tcp: lookup ppm-rajasorong.com: no such host
+  at D:/pekerjaan/backendCCTV/cctv_be/dbmod/select.go:428
+  at D:/pekerjaan/backendCCTV/cctv_be/model/karyawan.go:86;}
+{<2025-08-02 13:56:51>;Ip:::1;Nama API:TemplateProject/controler.Login;error:;}
+{<2025-08-02 13:56:55>;Ip:::1;Nama API:TemplateProject/controler.GetAllJenisBarang;error:;}
+{<2025-08-02 13:56:55>;Ip:::1;Nama API:TemplateProject/controler.GetObjeckBudidaya;error:;}
+{<2025-08-02 13:56:56>;Ip:::1;Nama API:TemplateProject/controler.GetAllBarang;error:;}
+{<2025-08-02 13:57:03>;Ip:::1;Nama API:TemplateProject/controler.DeleteBarang;error:;}
+{<2025-08-02 13:57:06>;Ip:::1;Nama API:TemplateProject/controler.GetAllJenisBarang;error:;}
+{<2025-08-02 13:57:06>;Ip:::1;Nama API:TemplateProject/controler.GetObjeckBudidaya;error:;}
+{<2025-08-02 13:57:07>;Ip:::1;Nama API:TemplateProject/controler.GetAllBarang;error:;}

@@ -111,42 +111,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Andi Pratama</td>
-                    <td>08123456789</td>
-                    <td>Jl. Merdeka No.10, Jakarta</td>
-                    <td>
-                        <button class="aksi-btn btn-detail"
-                            onclick="openDetail('Andi Pratama','08123456789','Jl. Merdeka No.10, Jakarta')"
-                            data-bs-toggle="modal" data-bs-target="#modalDetail">
-                            <i class="bi bi-eye"></i>
-                        </button>
-                        <button class="aksi-btn btn-edit" data-bs-toggle="modal" data-bs-target="#modalUbah">
-                            <i class="bi bi-pencil"></i>
-                        </button>
-                        <button class="aksi-btn btn-hapus" data-bs-toggle="modal" data-bs-target="#modalHapus">
-                            <i class="bi bi-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Sinta Lestari</td>
-                    <td>08987654321</td>
-                    <td>Jl. Sudirman No.25, Bandung</td>
-                    <td>
-                        <button class="aksi-btn btn-detail"
-                            onclick="openDetail('Sinta Lestari','08987654321','Jl. Sudirman No.25, Bandung')"
-                            data-bs-toggle="modal" data-bs-target="#modalDetail">
-                            <i class="bi bi-eye"></i>
-                        </button>
-                        <button class="aksi-btn btn-edit" data-bs-toggle="modal" data-bs-target="#modalUbah">
-                            <i class="bi bi-pencil"></i>
-                        </button>
-                        <button class="aksi-btn btn-hapus" data-bs-toggle="modal" data-bs-target="#modalHapus">
-                            <i class="bi bi-trash"></i>
-                        </button>
-                    </td>
-                </tr>
+
             </tbody>
         </table>
 
@@ -161,14 +126,14 @@
                 </div>
                 <div class="modal-body">
                     <label>Nama Klien</label>
-                    <input class="form-control mb-3">
+                    <input class="form-control mb-3" id="nama-tambah">
                     <label>Kontak</label>
-                    <input class="form-control mb-3">
+                    <input class="form-control mb-3" id="kontak-tambah">
                     <label>Alamat</label>
-                    <textarea class="form-control mb-3"></textarea>
+                    <input class="form-control mb-3" id="alamat-tambah">    
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-utama" data-bs-dismiss="modal">Simpan</button>
+                    <button class="btn btn-utama" data-bs-dismiss="modal" onclick="inputKlien()">Simpan</button>
                 </div>
             </div>
         </div>
@@ -182,15 +147,16 @@
                     <button class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
+                    <input id="id-ubah" hidden>
                     <label>Nama Klien</label>
-                    <input class="form-control mb-3" value="Andi Pratama">
+                    <input class="form-control mb-3" id="nama-ubah">
                     <label>Kontak</label>
-                    <input class="form-control mb-3" value="08123456789">
+                    <input class="form-control mb-3" id="kontak-ubah">
                     <label>Alamat</label>
-                    <textarea class="form-control mb-3">Jl. Merdeka No.10, Jakarta</textarea>
+                    <input class="form-control mb-3" id="alamat-ubah">
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-utama" data-bs-dismiss="modal">Simpan</button>
+                    <button class="btn btn-utama" data-bs-dismiss="modal" onclick="updateKlien()">Simpan</button>
                 </div>
             </div>
         </div>
@@ -239,9 +205,10 @@
                     <i class="bi bi-trash"></i>
                 </div>
                 <h5>Apakah anda yakin<br>akan menghapus data ini?</h5>
+                <input id="id-hapus" hidden>
                 <div class="mt-4 d-flex justify-content-center gap-3">
                     <button class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
-                    <button class="btn btn-danger" data-bs-dismiss="modal">Iya</button>
+                    <button class="btn btn-danger" data-bs-dismiss="modal" onclick="deleteKlien()" >Iya</button>
                 </div>
             </div>
         </div>
@@ -250,65 +217,15 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/datatables.net@1.13.8/js/jquery.dataTables.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script> -->
+      
     <script src="https://cdn.jsdelivr.net/npm/datatables.net-bs5@1.13.8/js/dataTables.bootstrap5.min.js"></script>
-
+    <script src="../js/sidebar-init.js"></script>
+    <script src="../js/fetchAPI.js"></script>
+    <script src="../js/admin/manajemen-klien.js"></script>
     <script>
-        const jadwalData = [
-            { id: 1, nama: "Wedding Expo Jakarta", tanggal: "2026-02-10", waktu_mulai: "10:00", waktu_selesai: "20:00", lokasi: "JCC Senayan", status: "pendaftaran" },
-            { id: 2, nama: "Corporate Gathering Bandung", tanggal: "2026-03-05", waktu_mulai: "18:00", waktu_selesai: "22:00", lokasi: "Bandung Ballroom", status: "berlangsung" },
-            { id: 3, nama: "Birthday Party Aurel", tanggal: "2026-01-28", waktu_mulai: "15:00", waktu_selesai: "19:00", lokasi: "Jakarta Selatan", status: "berlangsung" },
-            { id: 4, nama: "Private Event Bali", tanggal: "2026-02-15", waktu_mulai: "16:00", waktu_selesai: "23:00", lokasi: "Bali Resort", status: "selesai" }
-        ];
+      
 
-        function openDetail(nama, kontak, alamat) {
-            document.getElementById("detailNama").innerHTML = "<b>Nama:</b> " + nama;
-            document.getElementById("detailKontak").innerHTML = "<b>Kontak:</b> " + kontak;
-            document.getElementById("detailAlamat").innerHTML = "<b>Alamat:</b> " + alamat;
-
-            const tbody = document.getElementById("tbodyAcara");
-            tbody.innerHTML = "";
-
-            jadwalData.forEach(ev => {
-                const row = `
-                <tr>
-                    <td>${ev.nama}</td>
-                    <td>${ev.tanggal}</td>
-                    <td>${ev.waktu_mulai} - ${ev.waktu_selesai}</td>
-                    <td>${ev.lokasi}</td>
-                    <td>${ev.status}</td>
-                </tr>
-            `;
-                tbody.innerHTML += row;
-            });
-        }
-
-        fetch("../component/sidebar_admin.html")
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById("layout-admin").innerHTML = html;
-                document.getElementById("page-title").innerText = "Manajemen Klien";
-                document.getElementById("konten-halaman").innerHTML = document.getElementById("isi-halaman").innerHTML;
-
-                document.querySelectorAll(".menu a").forEach(link => {
-                    if (link.getAttribute("href") === "manajemen_klien.html") {
-                        link.classList.add("aktif");
-                    }
-                });
-
-                const sidebar = document.getElementById("sidebar");
-                const toggle = document.getElementById("toggleSidebar");
-                toggle.addEventListener("click", () => sidebar.classList.toggle("closed"));
-
-                new DataTable('#tabel-klien', {
-                    pageLength: 10,
-                    language: {
-                        search: "Cari:",
-                        lengthMenu: "Tampilkan _MENU_ data",
-                        info: "Menampilkan _START_ sampai _END_ dari _TOTAL_ data",
-                        paginate: { next: "Berikutnya", previous: "Sebelumnya" }
-                    }
-                });
-            });
     </script>
 
 </body>
