@@ -11,7 +11,6 @@ import (
 
 func Init() *echo.Echo {
 	e := echo.New()
-	// v1 := e.Group("/stream/v1")
 	e.Use(middleware.CORSWithConfig(middleware.DefaultCORSConfig))
 	e.GET("/getPhoto", controler.GetFoto)
 	e.POST("/uploadFoto", controler.UploadFoto)
@@ -19,7 +18,7 @@ func Init() *echo.Echo {
 	e.GET("/", func(c echo.Context) error {
 		return c.String(http.StatusOK, "welcome here")
 	})
-	// v2 := e.Group("/haewon/api/v1")
+	// v2 := e.Group("/photobooth/api/v1")
 	// v2.POST("/login", controler.Login)
 
 	v1 := e.Group("/photobooth/api/v1")

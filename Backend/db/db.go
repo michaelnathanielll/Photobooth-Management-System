@@ -15,8 +15,8 @@ const (
 	username = "root"
 	password = "root"
 	hostname = "localhost"
-	port     = "3306"
-	dbname   = "photoboot"
+	port     = "3307"
+	dbname   = "photobooth"
 )
 
 var OpenCon = 0

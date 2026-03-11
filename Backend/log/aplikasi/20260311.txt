@@ -1,0 +1,1420 @@
+{<2026-03-11 19:07:09>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:09>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:10>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:10>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:10>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:10>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:11>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:11>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:11>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:11>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:12>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:12>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:12>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:13>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:13>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:13>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:13>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:14>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:14>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:14>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:14>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:15>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:15>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:15>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:16>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:16>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:16>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:17>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:17>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:17>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:18>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:18>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:18>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:18>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:19>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:19>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:19>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:20>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:20>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:20>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:21>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:21>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:21>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:22>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:22>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:22>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:23>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:23>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:23>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:23>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:24>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:24>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:24>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:24>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:25>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:25>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:25>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:26>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:26>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:26>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:27>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:27>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:27>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:28>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:28>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:28>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:28>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:29>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:29>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:29>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:30>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:30>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:30>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:31>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:31>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:33>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:33>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:33>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:34>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:34>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:35>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:35>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:36>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:36>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:36>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:37>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:37>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:38>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:39>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:39>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:39>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:40>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:40>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:41>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:41>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:42>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:42>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:42>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:43>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:43>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:44>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:44>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:45>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:45>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:46>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:46>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:47>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:47>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:48>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:50>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:52>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:54>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:55>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:57>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:07:59>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:01>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:03>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:05>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:07>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:09>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:10>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:12>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:14>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:16>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:18>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:20>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:22>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:24>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:26>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:28>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:30>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:32>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:34>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:35>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:37>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:39>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:41>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:43>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:45>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:47>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:49>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:51>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:56>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:56>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:56>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:57>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:57>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:57>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:58>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:58>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:58>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:59>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:59>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:59>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:08:59>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:00>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:00>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:00>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:01>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:01>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:01>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:01>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:01>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:02>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:02>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:02>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:03>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:03>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:03>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:03>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:03>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:04>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:04>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:04>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:04>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:05>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:05>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:05>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:06>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:06>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:06>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:07>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:07>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:07>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:07>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:08>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:188;}
+{<2026-03-11 19:09:08>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:08>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:08>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:08>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:08>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:08>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:09>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:09>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:09>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:09>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:09>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:09>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:09>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:09>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:10>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:10>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:10>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:10>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:10>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:10>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:10>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:10>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:10>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:10>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:11>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:11>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:11>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:11>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:11>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:11>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:11>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:11>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:11>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:11>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:11>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:11>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:12>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:12>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:12>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:12>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:12>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:12>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:12>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:12>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:12>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:12>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:12>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:12>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:13>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:13>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:13>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:13>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:13>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:13>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:13>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:13>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:13>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:13>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:13>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:14>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:14>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:14>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:14>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:14>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:14>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:14>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:14>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:15>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:15>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:15>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:15>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:15>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:15>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:15>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:15>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:15>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:15>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:15>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:16>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:16>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:16>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:16>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:16>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:16>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:16>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:16>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:16>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:16>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:16>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:17>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:17>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:17>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:17>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:17>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:17>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:17>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:17>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:17>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:18>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:18>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:18>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:18>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:18>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:18>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:18>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:18>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:18>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:18>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:18>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:18>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:19>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:19>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:19>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:19>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:19>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:19>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:19>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:19>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:19>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:19>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:19>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:20>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:20>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:20>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:20>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:20>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:20>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:20>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:20>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:20>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:21>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:21>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:21>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:21>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:21>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:21>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:22>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:22>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:22>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:22>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:22>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:22>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:22>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:23>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:23>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:23>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:23>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:23>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:23>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:24>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:25>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:25>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:25>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:25>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:25>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:25>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:25>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:25>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:25>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:25>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:25>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:26>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:26>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:26>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:26>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:27>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:27>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:27>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:27>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:27>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:27>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:27>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:27>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:27>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:27>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:28>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:28>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:28>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:28>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:28>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:28>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:28>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:29>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:29>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:29>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:29>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:29>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:29>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:29>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:29>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:29>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:30>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:30>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:30>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:30>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:30>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:30>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:30>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:30>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:30>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:31>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:31>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:31>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:31>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:31>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:31>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:09:31>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:Error 1049 (42000): Unknown database 'photoboot'
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/dbmod/select.go:21
+  at C:/Users/Lenovo/Downloads/Skripsi_Photobooth/Backend/model/user.go:310;}
+{<2026-03-11 19:10:23>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:23>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:24>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:24>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:24>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:24>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:25>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:25>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:25>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:25>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:26>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:26>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:26>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:26>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:26>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:27>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:27>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:27>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:27>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:28>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:28>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:28>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:28>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:29>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:29>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:29>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:29>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:30>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:30>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:30>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:30>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:31>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:31>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:31>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:31>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:32>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:33>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:35>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:36>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:38>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:40>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:42>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:44>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:46>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:48>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:49>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:51>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:53>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:55>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:57>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:10:58>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:00>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:02>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:04>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:06>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:08>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:09>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:11>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:13>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:15>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:17>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:19>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:21>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:23>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:25>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:26>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:28>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:30>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:32>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:34>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:36>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:37>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:39>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:41>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:43>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:45>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:47>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:49>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:51>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:53>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:55>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:56>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:11:58>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:12:00>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:12:02>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:12:04>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:12:06>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:12:08>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:12:10>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:12:11>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:12:13>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:12:15>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:12:17>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:12:19>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:12:21>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:12:23>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:12:25>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:12:27>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:12:31>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:12:32>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:12:34>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:12:36>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:12:38>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:13:00>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:01>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:01>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:01>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:01>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:01>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:02>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:02>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:02>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:02>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:02>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:03>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:03>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:03>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:03>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:03>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:04>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:04>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:04>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:05>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:05>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:05>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:07>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:08>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:10>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:12>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:14>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:16>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:18>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:19>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:21>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:23>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:25>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:27>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:28>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:30>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:32>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:34>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:36>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:38>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:39>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:41>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:43>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:45>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:47>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:49>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:51>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:53>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:55>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:57>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:13:58>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:00>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:02>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:04>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:06>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:07>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:09>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:11>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:13>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:15>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:17>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:18>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:20>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:22>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:24>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:26>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:28>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:30>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:32>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:34>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:36>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:37>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:39>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:41>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:43>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:45>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:47>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:48>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:50>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:52>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:54>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:56>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:14:58>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:15:00>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:15:02>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:15:04>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:15:06>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:15:08>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:15:09>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:15:11>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:15:13>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:15:15>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:15:17>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:15:19>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:15:21>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:15:22>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:17:55>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:18:00>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:;}
+{<2026-03-11 19:18:00>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:;}
+{<2026-03-11 19:18:00>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:;}
+{<2026-03-11 19:18:08>;Ip:::1;Nama API:TemplateProject/controler.GetPaket;error:;}
+{<2026-03-11 19:18:16>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:18:18>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:;}
+{<2026-03-11 19:18:18>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:;}
+{<2026-03-11 19:18:18>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:;}
+{<2026-03-11 19:18:21>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:18:51>;Ip:::1;Nama API:TemplateProject/controler.InsertKlien;error:;}
+{<2026-03-11 19:18:54>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:18:56>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:;}
+{<2026-03-11 19:18:56>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:;}
+{<2026-03-11 19:18:56>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:;}
+{<2026-03-11 19:18:58>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:19:03>;Ip:::1;Nama API:TemplateProject/controler.UpdateKlien;error:;}
+{<2026-03-11 19:19:05>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:19:09>;Ip:::1;Nama API:TemplateProject/controler.DeleteKlien;error:;}
+{<2026-03-11 19:19:11>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:19:14>;Ip:::1;Nama API:TemplateProject/controler.GetPaket;error:;}
+{<2026-03-11 19:19:15>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:19:15>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:19:16>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:19:18>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:19:18>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:19:19>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:19:20>;Ip:::1;Nama API:TemplateProject/controler.GetPaket;error:;}
+{<2026-03-11 19:19:22>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:;}
+{<2026-03-11 19:19:22>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:;}
+{<2026-03-11 19:19:22>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:;}
+{<2026-03-11 19:19:28>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:28:39>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:28:40>;Ip:::1;Nama API:TemplateProject/controler.GetKlien;error:;}
+{<2026-03-11 19:59:12>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:59:12>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:59:13>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:59:14>;Ip:::1;Nama API:TemplateProject/controler.Get2Variable;error:;}
+{<2026-03-11 19:59:15>;Ip:::1;Nama API:TemplateProject/controler.GetPaket;error:;}
+{<2026-03-11 19:59:15>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:;}
+{<2026-03-11 19:59:16>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:;}
+{<2026-03-11 19:59:16>;Ip:::1;Nama API:TemplateProject/controler.GetAset;error:;}
