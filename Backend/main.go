@@ -1,6 +1,7 @@
 package main
 
 import (
+	"TemplateProject/model"
 	"TemplateProject/route"
 
 	// "crypto/tls"
@@ -90,7 +91,7 @@ func InsertLogsError(string2 string) error {
 }
 
 func main() {
-
+	model.Get2Variable("keahlian")
 	e := route.Init()
 	e.HideBanner = true
 	e.Use(middleware.RequestLoggerWithConfig(middleware.RequestLoggerConfig{
@@ -100,7 +101,7 @@ func main() {
 			return nil
 		},
 	}))
-	
+
 	go func() {
 		// s := http.Server{
 		// 	Addr:      ":2682",

@@ -12,6 +12,7 @@ import (
 func namaFungsi() string {
 	pc, _, _, _ := runtime.Caller(1)
 	fn := runtime.FuncForPC(pc)
+	// fmt.Println(fn.Name())
 	return fn.Name()
 }
 
@@ -147,7 +148,8 @@ func DeletePetugas(c echo.Context) error {
 func GetPetugas(c echo.Context) error {
 	namaFungsi := namaFungsi()
 	ip := c.RealIP()
-	result, err := model.GetPetugas()
+	tipe := c.FormValue("tipe")
+	result, err := model.GetPetugas(tipe)
 	if err != nil {
 		model.InsertLogError(ip, namaFungsi, err)
 		return c.JSON(http.StatusInternalServerError, map[string]string{"message": err.Error()})
@@ -354,6 +356,20 @@ func DeleteProyek(c echo.Context) error {
 	model.InsertLogError(ip, namaFungsi, err)
 	return c.JSON(http.StatusOK, result)
 }
+func GetProyekPendaftaran(c echo.Context) error {
+	namaFungsi := namaFungsi()
+	ip := c.RealIP()
+	req := model.GetFormValue(c)
+	id := c.Get("id_user").(int)
+	result, err := model.GetProyekPetuguasPendaftaran(req, id)
+	if err != nil {
+		model.InsertLogError(ip, namaFungsi, err)
+		return c.JSON(http.StatusInternalServerError, map[string]string{"message": err.Error()})
+	}
+
+	model.InsertLogError(ip, namaFungsi, err)
+	return c.JSON(http.StatusOK, result)
+}
 func GetProyek(c echo.Context) error {
 	namaFungsi := namaFungsi()
 	ip := c.RealIP()
@@ -385,7 +401,7 @@ func GetProyekByIdPetugas(c echo.Context) error {
 	namaFungsi := namaFungsi()
 	ip := c.RealIP()
 	id := c.Param("id")
-	result, err := model.GetProyekByIdPetugas(id)
+	result, err := model.GetProyekByIdPetugas(id, "1")
 	if err != nil {
 		model.InsertLogError(ip, namaFungsi, err)
 		return c.JSON(http.StatusInternalServerError, map[string]string{"message": err.Error()})
@@ -399,7 +415,8 @@ func GetAnggotaProyek(c echo.Context) error {
 	namaFungsi := namaFungsi()
 	ip := c.RealIP()
 	id := c.Param("id")
-	result, err := model.GetAnggotaProyek(id)
+	status := c.FormValue("status")
+	result, err := model.GetAnggotaProyek(id, status)
 	if err != nil {
 		model.InsertLogError(ip, namaFungsi, err)
 		return c.JSON(http.StatusInternalServerError, map[string]string{"message": err.Error()})
@@ -413,7 +430,23 @@ func InsertAnggotaProyek(c echo.Context) error {
 	namaFungsi := namaFungsi()
 	ip := c.RealIP()
 	bodyReq, _ := model.GetBodyReq(c)
-	result, err := model.InsertAnggotaProyek(bodyReq)
+	result, err := model.InsertAnggotaProyek(bodyReq, 0)
+	if err != nil {
+		model.InsertLogError(ip, namaFungsi, err)
+		return c.JSON(http.StatusInternalServerError, map[string]string{"message": err.Error()})
+	}
+
+	model.InsertLogError(ip, namaFungsi, err)
+	return c.JSON(http.StatusOK, result)
+}
+
+func DaftarProyek(c echo.Context) error {
+	namaFungsi := namaFungsi()
+	ip := c.RealIP()
+	bodyReq, _ := model.GetBodyReq(c)
+	id_user := c.Get("id_user").(int)
+	// id_user := 1
+	result, err := model.InsertAnggotaProyek(bodyReq, id_user)
 	if err != nil {
 		model.InsertLogError(ip, namaFungsi, err)
 		return c.JSON(http.StatusInternalServerError, map[string]string{"message": err.Error()})
@@ -536,5 +569,23 @@ func GetScoreByIdPetugas(c echo.Context) error {
 	}
 
 	model.InsertLogError(ip, namaFungsi, err)
+	return c.JSON(http.StatusOK, result)
+}
+
+func Login(c echo.Context) error {
+	nama := namaFungsi()
+	ip := c.RealIP()
+	// id := c.Param("id")
+	username := c.FormValue("username")
+	password := c.FormValue("password")
+	// id_alat := c.FormValue("id_alat")
+	// bodyReq, _ := model.GetBodyReq(c)
+	result, err := model.Login(username, password)
+	if err != nil {
+		model.InsertLogError(ip, nama, err)
+		return c.JSON(http.StatusInternalServerError, result)
+	}
+
+	model.InsertLogError(ip, nama, err)
 	return c.JSON(http.StatusOK, result)
 }

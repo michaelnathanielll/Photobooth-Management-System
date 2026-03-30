@@ -2,7 +2,7 @@ package route
 
 import (
 	controler "TemplateProject/controler"
-	// JWTMiddleware "TemplateProject/middleware"
+	JWTMiddleware "TemplateProject/middleware"
 	"net/http"
 
 	"github.com/labstack/echo/v4"
@@ -18,11 +18,11 @@ func Init() *echo.Echo {
 	e.GET("/", func(c echo.Context) error {
 		return c.String(http.StatusOK, "welcome here")
 	})
-	// v2 := e.Group("/photobooth/api/v1")
-	// v2.POST("/login", controler.Login)
+	v2 := e.Group("/photobooth/api/v1")
+	v2.POST("/login", controler.Login)
 
 	v1 := e.Group("/photobooth/api/v1")
-	// v1.Use(JWTMiddleware.JWTMiddleware)
+	v1.Use(JWTMiddleware.JWTMiddleware)
 
 	v1.POST("/pengguna", controler.InsertPengguna)
 	v1.PUT("/pengguna", controler.UpdatePengguna)
@@ -32,6 +32,7 @@ func Init() *echo.Echo {
 	v1.POST("/petugas", controler.InsertPetugas)
 	v1.PUT("/petugas", controler.UpdatePetugas)
 	v1.GET("/petugas", controler.GetPetugas)
+	v1.GET("/petugas/proyek",controler.GetProyekPendaftaran)
 	v1.DELETE("/petugas/:id", controler.DeletePetugas)
 
 	v1.POST("/klien", controler.InsertKlien)
@@ -53,10 +54,12 @@ func Init() *echo.Echo {
 	v1.PUT("/proyek", controler.UpdateProyek)
 	v1.GET("/proyek", controler.GetProyek)
 	v1.DELETE("/proyek/:id", controler.DeleteProyek)
+	v1.GET("/proyek/petugas/:id", controler.GetProyekByIdPetugas)
 	v1.GET("/proyek/:id", controler.GetProyekById)
-	v1.GET("proyek/petugas/:id", controler.GetProyekByIdPetugas)
+	
 	v1.GET("/proyek/anggota/:id", controler.GetAnggotaProyek)
 	v1.POST("/proyek/anggota", controler.InsertAnggotaProyek)
+	v1.POST("/proyek/anggota/daftar", controler.DaftarProyek)
 	v1.PUT("/proyek/anggota", controler.UpdateAnggotaProyek)
 	v1.DELETE("/proyek/anggota/:id", controler.DeleteAnggotaProyek)
 

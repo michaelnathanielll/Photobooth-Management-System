@@ -15,7 +15,7 @@ type Pengguna struct {
 	Password   string `json:"password" db:"password"`
 }
 
-type Petugas struct {
+type PetugasLogin struct {
 	Id             int      `json:"id" db:"id" type:"pk" act:"ai"`
 	Nama           string   `json:"nama" db:"nama"`
 	Kepagawaian    int      `json:"kepagawaian" db:"kepegawaian"`
@@ -25,6 +25,31 @@ type Petugas struct {
 	StatusAkun     int      `json:"status_akun" db:"status_akun"`
 	Username       string   `json:"username" db:"username"`
 	Password       string   `json:"password" db:"password"`
+	Token          string   `json:"token"`
+	Tipe           int      `json:"tipe" db:"tipe"`
+}
+
+type Petugas struct {
+	Id             int                 `json:"id" db:"id" type:"pk" act:"ai"`
+	Nama           string              `json:"nama" db:"nama"`
+	Kepagawaian    int                 `json:"kepagawaian" db:"kepegawaian"`
+	Keahlian       string              `json:"keahlian" db:"keahlian"`
+	DaftarKeahlian []Tabel2Variable    `json:"daftar_keahlian"`
+	IdHonor        int                 `json:"id_honor" db:"honor"`
+	Honor          int                 `json:"honor" db:"nama" type:"join" alias:"h"`
+	StatusAkun     int                 `json:"status_akun" db:"status_akun"`
+	Username       string              `json:"username" db:"username"`
+	Password       string              `json:"password" db:"password"`
+	Tipe           int                 `json:"tipe" db:"tipe"`
+	NoHp           string              `json:"no_hp" db:"no_hp"`
+	Skor           int                 `json:"skor"`
+	DetailSkor     []RekapNilaiPetugas `json:"detail_skor"`
+}
+
+type RekapNilaiPetugas struct {
+	IdPenilaian int     `json:"id_penilaian" db:"id_penilaian"`
+	Parameter   string  `json:"parameter" db:"nama" type:"join" alias:"p"`
+	Nilai       float64 `json:"nilai" db:"nilai"`
 }
 
 type Klien struct {
@@ -41,13 +66,11 @@ type Aset struct {
 	TipeAset int    `json:"tipe_aset" db:"tipe_aset"`
 }
 
-
 type Paket struct {
-	Id       int    `json:"id" db:"id" type:"pk" act:"ai"`
-	Nama     string `json:"nama" db:"nama"`
-	Harga    int    `json:"harga" db:"harga"`
+	Id    int    `json:"id" db:"id" type:"pk" act:"ai"`
+	Nama  string `json:"nama" db:"nama"`
+	Harga int    `json:"harga" db:"harga"`
 }
-
 
 type Proyek struct {
 	Id             int    `json:"id" db:"id" type:"pk" act:"ai"`
@@ -63,10 +86,10 @@ type Proyek struct {
 	QtyKertas      int    `json:"qty_kertas" db:"qty_kertas"`
 	Kertas         string `json:"kertas" db:"nama" type:"join" alias:"k"`
 	HargaKertas    int    `json:"harga_kertas" db:"harga_kertas"`
-	RealiasiKertas int    `json:"realiasi_kertas" db:"realiasi_kertas"`
+	RealiasiKertas int    `json:"realisasi_kertas" db:"realisasi_kertas"`
 	IdPrint        int    `json:"id_print" db:"id_print"`
 	QtyPrint       int    `json:"qty_print" db:"qty_print"`
-	RealiasiPrint  int    `json:"realiasi_print" db:"realiasi_print"`
+	RealiasiPrint  int    `json:"realisasi_print" db:"realisasi_print"`
 	HargaPrint     int    `json:"harga_print" db:"harga_print"`
 	Print          string `json:"print" db:"nama" type:"join" alias:"p"`
 	BiayaTambahan  int    `json:"biaya_tambahan" db:"biaya_tambahan"`
@@ -74,11 +97,16 @@ type Proyek struct {
 	StatusProyek   string `json:"status_proyek" db:"nama" type:"join" alias:"s"`
 	IdKlien        int    `json:"id_klien" db:"id_klien"`
 	Klien          string `json:"klien" db:"nama" type:"join" alias:"kl"`
-	Lokasi         string `json:"lokasi" db:"lokasi"`
+	IdLokasi       int    `json:"id_lokasi" db:"id_lokasi"`
+	Lokasi         string `json:"lokasi" db:"nama" type:"join" alias:"l"`
 	TanggalEvent   string `json:"tanggal_event" db:"tanggal_event" format:"date"`
 	IdTipeEvent    int    `json:"id_tipe_event" db:"tipe_event"`
 	TipeEvent      string `json:"tipe_event"`
 	TotalBiaya     int    `json:"total_biaya" db:"total_biaya"`
+	Keterangan     string `json:"keterangan" db:"keterangan"`
+	JumlahPetugas  int    `json:"jumlah_petugas" db:"jumlah_petugas"`
+	IdPaket        int    `json:"id_paket" db:"id_paket"`
+	// Paket string
 }
 
 type DaftarProyek struct {
@@ -89,14 +117,35 @@ type DaftarProyek struct {
 	TanggalEvent   string `json:"tanggal_event" db:"tanggal_event" format:"date"`
 	IdJenisProyek  int    `json:"id_jenis_proyek" db:"id_jenis_proyek"`
 	JenisProyek    string `json:"jenis_proyek" db:"nama" type:"join" alias:"j"`
-	Lokasi         string `json:"lokasi" db:"lokasi"`
+	IdLokasi       int    `json:"id_lokasi" db:"id_lokasi"`
+	Lokasi         string `json:"lokasi" db:"nama" type:"join" alias:"l"`
 	IdStatusProyek int    `json:"id_status_proyek" db:"id_status_proyek"`
+	StatusProyek   string `json:"status_proyek" db:"nama" type:"join" alias:"s"`
+	Booth          string `json:"booth" db:"nama" type:"join" alias:"b"`
+	Print          string `json:"print" db:"nama" type:"join" alias:"p"`
+	Kertas         string `json:"kertas" db:"nama" type:"join" alias:"k"`
+	Terdaftar      bool   `json:"terdaftar"`
+	IdDaftar       int    `json:"id_daftar"`
+}
+
+type DaftarProyekPetugas struct {
+	IdDaftar       int    `json:"id_daftar" db:"id" type:"pk" act:"ai"`
+	Id             int    `json:"id" db:"id" type:"join" alias:"p"`
+	Nama           string `json:"nama" db:"nama" type:"join" alias:"p"`
+	WaktuMulai     string `json:"waktu_mulai" db:"waktu_mulai" format:"time" type:"join" alias:"p"`
+	WaktuSelesai   string `json:"waktu_selesai" db:"waktu_selesai" format:"time" type:"join" alias:"p"`
+	TanggalEvent   string `json:"tanggal_event" db:"tanggal_event" format:"date" type:"join" alias:"p"`
+	IdJenisProyek  int    `json:"id_jenis_proyek" db:"id_jenis_proyek" type:"join" alias:"p"`
+	JenisProyek    string `json:"jenis_proyek" db:"nama" type:"join" alias:"j"`
+	IdLokasi       int    `json:"id_lokasi" db:"id_lokasi" type:"join" alias:"p"`
+	Lokasi         string `json:"lokasi" db:"nama" type:"join" alias:"l"`
+	IdStatusProyek int    `json:"id_status_proyek" db:"id_status_proyek" type:"join" alias:"p"`
 	StatusProyek   string `json:"status_proyek" db:"nama" type:"join" alias:"s"`
 }
 
 type PendaftaranProyek struct {
 	Id                  int    `json:"id" db:"id" type:"pk" act:"ai"`
-	IdPetugas           string `json:"id_petugas" db:"id_petugas"`
+	IdPetugas           int    `json:"id_petugas" db:"id_petugas"`
 	Petugas             string `json:"petugas" db:"nama" type:"join" alias:"p"`
 	IdProyek            int    `json:"id_proyek" db:"id_proyek"`
 	Proyek              string `json:"proyek" db:"nama" type:"join" alias:"pr"`
@@ -106,23 +155,37 @@ type PendaftaranProyek struct {
 	Bagian              string `json:"bagian" db:"nama" type:"join" alias:"b"`
 	Honor               int    `json:"honor" db:"honor"`
 	Skor                int    `json:"skor" db:"skor"`
-	SkorDaftar          int    `json:"skor_daftar" db:"skor_daftar	"`
+	SkorDaftar          int    `json:"skor_daftar" db:"skor_daftar"`
+	Keterangan          string `json:"keterangan" db:"keterangan"`
 }
 
 type AnggotaProyek struct {
-	Id                  int    `json:"id" db:"id" type:"pk" act:"ai"`
-	IdPetugas           string `json:"id_petugas" db:"id_petugas"`
-	Petugas             string `json:"petugas" db:"nama" type:"join" alias:"p"`
-	IdProyek            int    `json:"id_proyek" db:"id_proyek"`
-	Proyek              string `json:"proyek" db:"nama" type:"join" alias:"pr"`
-	IdStatusPendaftaran int    `json:"id_status_pendaftaran" db:"status_pendaftaran" `
-	StatusPendaftaran   string `json:"status_pendaftaran" db:"nama" type:"join" alias:"s"`
-	IdBagian            int    `json:"id_bagian" db:"bagian"`
-	Bagian              string `json:"bagian" db:"nama" type:"join" alias:"b"`
-	Kepegawaian         int    `json:"kepegawaian" db:"kepegawaian" type:"join" alias:"p"`
-	NoHp                int    `json:"no_hp" db:"kepegawaian" type:"join" alias:"p"`
-	Honor               int    `json:"honor" db:"honor"`
-	Skor                int    `json:"skor" db:"skor"`
+	Id                  int                       `json:"id" db:"id" type:"pk" act:"ai"`
+	IdPetugas           int                       `json:"id_petugas" db:"id_petugas"`
+	Petugas             string                    `json:"petugas" db:"nama" type:"join" alias:"p"`
+	IdProyek            int                       `json:"id_proyek" db:"id_proyek"`
+	Proyek              string                    `json:"proyek" db:"nama" type:"join" alias:"pr"`
+	IdStatusPendaftaran int                       `json:"id_status_pendaftaran" db:"status_pendaftaran" `
+	StatusPendaftaran   string                    `json:"status_pendaftaran" db:"nama" type:"join" alias:"s"`
+	IdBagian            int                       `json:"id_bagian" db:"bagian"`
+	Bagian              string                    `json:"bagian" db:"nama" type:"join" alias:"b"`
+	Kepegawaian         int                       `json:"kepegawaian" db:"kepegawaian" type:"join" alias:"p"`
+	Kepeg               string                    `json:"kepeg"`
+	NoHp                string                    `json:"no_hp" db:"no_hp" type:"join" alias:"p"`
+	Honor               string                    `json:"honor" db:"nama"  type:"join" alias:"h"`
+	Skor                int                       `json:"skor" db:"skor"`
+	GA                  int                       `json:"ga"`
+	SkorDaftar          int                       `json:"skor_daftar" db:"skor_daftar"`
+	Keterangan          string                    `json:"keterangan" db:"keterangan"`
+	JamHadir            string                    `json:"jam_hadir" db:"jam_hadir" format:"time" act:"COALESCE" var:"string"`
+	Penilaian           []PenilaianPetugasAnggota `json:"penilaian"`
+}
+type CountSkor struct {
+	Total int `json:"total" db:"total"`
+}
+type PenilaianPetugasAnggota struct {
+	Nama  string `json:"nama" db:"nama" type:"join" alias:"p"`
+	Nilai int    `json:"nilai" db:"nilai"`
 }
 
 type Tabel2Variable struct {

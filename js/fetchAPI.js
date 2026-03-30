@@ -1,5 +1,4 @@
-// const urlBase = "https://ppm-rajasorong.com:2687/tambak/api/v1"
-// const urlBase = "http://192.168.1.154:2682/tambak/api/v1"
+
 const urlBase = "http://localhost:2682/photobooth/api/v1"
 // apiService.js
 window.fetchAPI = async function (url, method = 'GET', body = null) {
@@ -85,13 +84,6 @@ function formatRupiahString(value) {
     // Kembalikan hasil yang sudah diformat
     return formatted;
 }
-// function formatUSD(value) {
-//     return new Intl.NumberFormat('en-US', {
-//         style: 'currency',
-//         currency: 'USD',
-//         minimumFractionDigits: 2
-//     }).format(value);
-// }
 
 
 function parseRupiah(value) {
@@ -138,149 +130,11 @@ const buildDate = (date = new Date()) =>{
     return date.getFullYear()+'-'+date.getMonth()+'-'+date.getDate();
 }
 
-async function muatDataJenisAkun(id) {
-    try {
-        tmpAlat = await fetchAPI('/akun?id='+id);
-        alatBeratData = tmpAlat.data; // Sesuaikan dengan endpoint API Anda
-        const select = document.getElementById('akunKas');
-        select.innerHTML = "";
-        // select.innerHTML = '<option value="" selected disabled>Pilih Jenis Jurnal</option>';
-        let i = 0;
-        alatBeratData.forEach(item => {
-            if (i === 0 ){
-                idParent = item.id;
-                i++;
-            } 
-            const option = document.createElement('option');
-            option.value = item.id; // ID alat berat
-            option.textContent = `${item.nama} - (${item.kode_akun})`; // Nama dan kode alat berat
-            select.appendChild(option);
-        });
-        // console.log(alatBeratBySewa);
-    } catch (error) {
-        console.error('Gagal memuat data alat berat:', error);
-    }
-}
-
-async function muatDataJenisAkunWithId(idAkun, idElement) {
-    try {
-        tmpAlat = await fetchAPI('/akun?id='+idAkun);
-        alatBeratData = tmpAlat.data; // Sesuaikan dengan endpoint API Anda
-        const select = document.getElementById(idElement);
-        select.innerHTML = "";
-        select.innerHTML = '<option value="0" selected disabled>Pilih Akun Jurnal</option>';
-        let i = 0;
-        alatBeratData.forEach(item => {
-            if (i === 0 ){
-                idParent = item.id;
-                i++;
-            } 
-            const option = document.createElement('option');
-            option.value = item.id; // ID alat berat
-            option.textContent = `${item.nama} - (${item.kode_akun})`; // Nama dan kode alat berat
-            select.appendChild(option);
-        });
-        // console.log(alatBeratBySewa);
-    } catch (error) {
-        console.error('Gagal memuat data alat berat:', error);
-    }
-}
-
 function redirectPriv(){
     alert("anda tidak di ijinkan mengakses halaman ini, silakan melakukan login ulang");
     window.location.href = 'default.html';
 }
 
-function checkPriviledge(page){
-    const roleString = localStorage.getItem('role');
-    const roles = roleString ? JSON.parse(roleString) : [];
-    // let cek = false;
-    if (page === 'dashboard'){
-         if (roles.includes(1)){
-            return;
-         }else{
-            redirectPriv();
-         }
-    } else if (page === 'keuangan'){
-        if (roles.includes(6)){
-           return;
-        }else{
-            redirectPriv();
-        }
-   } else if (page === 'alat_berat'){
-    if (roles.includes(2)){
-       return;
-    }else{
-        redirectPriv();
-    }
-    } else if (page === 'sparepart'){
-        if (roles.includes(3)){
-           return;
-        }else{
-            redirectPriv();
-        }
-    } else if (page === 'pembelian'){
-        if (roles.includes(4)){
-           return;
-        }else{
-            redirectPriv();
-        }
-    } else if (page === 'penyewaan'){
-        if (roles.includes(5)){
-           return;
-        }else{
-            redirectPriv();
-        }
-    } else if (page === 'customer'){
-        if (roles.includes(7)){
-           return;
-        }else{
-            redirectPriv();
-        }
-    } else if (page === 'service'){
-        if (roles.includes(11)){
-           return;
-        }else{
-            redirectPriv();
-        }
-    }  else if (page === 'supplier'){
-        if (roles.includes(8)){
-           return;
-        }else{
-            redirectPriv();
-        }
-    } else if (page === 'karyawan'){
-        if (roles.includes(9)){
-           return;
-        }else{
-            redirectPriv();
-        }
-    } else if (page === 'hak_akses'){
-        if (roles.includes(10)){
-           return;
-        }else{
-            redirectPriv();
-        }
-    }
-    
-}
-
-// Fungsi untuk generate warna random
-function generateColors(count) {
-    return Array.from({ length: count }, () => 
-      '#' + Math.floor(Math.random()*16777215).toString(16)
-    );
-  }
-  
-  // Atau gunakan array warna tetap (akan berulang jika data lebih banyak)
-  const predefinedColors = [
-    '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', 
-    '#9966FF', '#FF9F40', '#32a852', '#eb4034'
-  ];
-  
-  function generateColors(count) {
-    return predefinedColors.slice(0, count);
-  }
 
 
 function formatFloatSmart(f, digits = 3) {
@@ -312,67 +166,20 @@ function logout(){
     localStorage.removeItem('id_user');
     localStorage.removeItem('role');
     localStorage.removeItem('token');
-    window.location.href = 'login.html';
+    window.location.href = '../masuk.html';
+}
+function setValInner(id, value, fallback = "-") {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.innerHTML += value && value !== "null" ? value : fallback;
 }
 
-
-// Sembunyikan menu berdasarkan role
-function setMenuVisibility() {
-    const roleString = localStorage.getItem('role');
-    const roles = roleString ? JSON.parse(roleString) : [];
-
-    // Daftar elemen menu yang akan diatur visibilitasnya
-    const menus = {
-        dashboard: document.getElementById('dashboardSide'),
-        cctv: document.getElementById('cctvSide'),
-        petak: document.getElementById('petakSide'),
-        budidaya : document.getElementById('budidayaSide'),
-        pengukuran: document.getElementById('pengukuranSide'),
-        barang: document.getElementById('barangSide'),//spare part
-        karyawan: document.getElementById('karyawanSide'),
-        logHarian: document.getElementById('logHarianSide'),
-        hakAksesSide: document.getElementById('hakAksesSide')
-    };
-
-    // Sembunyikan semua menu terlebih dahulu
-    Object.values(menus).forEach(menu => {
-        if (menu) menu.style.display = "none";
-    });
-    // console.log(roles);
-    roles.forEach(role => {
-        // console.log(role);
-        switch (role) {
-            case 8:
-                if (menus.dashboard) menus.dashboard.style.display = "flex";
-                break;
-            case 1:
-                if (menus.cctv) menus.cctv.style.display = "flex";
-                break;
-            case 2:
-                if (menus.petak) menus.petak.style.display = "flex";
-                break;
-            case 3: // spare part
-                if (menus.budidaya) menus.budidaya.style.display = "flex";
-                 break;
-            case 4:
-                if (menus.pengukuran) menus.pengukuran.style.display = "flex";
-                break;
-            case 5:
-                if (menus.barang) menus.barang.style.display = "flex";
-                break;
-            case 6:
-                if (menus.karyawan) menus.karyawan.style.display = "flex";
-                break;
-            case 7:
-                if (menus.hakAksesSide) menus.hakAksesSide.style.display = "flex";
-                break;
-            case 9:
-                if (menus.logHarian) menus.logHarian.style.display = "flex";
-                break;
-            default:
-                console.warn(`Role ${role} tidak dikenali.`);
-        }
-    });
-
+function setVal(id, value, fallback = "-") {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.value = value && value !== "null" ? value : fallback;
 }
-
+function getVal(id){
+    const el = document.getElementById (id);
+    return el.value;
+}

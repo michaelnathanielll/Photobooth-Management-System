@@ -140,6 +140,7 @@
             <thead>
                 <tr>
                     <th>Nama</th>
+                    <!-- <th>Username</th> -->
                     <th>No HP</th>
                     <th>Kepegawaian</th>
                     <th>Keahlian</th>
@@ -150,53 +151,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr data-status="aktif">
-                    <td>Budi Santoso</td>
-                    <td>08123456789</td>
-                    <td>Senior</td>
-                    <td>Operator, Printer</td>
-                    <td>Rp 150.000</td>
-                    <td>362 / 400</td>
-                    <td><span class="badge bg-success">Aktif</span></td>
-                    <td>
-                        <button class="aksi-btn btn-detail"
-                            onclick="openDetail('Budi Santoso','08123456789','Senior','Operator, Printer','150000')"
-                            data-bs-toggle="modal" data-bs-target="#modalDetail">
-                            <i class="bi bi-eye"></i>
-                        </button>
-                        <button class="aksi-btn btn-edit" data-bs-toggle="modal" data-bs-target="#modalUbah">
-                            <i class="bi bi-pencil"></i>
-                        </button>
-                        <button class="aksi-btn btn-nonaktif btn-status" data-bs-toggle="modal"
-                            data-bs-target="#modalStatus">
-                            <i class="bi bi-person-x"></i>
-                        </button>
-                    </td>
-                </tr>
 
-                <tr data-status="nonaktif">
-                    <td>Sinta Lestari</td>
-                    <td>08987654321</td>
-                    <td>Junior</td>
-                    <td>Asisten, Operator</td>
-                    <td>Rp 100.000</td>
-                    <td>338 / 400</td>
-                    <td><span class="badge bg-secondary">Non-Aktif</span></td>
-                    <td>
-                        <button class="aksi-btn btn-detail"
-                            onclick="openDetail('Sinta Lestari','08987654321','Junior','Asisten, Operator','100000')"
-                            data-bs-toggle="modal" data-bs-target="#modalDetail">
-                            <i class="bi bi-eye"></i>
-                        </button>
-                        <button class="aksi-btn btn-edit" data-bs-toggle="modal" data-bs-target="#modalUbah">
-                            <i class="bi bi-pencil"></i>
-                        </button>
-                        <button class="aksi-btn btn-aktif btn-status" data-bs-toggle="modal"
-                            data-bs-target="#modalStatus">
-                            <i class="bi bi-person-check"></i>
-                        </button>
-                    </td>
-                </tr>
             </tbody>
         </table>
 
@@ -213,35 +168,38 @@
                 <div class="modal-body">
 
                     <label>Nama</label>
-                    <input class="form-control mb-2">
+                    <input type="text" class="form-control mb-2" id="nama-input">
+
+                    <label>Username</label>
+                    <input type="text" class="form-control mb-2" id="username-input">
+                  
+                    <label>Password</label>
+                    <input type="password" class="form-control mb-2" id="password-input">
 
                     <label>No HP</label>
-                    <input class="form-control mb-2">
+                    <input  type="text" class="form-control mb-2" id="no_hp-input">
 
                     <label>Status Kepegawaian</label>
-                    <select class="form-control mb-2">
-                        <option>Senior</option>
-                        <option>Junior</option>
+                    <select class="form-select mb-2" id="kepeg-input">
+                        <option value="1">Junior</option>
+                        <option value="2">Senior</option>
                     </select>
 
                     <label>Keahlian</label>
-                    <div class="form-control mb-2" style="height:auto">
+                    <div class="form-control mb-2" style="height:auto" id="keahlian-input">
                         <div><input type="checkbox"> Operator</div>
                         <div><input type="checkbox"> Printer</div>
                         <div><input type="checkbox"> Asisten</div>
                     </div>
 
                     <label>Honor Standar</label>
-                    <select class="form-control">
-                        <option>100000</option>
-                        <option selected>150000</option>
-                        <option>175000</option>
-                        <option>200000</option>
+                    <select class="form-select" id="honor-input" >
+                       
                     </select>
 
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-utama" data-bs-dismiss="modal">Simpan</button>
+                    <button class="btn btn-utama" data-bs-dismiss="modal" onclick="InsertPengguna()">Simpan</button>
                 </div>
             </div>
         </div>
@@ -256,37 +214,32 @@
                     <button class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-
+                    <input id="id-update" hidden>
                     <label>Nama</label>
-                    <input class="form-control mb-2" value="Budi Santoso">
+                    <input class="form-control mb-2" id="nama-update">
 
                     <label>No HP</label>
-                    <input class="form-control mb-2" value="08123456789">
+                    <input class="form-control mb-2" id="nomor-update">
 
                     <label>Status Kepegawaian</label>
-                    <select class="form-control mb-2">
-                        <option selected>Senior</option>
-                        <option>Junior</option>
+                    <select class="form-select mb-2" id="kepeg-update">
+                        <option value="1">Junior</option>
+                        <option value="2">Senior</option>
                     </select>
 
                     <label>Keahlian</label>
-                    <div class="form-control mb-2" style="height:auto">
-                        <div><input type="checkbox" checked> Operator</div>
-                        <div><input type="checkbox" checked> Printer</div>
-                        <div><input type="checkbox"> Asisten</div>
+                    <div class="form-control mb-2" style="height:auto" id="update-keahlian">
+
                     </div>
 
                     <label>Honor Standar</label>
-                    <select class="form-control">
-                        <option>100000</option>
-                        <option selected>150000</option>
-                        <option>175000</option>
-                        <option>200000</option>
+                    <select class="form-select" id="honor-update">
+
                     </select>
 
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-utama" data-bs-dismiss="modal">Simpan</button>
+                    <button class="btn btn-utama" data-bs-dismiss="modal" onclick="updatePengguna()">Simpan</button>
                 </div>
             </div>
         </div>
@@ -307,19 +260,16 @@
                         <div class="col-md-6">
                             <div class="judul-detail">Biodata</div>
                             <div id="dNama"></div>
+                            <div id="dUsername"></div>
                             <div id="dHP"></div>
                             <div id="dStatus"></div>
                             <div id="dKeahlian"></div>
                             <div id="dHonor"></div>
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-6" id="detail-kerja">
                             <div class="judul-detail">Detail Skor Kinerja</div>
-                            <div id="sk1"></div>
-                            <div id="sk2"></div>
-                            <div id="sk3"></div>
-                            <div id="sk4"></div>
-                            <div id="skTotal" style="margin-top:8px;font-weight:bold;"></div>
+
                         </div>
 
                     </div>
@@ -350,6 +300,26 @@
     </div>
 
 
+    <div class="modal fade modal-form" id="modalPassword" tabindex="-1">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+            <div class="modal-content p-3">
+                <div class="modal-header">
+                    <h5 class="modal-title">Ubah Kata Sandi</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <label>Password Baru</label>
+                    <input id="id-password" hidden>
+                    <input type="password" id="password" class="form-control mb-3" required>
+                    <label>Konfirmasi Password</label>
+                    <input type="password" id="konfirm-password" class="form-control" required>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-utama" data-bs-dismiss="modal" onclick="updatePassword()">Simpan</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="modal fade modal-hapus" id="modalStatus" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -357,9 +327,11 @@
                     <i class="bi bi-person-x"></i>
                 </div>
                 <h5 id="teksStatus"></h5>
+                <input id="id-status" hidden>
+                <input id="status-akun" hidden>
                 <div class="mt-4 d-flex justify-content-center gap-3">
                     <button class="btn-tidak" data-bs-dismiss="modal">Tidak</button>
-                    <button class="btn-iya" data-bs-dismiss="modal">Ya</button>
+                    <button class="btn-iya" data-bs-dismiss="modal" onclick="updateStatus()">Ya</button>
                 </div>
             </div>
         </div>
@@ -373,70 +345,8 @@
     <script src="https://cdn.jsdelivr.net/npm/datatables.net-bs5@1.13.8/js/dataTables.bootstrap5.min.js"></script>
     <script src="../js/sidebar-init.js"></script>
 
-    <script>
-        const jadwalData = [
-            { nama: "Wedding Expo Jakarta", tanggal: "2026-02-10", waktu_mulai: "10:00", waktu_selesai: "20:00", lokasi: "JCC Senayan", status: "Pendaftaran" },
-            { nama: "Corporate Gathering Bandung", tanggal: "2026-03-05", waktu_mulai: "18:00", waktu_selesai: "22:00", lokasi: "Bandung Ballroom", status: "Berlangsung" },
-            { nama: "Birthday Party Aurel", tanggal: "2026-01-28", waktu_mulai: "15:00", waktu_selesai: "19:00", lokasi: "Jakarta Selatan", status: "Berlangsung" },
-            { nama: "Private Event Bali", tanggal: "2026-02-15", waktu_mulai: "16:00", waktu_selesai: "23:00", lokasi: "Bali Resort", status: "Selesai" }
-        ];
-
-        function openDetail(nama, hp, status, keahlian, honor) {
-            document.getElementById("dNama").innerHTML = "<b>Nama:</b> " + nama;
-            document.getElementById("dHP").innerHTML = "<b>No HP:</b> " + hp;
-            document.getElementById("dStatus").innerHTML = "<b>Status Kepegawaian:</b> " + status;
-            document.getElementById("dKeahlian").innerHTML = "<b>Keahlian:</b> " + keahlian;
-            document.getElementById("dHonor").innerHTML = "<b>Honor:</b> Rp " + Number(honor).toLocaleString("id-ID");
-
-            const tbody = document.getElementById("tbodyAcara");
-            tbody.innerHTML = "";
-            jadwalData.forEach(ev => {
-                tbody.innerHTML += `
-        <tr>
-            <td>${ev.nama}</td>
-            <td>${ev.tanggal}</td>
-            <td>${ev.waktu_mulai} - ${ev.waktu_selesai}</td>
-            <td>${ev.lokasi}</td>
-            <td>${ev.status}</td>
-        </tr>`;
-            });
-
-            const skor = { k1: 90, k2: 92, k3: 88, k4: 92 };
-            const total = skor.k1 + skor.k2 + skor.k3 + skor.k4;
-
-            document.getElementById("sk1").innerText = "Knowledge & Skill: " + skor.k1 + " / 100";
-            document.getElementById("sk2").innerText = "Communication & Teamwork: " + skor.k2 + " / 100";
-            document.getElementById("sk3").innerText = "Attitude & Work Time: " + skor.k3 + " / 100";
-            document.getElementById("sk4").innerText = "Problem Solving: " + skor.k4 + " / 100";
-
-            document.getElementById("skTotal").innerHTML = "<b>Total: " + total + " / 400</b>";
-
-        }
-
-        fetch("../component/sidebar_admin.html")
-            .then(res => res.text())
-            .then(html => {
-
-                /* 1. inject layout sidebar */
-                document.getElementById("layout-admin").innerHTML = html;
-
-                /* 2. inject konten */
-                document.getElementById("konten-halaman").innerHTML =
-                    document.getElementById("isi-halaman").innerHTML;
-
-                /* 3. init sidebar SETELAH ADA DI DOM */
-                initSidebar("Manajemen Petugas");
-
-                /* 4. datatable */
-                new DataTable('#tabel-petugas', {
-                    pageLength: 10
-                });
-
-            });
-
-
-
-    </script>
+    <script src="../js/fetchAPI.js"></script>
+    <script src="../js/admin/manajemen_petugas.js"></script>
 
 </body>
 

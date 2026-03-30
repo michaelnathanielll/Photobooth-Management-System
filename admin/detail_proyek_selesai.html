@@ -237,7 +237,7 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <div class="section-title">Knowledge & Skill</div>
-                        <div id="avgK1">88</div>
+                        <div id="avgK1"></div>
                     </div>
                 </div>
             </div>
@@ -245,7 +245,7 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <div class="section-title">Communication & Teamwork</div>
-                        <div id="avgK2">84</div>
+                        <div id="avgK2"></div>
                     </div>
                 </div>
             </div>
@@ -253,7 +253,7 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <div class="section-title">Attitude & Work Time</div>
-                        <div id="avgK3">90</div>
+                        <div id="avgK3"></div>
                     </div>
                 </div>
             </div>
@@ -261,7 +261,7 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <div class="section-title">Problem Solving</div>
-                        <div id="avgK4">86</div>
+                        <div id="avgK4"></div>
                     </div>
                 </div>
             </div>
@@ -269,7 +269,7 @@
                 <div class="card text-center border-primary">
                     <div class="card-body">
                         <div class="section-title">Total Skor Proyek</div>
-                        <div id="avgTotal">348</div>
+                        <div id="avgTotal"></div>
                     </div>
                 </div>
             </div>
@@ -314,7 +314,7 @@
                     </div>
 
                     <div class="modal-body">
-
+                        <input id="id-nilai" hidden>
                         <div class="slider-box">
                             <div class="slider-title">Knowledge & Skill : <span id="valK1">80</span></div>
                             <div class="slider-row">
@@ -359,7 +359,7 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button class="btn btn-utama w-100" id="btnSimpanNilai" data-bs-dismiss="modal">
+                        <button class="btn btn-utama w-100" id="btnSimpanNilai" data-bs-dismiss="modal" onclick="simpanNilai()">
                             Simpan
                         </button>
                     </div>
@@ -404,7 +404,7 @@
                     <div class="modal-body">
                         <label>Jam Hadir</label>
                         <input type="time" id="inputJamHadir" class="form-control">
-
+                        <input id="id-edit" hidden>
                         <label class="mt-2">Keterangan</label>
                         <textarea id="inputKetHadir" class="form-control" rows="2"
                             placeholder="Contoh: Terlambat karena macet"></textarea>
@@ -424,278 +424,10 @@
         <script src="https://cdn.jsdelivr.net/npm/datatables.net@1.13.8/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/datatables.net-bs5@1.13.8/js/dataTables.bootstrap5.min.js"></script>
 
+        <script src="../js/fetchAPI.js"></script>
+        <script src="../js/admin/detail_proyek_selesai.js"></script>
         <script>
-            const dataEvent = {
-                id: 1,
-                nama: "Wedding Expo Jakarta",
-                jenis: "Wedding",
-                klien: "Project Art",
-                tanggal: "2026-02-10",
-                waktu_mulai: "10:00",
-                waktu_selesai: "20:00",
-                lokasi: "JCC Senayan",
-                booth: "Twini Booth Silver",
-                kertas: "Stripe",
-                qty_kertas: 200,
-                base: "Magnetic",
-                qty_base: 200,
-                biaya_tambahan: 500000,
-                status: "Selesai",
-
-                qty_kertas_real: 180,
-                qty_base_real: 190,
-
-                biaya_sewa_booth: 5000000,
-                biaya_kertas: 800,
-                biaya_frame: 1200
-            };
-
-            const dataPetugas = [
-                {
-                    nama: "Budi Santoso",
-                    hp: "08123456789",
-                    kepeg: "Senior",
-                    peran: "Operator",
-                    honor: 150000,
-                    skor_proyek: 380,
-
-                    skor_owner: 390,
-                    skor_admin: 360,
-                    skor_manager: 370,
-
-                    k1: 95,
-                    k2: 92,
-                    k3: 96,
-                    k4: 97,
-
-                    jam_hadir: "10:00",
-                    ket_hadir: ""
-                },
-                {
-                    nama: "Sinta Lestari",
-                    hp: "08987654321",
-                    kepeg: "Junior",
-                    peran: "Asisten",
-                    honor: 100000,
-                    skor_proyek: null,
-                    jam_hadir: null,
-                    ket_hadir: null
-                },
-                {
-                    nama: "Andi Wijaya",
-                    hp: "082233445566",
-                    kepeg: "Senior",
-                    peran: "Printer (Magnet)",
-                    honor: 175000,
-                    skor_proyek: 360,
-                    jam_hadir: "10:05",
-                    ket_hadir: "Telat 5 menit"
-                }
-            ];
-
-            function renderDetail() {
-
-                document.getElementById("detailProyek").innerHTML = `
-        <div class="detail-grid">
-               <div>
-        <div class="detail-item"><span class="detail-label">Nama Event</span>: ${dataEvent.nama}</div>
-        <div class="detail-item"><span class="detail-label">Jenis Event</span>: ${dataEvent.jenis}</div>
-        <div class="detail-item"><span class="detail-label">Paket</span>: ${dataEvent.paket ?? "-"}</div>
-        <div class="detail-item"><span class="detail-label">Klien</span>: ${dataEvent.klien}</div>
-        <div class="detail-item"><span class="detail-label">Biaya Tambahan</span>: Rp ${dataEvent.biaya_tambahan.toLocaleString("id-ID")}</div>
-    </div>
-
-    <div>
-        <div class="detail-item"><span class="detail-label">Lokasi</span>: ${dataEvent.lokasi}</div>
-        <div class="detail-item"><span class="detail-label">Tanggal</span>: ${dataEvent.tanggal}</div>
-        <div class="detail-item"><span class="detail-label">Waktu</span>: ${dataEvent.waktu_mulai} - ${dataEvent.waktu_selesai}</div>
-        <div class="detail-item"><span class="detail-label">Jumlah Petugas</span>: ${dataEvent.jumlahPetugas ?? "0"} Orang</div>
-            <div class="detail-item"><span class="detail-label">Status</span>: ${dataEvent.status}</div>
-        </div>
-
-    <div>
-        <div class="detail-item"><span class="detail-label">Booth</span>: ${dataEvent.booth}</div>
-        <div class="detail-item"><span class="detail-label">Kertas</span>: ${dataEvent.kertas} (${dataEvent.qty_kertas})</div>
-        <div class="detail-item"><span class="detail-label">Base Print</span>: ${dataEvent.base} (${dataEvent.qty_base})</div>
-        <div class="detail-item"><span class="detail-label">Keterangan</span>: ${dataEvent.keterangan ?? "-"}</div>
-    </div>
-
-</div>
-`;
-
-                const tbody = document.getElementById("tbodyPetugas");
-                tbody.innerHTML = "";
-
-                dataPetugas.forEach(p => {
-
-                    let btnNilai = "";
-                    if (p.skor_proyek === null) {
-                        btnNilai = `
-          <button class="aksi-btn" data-bs-toggle="modal" data-bs-target="#modalNilai">
-            <i class="bi bi-pencil-square"></i>
-          </button>`;
-                    }
-
-                    let btnHadir = `
-      <button class="aksi-btn ms-1"
-        data-bs-toggle="modal"
-        data-bs-target="#modalKehadiran"
-        onclick="setPetugasAktif('${p.nama}')"
-        title="Ubah Kehadiran">
-        <i class="bi bi-clock-history"></i>
-      </button>
-    `;
-
-                    tbody.innerHTML += `
-      <tr>
-        <td>${p.nama}</td>
-        <td>${p.hp}</td>
-        <td>${p.kepeg}</td>
-        <td>${p.peran}</td>
-        <td>Rp ${p.honor.toLocaleString("id-ID")}</td>
-        <td>
-${p.skor_proyek !== null ? `
-<span 
-data-bs-toggle="tooltip" 
-data-bs-html="true"
-title="
-<b>Skor Owner</b>: ${p.skor_owner ?? '-'} / 400<br>
-<b>Skor Admin</b>: ${p.skor_admin ?? '-'} / 400<br>
-<b>Skor Manager Proyek</b>: ${p.skor_manager ?? '-'} / 400
-<hr style='margin:4px 0'>
-<b>Knowledge & Skill</b>: ${p.k1 ?? '-'} / 100<br>
-<b>Communication & Teamwork</b>: ${p.k2 ?? '-'} / 100<br>
-<b>Attitude & Work Time</b>: ${p.k3 ?? '-'} / 100<br>
-<b>Problem Solving</b>: ${p.k4 ?? '-'} / 100
-">
-${p.skor_proyek}
-</span>
-` : "-"}
-</td>
-        <td>${p.jam_hadir ?? "-"}</td>
-        <td>${p.ket_hadir ?? "-"}</td>
-        <td>${btnNilai + btnHadir}</td>
-      </tr>
-    `;
-                });
-
-                new DataTable('#tabel-petugas', { pageLength: 10 });
-
-                renderBiaya();
-
-                const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-                tooltipTriggerList.map(el => new bootstrap.Tooltip(el))
-            }
-
-            function renderBiaya() {
-                const honorEstimasi = dataPetugas.length * 150000;
-                const honorRealisasi = dataPetugas.reduce((sum, p) => sum + p.honor, 0);
-
-                const totalKertasEstimasi = dataEvent.biaya_kertas * dataEvent.qty_kertas;
-                const totalFrameEstimasi = dataEvent.biaya_frame * dataEvent.qty_base;
-
-                const totalKertasRealisasi = dataEvent.biaya_kertas * dataEvent.qty_kertas_real;
-                const totalFrameRealisasi = dataEvent.biaya_frame * dataEvent.qty_base_real;
-
-                const totalEstimasi =
-                    honorEstimasi +
-                    dataEvent.biaya_sewa_booth +
-                    totalKertasEstimasi +
-                    totalFrameEstimasi;
-
-                const totalRealisasi =
-                    honorRealisasi +
-                    dataEvent.biaya_sewa_booth +
-                    totalKertasRealisasi +
-                    totalFrameRealisasi;
-
-                document.getElementById("dataBiaya").innerHTML = `
-  <div class="row">
-
-    <!-- ESTIMASI -->
-    <div class="col-md-6">
-      <b>Estimasi Biaya</b><br><br>
-      Honor Petugas : Rp ${honorEstimasi.toLocaleString("id-ID")}<br>
-      Sewa Booth : Rp ${dataEvent.biaya_sewa_booth.toLocaleString("id-ID")}<br>
-      Kertas : ${dataEvent.qty_kertas} pcs × Rp ${dataEvent.biaya_kertas.toLocaleString("id-ID")} = 
-      Rp ${totalKertasEstimasi.toLocaleString("id-ID")}<br>
-      Base Print : ${dataEvent.qty_base} pcs × Rp ${dataEvent.biaya_frame.toLocaleString("id-ID")} = 
-      Rp ${totalFrameEstimasi.toLocaleString("id-ID")}<br><br>
-
-<div class="total-estimasi">
-Total Estimasi :<br>
-Rp ${totalEstimasi.toLocaleString("id-ID")}
-</div>
-
-    </div>
-
-    <!-- REALISASI -->
-    <div class="col-md-6">
-      <b>Biaya Proyek (Realisasi)</b><br><br>
-      Honor Petugas : Rp ${honorRealisasi.toLocaleString("id-ID")}<br>
-      Sewa Booth : Rp ${dataEvent.biaya_sewa_booth.toLocaleString("id-ID")}<br>
-      Kertas : ${dataEvent.qty_kertas_real} pcs × Rp ${dataEvent.biaya_kertas.toLocaleString("id-ID")} = 
-      Rp ${totalKertasRealisasi.toLocaleString("id-ID")}<br>
-      Base Print : ${dataEvent.qty_base_real} pcs × Rp ${dataEvent.biaya_frame.toLocaleString("id-ID")} = 
-      Rp ${totalFrameRealisasi.toLocaleString("id-ID")}<br><br>
-
-<div class="total-realisasi">
-Total Realisasi :<br>
-Rp ${totalRealisasi.toLocaleString("id-ID")}
-</div>
-
-    </div>
-
-  </div>
-
-  <hr>
-
-<div class="total-selisih">
-Selisih : Rp ${(totalEstimasi - totalRealisasi).toLocaleString("id-ID")}
-</div>
-<div class="total-selisih2">
-Selisih : Rp ${(totalEstimasi - totalRealisasi).toLocaleString("id-ID")}
-</div>
-
-  `;
-            }
-
-            let petugasAktif = null;
-
-            function setPetugasAktif(nama) {
-                petugasAktif = dataPetugas.find(p => p.nama === nama);
-                document.getElementById("inputJamHadir").value = petugasAktif.jam_hadir ?? "";
-                document.getElementById("inputKetHadir").value = petugasAktif.ket_hadir ?? "";
-            }
-
-            function simpanKehadiran() {
-                petugasAktif.jam_hadir = document.getElementById("inputJamHadir").value;
-                petugasAktif.ket_hadir = document.getElementById("inputKetHadir").value;
-                renderDetail();
-            }
-
-
-
-            function simpanQtyRealisasi() {
-                dataEvent.qty_kertas_real = parseInt(document.getElementById("inputKertasReal").value);
-                dataEvent.qty_base_real = parseInt(document.getElementById("inputBaseReal").value);
-                renderBiaya();
-            }
-
-
-            fetch("../component/sidebar_admin.html")
-                .then(r => r.text())
-                .then(html => {
-                    document.getElementById("layout-admin").innerHTML = html;
-                    document.getElementById("page-title").innerText = "Detail Proyek Selesai";
-                    document.getElementById("konten-halaman").innerHTML = document.getElementById("isi-halaman").innerHTML;
-
-                    const sidebar = document.getElementById("sidebar");
-                    const toggle = document.getElementById("toggleSidebar");
-                    toggle.addEventListener("click", () => sidebar.classList.toggle("closed"));
-
-                    renderDetail();
-                });
+          
         </script>
 
 </body>

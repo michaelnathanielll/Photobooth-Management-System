@@ -16,4 +16,5 @@ var table = map[string]string{
 	"paket":               "paket",
 	"lokasi":              "lokasi",
 	"honor":               "honor",
+	"pendaftaran":         "pendaftaran",
 }

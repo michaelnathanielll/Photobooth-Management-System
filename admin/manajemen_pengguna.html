@@ -134,49 +134,13 @@
                 <tr>
                     <th>Username</th>
                     <th>Nama</th>
-                    <th>Role</th>
+                    <!-- <th>Role</th> -->
                     <th>Status</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
-                <tr data-status="aktif">
-                    <td>admin01</td>
-                    <td>Michael Nathanael</td>
-                    <td>Admin</td>
-                    <td><span class="badge bg-success">Aktif</span></td>
-                    <td>
-                        <button class="aksi-btn btn-edit" data-bs-toggle="modal" data-bs-target="#modalUbah">
-                            <i class="bi bi-pencil"></i>
-                        </button>
-                        <button class="aksi-btn btn-password" data-bs-toggle="modal" data-bs-target="#modalPassword">
-                            <i class="bi bi-key"></i>
-                        </button>
-                        <button class="aksi-btn btn-nonaktif btn-status" data-bs-toggle="modal"
-                            data-bs-target="#modalStatus">
-                            <i class="bi bi-person-x"></i>
-                        </button>
-                    </td>
-                </tr>
 
-                <tr data-status="nonaktif">
-                    <td>manager02</td>
-                    <td>Andi Project</td>
-                    <td>Manager Proyek</td>
-                    <td><span class="badge bg-secondary">Non-Aktif</span></td>
-                    <td>
-                        <button class="aksi-btn btn-edit" data-bs-toggle="modal" data-bs-target="#modalUbah">
-                            <i class="bi bi-pencil"></i>
-                        </button>
-                        <button class="aksi-btn btn-password" data-bs-toggle="modal" data-bs-target="#modalPassword">
-                            <i class="bi bi-key"></i>
-                        </button>
-                        <button class="aksi-btn btn-aktif btn-status" data-bs-toggle="modal"
-                            data-bs-target="#modalStatus">
-                            <i class="bi bi-person-check"></i>
-                        </button>
-                    </td>
-                </tr>
             </tbody>
         </table>
 
@@ -192,13 +156,13 @@
                 </div>
                 <div class="modal-body">
                     <label>Username</label>
-                    <input class="form-control mb-3">
+                    <input class="form-control mb-3" id="username-input">
                     <label>Password</label>
-                    <input type="password" class="form-control mb-3">
+                    <input type="password" class="form-control mb-3" id="password-input">
                     <label>Nama</label>
-                    <input class="form-control mb-3">
-                    <label>Role</label>
-                    <label>Role</label>
+                    <input class="form-control mb-3" id="nama-input">
+                    <!-- <label>Role</label>
+                   
                     <div class="form-control mb-3" style="height:auto">
 
                         <div class="form-check">
@@ -217,11 +181,11 @@
                             <label class="form-check-label" for="rolePetugasTambah">Petugas</label>
                         </div>
 
-                    </div>
+                    </div> -->
 
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-utama" data-bs-dismiss="modal">Simpan</button>
+                    <button class="btn btn-utama" data-bs-dismiss="modal" onclick="inputPengguna()">Simpan</button>
                 </div>
             </div>
         </div>
@@ -236,11 +200,12 @@
                     <button class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
+                    <input id="id-ubah" hidden>
                     <label>Username</label>
-                    <input class="form-control mb-3" value="admin01">
+                    <input class="form-control mb-3" id="username-ubah">
                     <label>Nama</label>
-                    <input class="form-control mb-3" value="Zelvin Admin">
-                    <label>Role</label>
+                    <input class="form-control mb-3" id="nama-ubah">
+                    <!-- <label>Role</label>
                     <div class="form-control mb-3" style="height:auto">
 
                         <div class="form-check">
@@ -259,11 +224,11 @@
                             <label class="form-check-label" for="rolePetugasTambah">Petugas</label>
                         </div>
 
-                    </div>
+                    </div> -->
 
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-utama" data-bs-dismiss="modal">Simpan</button>
+                    <button class="btn btn-utama" data-bs-dismiss="modal" onclick="updatePengguna()">Simpan</button>
                 </div>
             </div>
         </div>
@@ -279,12 +244,13 @@
                 </div>
                 <div class="modal-body">
                     <label>Password Baru</label>
-                    <input type="password" class="form-control mb-3">
+                    <input id="id-password" hidden>
+                    <input type="password" id="password" class="form-control mb-3" required>
                     <label>Konfirmasi Password</label>
-                    <input type="password" class="form-control">
+                    <input type="password" id="konfirm-password" class="form-control" required>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-utama" data-bs-dismiss="modal">Simpan</button>
+                    <button class="btn btn-utama" data-bs-dismiss="modal" onclick="updatePassword()">Simpan</button>
                 </div>
             </div>
         </div>
@@ -298,9 +264,11 @@
                     <i class="bi bi-person-x"></i>
                 </div>
                 <h5 id="teksStatus"></h5>
+                <input id="id-status" hidden>
+                <input id="status-akun" hidden>
                 <div class="mt-4 d-flex justify-content-center gap-3">
                     <button class="btn-tidak" data-bs-dismiss="modal">Tidak</button>
-                    <button class="btn-iya" data-bs-dismiss="modal">Ya</button>
+                    <button class="btn-iya" data-bs-dismiss="modal" onclick="updateStatus()">Ya</button>
                 </div>
             </div>
         </div>
@@ -312,57 +280,8 @@
     <script src="https://cdn.jsdelivr.net/npm/datatables.net@1.13.8/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/datatables.net-bs5@1.13.8/js/dataTables.bootstrap5.min.js"></script>
     <script src="../js/sidebar-init.js"></script>
-
-
-    <script>
-        fetch("../component/sidebar_admin.html")
-            .then(res => res.text())
-            .then(html => {
-
-                /* inject sidebar */
-                document.getElementById("layout-admin").innerHTML = html;
-
-                /* inject konten */
-                document.getElementById("konten-halaman").innerHTML =
-                    document.getElementById("isi-halaman").innerHTML;
-
-                /* 🔥 cukup 1 baris */
-                initSidebar("Manajemen Pengguna");
-
-                /* DataTable */
-                new DataTable('#tabel-user', {
-                    pageLength: 10
-                });
-
-                /* Status modal */
-                document.querySelectorAll(".btn-status").forEach(btn => {
-                    btn.addEventListener("click", function () {
-
-                        const row = this.closest("tr");
-                        const status = row.getAttribute("data-status");
-
-                        const teks = document.getElementById("teksStatus");
-                        const icon = document.getElementById("iconStatus");
-
-                        if (status === "aktif") {
-                            teks.innerHTML = "Nonaktifkan pengguna ini?";
-                            icon.innerHTML = '<i class="bi bi-person-x"></i>';
-                            icon.style.borderColor = "#e74c3c";
-                            icon.style.color = "#e74c3c";
-                        } else {
-                            teks.innerHTML = "Aktifkan kembali pengguna ini?";
-                            icon.innerHTML = '<i class="bi bi-person-check"></i>';
-                            icon.style.borderColor = "#27ae60";
-                            icon.style.color = "#27ae60";
-                        }
-
-                    });
-                });
-
-            })
-            .catch(err => console.error("Sidebar gagal dimuat:", err));
-
-    </script>
+    <script src="../js/fetchAPI.js"></script>
+    <script src="../js/admin/manajemen_pengguna.js"></script>
 
 </body>
 
