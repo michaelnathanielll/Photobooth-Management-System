@@ -507,7 +507,7 @@ func GetProyekPetuguasPendaftaran(req ReqFormValue, id int) (Response, error) {
 		return res, err
 	}
 	DecodeMapStringArray(resp.([]map[string]interface{}), &arrObj)
-	respon, err := GetProyekByIdPetugas(strconv.Itoa(id), "0")
+	respon, err := GetProyekByIdPetugas(strconv.Itoa(id), "0,1")
 	if err != nil {
 		err = errorHandle.ErrorLine(err)
 		res = ResponseError(err)
@@ -569,7 +569,7 @@ func GetProyekByIdPetugas(id, status string) (Response, error) {
 	join += " JOIN " + statusTab + " s ON p.id_status_proyek = s.id"
 	join += " JOIN " + jenisTab + " j ON p.id_jenis_proyek = j.id"
 	join += " JOIN " + lokasiTab + " l ON p.id_lokasi = l.id"
-	where := namaTab + ".deleted_at IS NULL AND " + namaTab + ".status_pendaftaran = " + status + " AND " + namaTab + ".id_petugas = " + id
+	where := namaTab + ".deleted_at IS NULL AND " + namaTab + ".status_pendaftaran IN ( " + status + " ) AND " + namaTab + ".id_petugas = " + id
 	resp, err := dbmod.SelectQueryJoin(obj, namaTab, where, namaTab+".id DESC", "", "", join)
 	if err != nil {
 		err = errorHandle.ErrorLine(err)
