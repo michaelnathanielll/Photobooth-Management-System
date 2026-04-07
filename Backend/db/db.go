@@ -15,7 +15,7 @@ const (
 	username = "root"
 	password = "root"
 	hostname = "localhost"
-	port     = "3307"
+	port     = "3306"
 	dbname   = "photobooth"
 )
 

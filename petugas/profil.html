@@ -238,17 +238,16 @@
 
                 <div class="card">
                     <div class="card-title">Biodata</div>
-                    <div class="info-text"><b>Nama:</b> Michael Nathanael</div>
-                    <div class="info-text"><b>No HP:</b> 0812-3456-7890</div>
-                    <div class="info-text"><b>Status Kepegawaian:</b> Tetap</div>
-                    <div class="info-text"><b>Honor Standar:</b> Rp 150.000 / Event</div>
+                    <div class="info-text"><b>Nama:</b> <span id="nama"></span></div>
+                    <div class="info-text"><b>No HP:</b> <span id="no-hp"></span></div>
+                    <div class="info-text"><b>Status Kepegawaian:</b> <span id="kepeg"></span></div>
+                    <div class="info-text"><b>Honor Standar:</b> Rp <span id="honor"></span> / Event</div>
                 </div>
 
-                <div class="card">
+                <div class="card" id="keahlian">
                     <div class="card-title">Keahlian</div>
-                    <span class="badge">Operator</span>
-                    <span class="badge">Printer (Magnet)</span>
-                    <span class="badge">Asisten</span>
+                    
+                    
                 </div>
 
             </div>
@@ -277,10 +276,10 @@
                 <div class="modal-title">Ubah Profil</div>
                 <div class="modal-close" onclick="closeModal('modalProfil')">✕</div>
             </div>
-            <input type="text" value="Michael Nathanael">
-            <input type="text" value="0812-3456-7890">
+            <input type="text" id="nama-ubah" >
+            <input type="text" id="no-hp-ubah">
             <div class="modal-footer">
-                <button class="btn-utama" onclick="closeModal('modalProfil')">Simpan</button>
+                <button class="btn-utama" onclick="updatePengguna()">Simpan</button>
             </div>
         </div>
     </div>
@@ -291,102 +290,20 @@
                 <div class="modal-title">Ubah Kata Sandi</div>
                 <div class="modal-close" onclick="closeModal('modalPassword')">✕</div>
             </div>
-            <input type="password" placeholder="Password Lama">
-            <input type="password" placeholder="Password Baru">
-            <input type="password" placeholder="Ulangi Password Baru">
+            <input type="password" id="passLama" placeholder="Password Lama">
+            <input type="password" id ="passBaru" placeholder="Password Baru">
+            <input type="password" id="konfirPass" placeholder="Ulangi Password Baru">
             <div class="modal-footer">
-                <button class="btn-utama" onclick="closeModal('modalPassword')">Simpan</button>
+                <button class="btn-utama" onclick="updatePassword()">Simpan</button>
             </div>
         </div>
     </div>
 
     <script>
-        fetch("../component/navbar_petugas.html")
-            .then(r => r.text())
-            .then(html => {
-                document.getElementById("navbar-petugas").innerHTML = html;
-                document.getElementById("navbarTitle").innerText = "Profil Petugas";
-            });
 
-        function openModal(id) { document.getElementById(id).style.display = "flex"; }
-        function closeModal(id) { document.getElementById(id).style.display = "none"; }
-
-        const scoreData = [
-            {
-                id: 1,
-                event: "Wedding Expo Jakarta",
-                knowledge: 90,
-                communication: 92,
-                attitude: 95,
-                problem: 91
-            },
-            {
-                id: 2,
-                event: "Corporate Gathering",
-                knowledge: 85,
-                communication: 88,
-                attitude: 90,
-                problem: 87
-            },
-            {
-                id: 3,
-                event: "Birthday Party Aurel",
-                knowledge: 93,
-                communication: 96,
-                attitude: 97,
-                problem: 94
-            }
-        ];
-
-        const scoreListEl = document.getElementById("scoreList");
-        const summaryEl = document.getElementById("scoreSummary");
-
-        let sumK = 0, sumC = 0, sumA = 0, sumP = 0;
-
-        scoreData.forEach(sc => {
-            const total = sc.knowledge + sc.communication + sc.attitude + sc.problem;
-
-            sumK += sc.knowledge;
-            sumC += sc.communication;
-            sumA += sc.attitude;
-            sumP += sc.problem;
-
-            const div = document.createElement("div");
-            div.className = "score-item";
-            div.innerHTML = `
-        <span>${sc.event}</span>
-        <b>${total}</b>
-
-        <div class="score-tooltip">
-            <div class="tooltip-row"><b>Knowledge & Skill:</b> ${sc.knowledge}</div>
-            <div class="tooltip-row"><b>Communication & Teamwork:</b> ${sc.communication}</div>
-            <div class="tooltip-row"><b>Attitude & Work Time:</b> ${sc.attitude}</div>
-            <div class="tooltip-row"><b>Problem Solving & Decision:</b> ${sc.problem}</div>
-        </div>
-    `;
-            scoreListEl.appendChild(div);
-        });
-
-        const avgK = Math.round(sumK / scoreData.length);
-        const avgC = Math.round(sumC / scoreData.length);
-        const avgA = Math.round(sumA / scoreData.length);
-        const avgP = Math.round(sumP / scoreData.length);
-        const totalAvg = avgK + avgC + avgA + avgP;
-
-        summaryEl.innerHTML = `
-    <div class="summary-item"><span>Knowledge & Skill</span><b>${avgK}</b></div>
-    <div class="summary-item"><span>Communication & Teamwork</span><b>${avgC}</b></div>
-    <div class="summary-item"><span>Attitude & Work Time</span><b>${avgA}</b></div>
-    <div class="summary-item"><span>Problem Solving & Responsibility</span><b>${avgP}</b></div>
-    <div class="summary-item summary-total"><span>Total Skor Rata-rata</span><b>${totalAvg}</b></div>
-`;
-
-        function logout() {
-            alert("Logout berhasil!");
-            window.location.href = "petugas/masuk.html";
-        }
     </script>
-
+    <script src="../js/fetchAPI.js"></script>
+    <script src="../js/petugas/profil.js"></script>
 </body>
 
 </html>

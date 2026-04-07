@@ -158,6 +158,19 @@ func GetPetugas(c echo.Context) error {
 	model.InsertLogError(ip, namaFungsi, err)
 	return c.JSON(http.StatusOK, result)
 }
+func GetPetugasById(c echo.Context) error {
+	namaFungsi := namaFungsi()
+	ip := c.RealIP()
+	tipe := c.Param("id")
+	result, err := model.GetPetugas2ById(tipe)
+	if err != nil {
+		model.InsertLogError(ip, namaFungsi, err)
+		return c.JSON(http.StatusInternalServerError, map[string]string{"message": err.Error()})
+	}
+
+	model.InsertLogError(ip, namaFungsi, err)
+	return c.JSON(http.StatusOK, result)
+}
 
 func InsertKlien(c echo.Context) error {
 	namaFungsi := namaFungsi()
@@ -370,6 +383,46 @@ func GetProyekPendaftaran(c echo.Context) error {
 	model.InsertLogError(ip, namaFungsi, err)
 	return c.JSON(http.StatusOK, result)
 }
+func GetKomposisiTimProyek(c echo.Context) error {
+	namaFungsi := namaFungsi()
+	ip := c.RealIP()
+	id := c.Param("id")
+	result, err := model.GetKomposisiTimProyek(id)
+	if err != nil {
+		model.InsertLogError(ip, namaFungsi, err)
+		return c.JSON(http.StatusInternalServerError, map[string]string{"message": err.Error()})
+	}
+
+	model.InsertLogError(ip, namaFungsi, err)
+	return c.JSON(http.StatusOK, result)
+}
+func GetBagianPendaftar(c echo.Context) error {
+	namaFungsi := namaFungsi()
+	ip := c.RealIP()
+	id := c.Param("id")
+	result, err := model.GetBagianPendaftar(id)
+	if err != nil {
+		model.InsertLogError(ip, namaFungsi, err)
+		return c.JSON(http.StatusInternalServerError, map[string]string{"message": err.Error()})
+	}
+
+	model.InsertLogError(ip, namaFungsi, err)
+	return c.JSON(http.StatusOK, result)
+}
+func UpdateKomposisi(c echo.Context) error {
+	namaFungsi := namaFungsi()
+	ip := c.RealIP()
+	id := c.Param("id")
+	bodyReq, _ := model.GetBodyReq(c)
+	result, err := model.UpdateKomposisi(id, bodyReq)
+	if err != nil {
+		model.InsertLogError(ip, namaFungsi, err)
+		return c.JSON(http.StatusInternalServerError, map[string]string{"message": err.Error()})
+	}
+
+	model.InsertLogError(ip, namaFungsi, err)
+	return c.JSON(http.StatusOK, result)
+}
 func GetProyek(c echo.Context) error {
 	namaFungsi := namaFungsi()
 	ip := c.RealIP()
@@ -402,6 +455,20 @@ func GetProyekByIdPetugas(c echo.Context) error {
 	ip := c.RealIP()
 	id := c.Param("id")
 	result, err := model.GetProyekByIdPetugas(id, "1")
+	if err != nil {
+		model.InsertLogError(ip, namaFungsi, err)
+		return c.JSON(http.StatusInternalServerError, map[string]string{"message": err.Error()})
+	}
+
+	model.InsertLogError(ip, namaFungsi, err)
+	return c.JSON(http.StatusOK, result)
+}
+
+func GetHistoryPointProyekByIdPetugas(c echo.Context) error {
+	namaFungsi := namaFungsi()
+	ip := c.RealIP()
+	id := c.Get("id_user").(int)
+	result, err := model.GetHistoryPointProyekByIdPetugas(strconv.Itoa(int(id)))
 	if err != nil {
 		model.InsertLogError(ip, namaFungsi, err)
 		return c.JSON(http.StatusInternalServerError, map[string]string{"message": err.Error()})
@@ -586,6 +653,67 @@ func Login(c echo.Context) error {
 		return c.JSON(http.StatusInternalServerError, result)
 	}
 
+	model.InsertLogError(ip, nama, err)
+	return c.JSON(http.StatusOK, result)
+}
+
+func CountPenggunaDashboard(c echo.Context) error {
+	nama := namaFungsi()
+	ip := c.RealIP()
+	result, err := model.CountPenggunaDashboard()
+	if err != nil {
+		model.InsertLogError(ip, nama, err)
+		return c.JSON(http.StatusInternalServerError, result)
+	}
+	model.InsertLogError(ip, nama, err)
+	return c.JSON(http.StatusOK, result)
+}
+
+func GetProyekDashboard(c echo.Context) error {
+	nama := namaFungsi()
+	ip := c.RealIP()
+	result, err := model.GetProyekDashboard()
+	if err != nil {
+		model.InsertLogError(ip, nama, err)
+		return c.JSON(http.StatusInternalServerError, result)
+	}
+	model.InsertLogError(ip, nama, err)
+	return c.JSON(http.StatusOK, result)
+}
+
+func CountJumlahProyek(c echo.Context) error {
+	nama := namaFungsi()
+	ip := c.RealIP()
+	result, err := model.CountJumlahProyek()
+	if err != nil {
+		model.InsertLogError(ip, nama, err)
+		return c.JSON(http.StatusInternalServerError, result)
+	}
+	model.InsertLogError(ip, nama, err)
+	return c.JSON(http.StatusOK, result)
+}
+
+
+func CountPendapatanProyek(c echo.Context) error {
+	nama := namaFungsi()
+	ip := c.RealIP()
+	result, err := model.CountPendapatanProyek()
+	if err != nil {
+		model.InsertLogError(ip, nama, err)
+		return c.JSON(http.StatusInternalServerError, result)
+	}
+	model.InsertLogError(ip, nama, err)
+	return c.JSON(http.StatusOK, result)
+}
+
+func CountJenisProyek(c echo.Context) error {
+	nama := namaFungsi()
+	ip := c.RealIP()
+	result, err := model.CountJenisProyek()
+	if err != nil {
+		model.InsertLogError(ip, nama, err)
+		return c.JSON(http.StatusInternalServerError, result)
+	}
 	model.InsertLogError(ip, nama, err)
 	return c.JSON(http.StatusOK, result)
 }

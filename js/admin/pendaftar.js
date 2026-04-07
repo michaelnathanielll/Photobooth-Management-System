@@ -1,8 +1,94 @@
 let dataPendaftar = [];
+let posisiList = [];
+function tentukanPeran(p) {
+    // console.log(p)
+    // console.log("posisiList:", posisiList);
 
+    let hasil = posisiList.map(posisi => ({
+        posisi,
+        skor: hitungSkorGA(p, posisi)
+    }));
+
+    hasil.sort((a, b) => b.skor - a.skor);
+    console.log(p.petugas, hasil)
+    if (hasil.length > 0) {
+        return {
+            ga: Math.round(hasil[0].skor),
+            peran: hasil[0].posisi
+        };
+    } else {
+        return { ga: 0, peran: "" }
+    }
+
+}
+function hitungSkorGA(p, posisi) {
+    // console.log("masuk di skor hitung")
+    // console.log(p)
+    let nilai = p.skor || 0;
+
+    // jumlah skill
+    let jumlahSkill = p.daftar_keahlian?.length || 0;
+
+    // jabatan
+    let jabatan = p.kepeg === "Senior" ? 100 : 70;
+
+    // kecocokan posisi
+    let cocok = p.daftar_keahlian?.some(k => k.nama === posisi);
+
+    let skorPosisi = cocok ? 100 : 0;
+
+    // histori (kalau belum ada, anggap 0)
+    let histori = p.jumlah_event_bulan_ini || 0;
+
+    // normalisasi
+    jumlahSkill = jumlahSkill * 20;  // max 100
+    histori = histori * 20;
+
+    // bobot
+    const b = {
+        nilai: 0.4,
+        skill: 0.15,
+        jabatan: 0.1,
+        posisi: 0.25,
+        histori: 0.1
+    };
+
+    let skor =
+        (nilai * b.nilai / p.penilaian.length) +
+        jumlahSkill * b.skill +
+        jabatan * b.jabatan +
+        skorPosisi * b.posisi -
+        histori * b.histori;
+
+    // optional: efek "mutasi kecil"
+    skor += Math.random() * 2;
+    // console.log(skor)
+    return skor;
+}
 function getParamId() {
     const urlParams = new URLSearchParams(window.location.search);
     return parseInt(urlParams.get("id")) || 1;
+}
+async function renderSelectBagian() {
+    const id = getParamId();
+    try {
+
+        const response = await fetchAPI('/proyek/anggota/komposisi/' + id + '?status=0', 'GET');
+
+        console.log("Response API:", response);
+        const selectBagian = document.getElementById("bagian-edit")
+        selectBagian.innerHTML = "";
+        response.data.forEach(e => {
+            posisiList.push(e.keahlian);
+            selectBagian.innerHTML += `<option value=${e.id_keahlian}>${e.keahlian}</option>`
+        });
+
+        // console.log(posisiList);
+
+
+    } catch (error) {
+        console.error("Gagal mengambil data:", error);
+    }
 }
 
 async function renderTable() {
@@ -22,7 +108,16 @@ async function renderTable() {
     } catch (error) {
         console.error("Gagal mengambil data:", error);
     }
+    await renderSelectBagian();
     dataPendaftar.forEach(p => {
+        const hasil = tentukanPeran(p);
+        if (p.kepegawaian === 1) {
+            p.kepeg = "Junior"
+        } else {
+            p.kepeg = "Senior"
+        }
+        p.bagian = hasil.peran;
+        p.ga = hasil.ga;
         tbody.innerHTML += `
         <tr>
             <td>${p.petugas}</td>
@@ -97,14 +192,19 @@ fetch("../component/sidebar_admin.html")
 
 
 async function confirmModal() {
-  
+    const petugas = dataPendaftar.filter(item =>
+        item.id === parseInt(getVal("id-edit")));
+    console.log(petugas);
     let data = {
-        id : parseInt(getVal("id-edit")),
-        id_status_pendaftaran : parseInt(getVal("tipe-edit")),
+        id: parseInt(getVal("id-edit")),
+        id_status_pendaftaran: parseInt(getVal("tipe-edit")),
+        id_bagian: parseInt(getVal("bagian-edit")),
+        skor_daftar: petugas.skor,
+        honor:parseInt(petugas.honor),
     }
     try {
 
-        const response = await fetchAPI('/proyek/anggota' ,'PUT',data);
+        const response = await fetchAPI('/proyek/anggota', 'PUT', data);
 
         console.log("Response API:", response);
 

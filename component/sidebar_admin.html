@@ -218,7 +218,7 @@
         <div class="sidebar" id="sidebar">
 
             <div class="sidebar-header">
-                <img src="../aset/logo.JPG" />
+                <a href="/admin/dasbor.html"><img src="../aset/logo.JPG" /></a>
             </div>
 
             <ul class="menu">
@@ -279,24 +279,24 @@
 
 
     <script>
-        fetch("../component/sidebar_admin.html")
-            .then(res => res.text())
-            .then(html => {
+        // fetch("../component/sidebar_admin.html")
+        //     .then(res => res.text())
+        //     .then(html => {
 
-                /* inject sidebar */
-                document.getElementById("layout-admin").innerHTML = html;
+        //         /* inject sidebar */
+        //         document.getElementById("layout-admin").innerHTML = html;
 
-                /* inject konten dashboard */
-                document.getElementById("konten-halaman").innerHTML =
-                    document.getElementById("isi-halaman").innerHTML;
+        //         /* inject konten dashboard */
+        //         document.getElementById("konten-halaman").innerHTML =
+        //             document.getElementById("isi-halaman").innerHTML;
 
-                /* 🔥 cukup 1 baris */
-                initSidebar("Dashboard Admin");
+        //         /* 🔥 cukup 1 baris */
+        //         initSidebar("Dashboard Admin");
 
-                /* === lanjut logic dashboard kamu di sini === */
-                renderSummary();
-                renderKanban();
+        //         /* === lanjut logic dashboard kamu di sini === */
+        //         renderSummary();
+        //         renderKanban();
 
-            })
-            .catch(err => console.error(err));
+        //     })
+        //     .catch(err => console.error(err));
     </script>

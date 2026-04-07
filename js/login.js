@@ -48,7 +48,7 @@ async function masuk() {
             // localStorage.setItem('role', obj.table_hak_akses); 
             localStorage.setItem('token', obj.token);
             if (obj.tipe === 0) {
-                window.location.href = "petugas/dasbor.html";
+                window.location.href = "petugas/jadwal_kerja.html";
             } else if (obj.tipe == 1) {
                 window.location.href = "admin/dasbor.html";
             }

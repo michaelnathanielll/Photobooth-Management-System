@@ -1,6 +1,6 @@
 let dataPetugas = [
 ];
-
+let dataKomposisi = [];
 function getParamId() {
     const urlParams = new URLSearchParams(window.location.search);
     return parseInt(urlParams.get("id")) || 1;
@@ -59,7 +59,7 @@ async function renderDetail() {
     tbody.innerHTML = "";
     try {
 
-        const response = await fetchAPI('/proyek/anggota/' + id+'?status=1', 'GET');
+        const response = await fetchAPI('/proyek/anggota/' + id + '?status=1', 'GET');
 
         console.log("Response API:", response);
 
@@ -90,7 +90,7 @@ async function renderDetail() {
         if (ev.id_status_proyek === 2) {
             row += `
             <td>
-                <button class="aksi-btn btn-hapus" data-bs-toggle="modal" data-bs-target="#modalHapusPetugas">
+                <button class="aksi-btn btn-hapus" data-bs-toggle="modal" data-bs-target="#modalHapusPetugas" onclick="openHapus('${p.id}')">
                     <i class="bi bi-trash"></i>
                 </button>
             </td>`;
@@ -105,6 +105,107 @@ async function renderDetail() {
     new DataTable('#tabel-petugas', { pageLength: 10 });
 }
 
+function openHapus(id){
+    setVal("id-hapus",id);
+}
+async function OpenKomposisi() {
+    const id = getParamId();
+    const response = await fetchAPI('/proyek/komposisi/' + id, 'GET');
+    dataKomposisi = response.data;
+    renderKomposisi(dataKomposisi);
+    console.log("Response API:", response);
+}
+
+function renderKomposisi(data) {
+    const container = document.getElementById("komposisiTimProyek");
+    container.innerHTML = "";
+
+    data.forEach(item => {
+        container.innerHTML += `
+            <div class="mb-3">
+                <label class="form-label">${item.keahlian}</label>
+                <input 
+                    type="number" 
+                    class="form-control"
+                    value="${item.qty}" 
+                    data-id="${item.id_keahlian}"
+                    min="0"
+                >
+            </div>
+        `;
+    });
+}
+
+function ambilKomposisi() {
+    const inputs = document.querySelectorAll("#komposisiTimProyek input");
+
+    let hasil = [];
+
+    inputs.forEach(input => {
+        hasil.push({
+            id_keahlian: parseInt(input.dataset.id),
+            qty: parseInt(input.value) || 0
+        });
+    });
+
+    return hasil;
+}
+async function simpanKomposisi() {
+     const id = getParamId();
+    const hasilInput = ambilKomposisi();
+
+    dataKomposisi = dataKomposisi.map(item => {
+        const found = hasilInput.find(f => f.id_keahlian === item.id_keahlian);
+        return {
+            ...item,
+            qty: found ? found.qty : 0
+        };
+    });
+
+    console.log("Data terbaru:", dataKomposisi);
+ try {
+        // Kirim data ke server
+        const response = await fetchAPI('/proyek/komposisi/' + id, 'PUT',dataKomposisi);
+        console.log(response)
+        // Cek apakah berhasil
+        if (response && response.status === 200) {
+            alert('Data berhasil dihapus!');
+            location.reload();
+        } else {
+            console.error('Kesalahan pada status respons:', response.status);
+            alert('Terjadi kesalahan saat mengirim data.');
+        }
+
+    } catch (error) {
+        console.error('Error submitting data:', error);
+        alert('Terjadi kesalahan saat mengirim data.');
+    }
+    // tutup modal
+    const modal = bootstrap.Modal.getInstance(document.getElementById('modalKomposisiPetugas'));
+    modal.hide();
+}
+
+async function hapusPetugas() {
+    const id = document.getElementById("id-hapus").value;
+    try {
+        // Kirim data ke server
+        const response = await fetchAPI('/proyek/anggota/' + id, 'DELETE');
+        console.log(response)
+        // Cek apakah berhasil
+        if (response && response.status === 200) {
+            alert('Data berhasil dihapus!');
+            location.reload();
+        } else {
+            console.error('Kesalahan pada status respons:', response.status);
+            alert('Terjadi kesalahan saat mengirim data.');
+        }
+
+    } catch (error) {
+        console.error('Error submitting data:', error);
+        alert('Terjadi kesalahan saat mengirim data.');
+    }
+
+}
 
 document.addEventListener('DOMContentLoaded', async function () {
 

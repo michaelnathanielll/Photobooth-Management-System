@@ -129,6 +129,9 @@ function renderEvent() {
         let tombol = '';
         if (ev.terdaftar === true) {
             tombol = `<button class="btn-batal" onclick="openModal('batalkan',${ev.id})">Batalkan Pendaftaran</button>`;
+            if(ev.id_status_daftar == 1){
+               tombol = `<button class="btn-diterima" >Diterima</button>`
+            }
         } else {
             tombol = `<button class="btn-daftar" onclick="openModal('daftar',${ev.id})">Daftar Proyek</button>`;
         }

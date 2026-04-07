@@ -32,7 +32,8 @@ func Init() *echo.Echo {
 	v1.POST("/petugas", controler.InsertPetugas)
 	v1.PUT("/petugas", controler.UpdatePetugas)
 	v1.GET("/petugas", controler.GetPetugas)
-	v1.GET("/petugas/proyek",controler.GetProyekPendaftaran)
+	v1.GET("/petugas/:id", controler.GetPetugasById)
+	v1.GET("/petugas/proyek", controler.GetProyekPendaftaran)
 	v1.DELETE("/petugas/:id", controler.DeletePetugas)
 
 	v1.POST("/klien", controler.InsertKlien)
@@ -55,9 +56,13 @@ func Init() *echo.Echo {
 	v1.GET("/proyek", controler.GetProyek)
 	v1.DELETE("/proyek/:id", controler.DeleteProyek)
 	v1.GET("/proyek/petugas/:id", controler.GetProyekByIdPetugas)
+	v1.GET("/proyek/petugas/skor", controler.GetHistoryPointProyekByIdPetugas)
 	v1.GET("/proyek/:id", controler.GetProyekById)
-	
+	v1.GET("/proyek/komposisi/:id", controler.GetKomposisiTimProyek)
+	v1.PUT("/proyek/komposisi/:id", controler.UpdateKomposisi)
+
 	v1.GET("/proyek/anggota/:id", controler.GetAnggotaProyek)
+	v1.GET("/proyek/anggota/komposisi/:id", controler.GetBagianPendaftar)
 	v1.POST("/proyek/anggota", controler.InsertAnggotaProyek)
 	v1.POST("/proyek/anggota/daftar", controler.DaftarProyek)
 	v1.PUT("/proyek/anggota", controler.UpdateAnggotaProyek)
@@ -71,5 +76,10 @@ func Init() *echo.Echo {
 	v1.POST("/penilaian", controler.InsertPenilaian)
 	v1.GET("/penilaian/:id", controler.GetScoreByIdPetugas)
 
+	v1.GET("/dashboard/pengguna", controler.CountPenggunaDashboard)
+	v1.GET("/dashboard/proyek", controler.GetProyekDashboard)
+	v1.GET("/dashboard/jenis", controler.CountJenisProyek)
+	v1.GET("/dashboard/jumlah", controler.CountJumlahProyek)
+	v1.GET("/dashboard/pendapatan", controler.CountPendapatanProyek)
 	return e
 }

@@ -153,6 +153,45 @@ func GetPetugas2() (Response, error) {
 	return res, nil
 }
 
+func GetPetugas2ById(id string) (Response, error) {
+	var res Response
+	var obj Petugas
+	var arrObj = []Petugas{}
+	namaTab := table["petugas"]
+	honorTab := table["honor"]
+	where := namaTab + ".deleted_at IS NULL AND " + namaTab + ".tipe = 0 AND " + namaTab + ".id = " + id
+
+	join := namaTab + " JOIN " + honorTab + " h ON " + namaTab + ".honor = h.id"
+	resp, err := dbmod.SelectQueryJoin(obj, namaTab, where, namaTab+".nama ASC", "", "", join)
+	if err != nil {
+		err = errorHandle.ErrorLine(err)
+		res = ResponseError(err)
+		return res, err
+	}
+	DecodeMapStringArray(resp.([]map[string]interface{}), &arrObj)
+	for i, x := range arrObj {
+		tmpKeahlian := strings.Split(x.Keahlian, ",")
+		for _, y := range tmpKeahlian {
+			tmpId, _ := strconv.Atoi(y)
+			x.DaftarKeahlian = append(x.DaftarKeahlian, mapKeahlian[tmpId])
+		}
+		x.DetailSkor, err = GetAvgNilaiPetugas(strconv.Itoa(x.Id))
+		if err != nil {
+			err = errorHandle.ErrorLine(err)
+			res = ResponseError(err)
+			return res, err
+		}
+		for _, y := range x.DetailSkor {
+			x.Skor += int(y.Nilai)
+		}
+		arrObj[i] = x
+
+	}
+	res = ResponseGet()
+	res.Data = arrObj
+	return res, nil
+}
+
 func GetAvgNilaiPetugas(id string) ([]RekapNilaiPetugas, error) {
 	var obj RekapNilaiPetugas
 	var arrObj = []RekapNilaiPetugas{}
@@ -519,11 +558,104 @@ func GetProyekPetuguasPendaftaran(req ReqFormValue, id int) (Response, error) {
 			if x.Id == y.Id {
 				arrObj[i].Terdaftar = true
 				arrObj[i].IdDaftar = y.IdDaftar
+				arrObj[i].IdStatusDaftar = y.IdStatusPendaftaran
 			}
 		}
 	}
 	res = ResponseGet()
 	res.Data = arrObj
+	return res, nil
+}
+
+func GetKomposisiTimProyek(id string) (Response, error) {
+	var res Response
+	var obj Komposisi
+	resp, err := dbmod.SelectQueryRow(obj, table["proyek"], "", id)
+	if err != nil {
+		err = errorHandle.ErrorLine(err)
+		res = ResponseError(err)
+		return res, err
+	}
+	DecodeMapStringV1(resp.(map[string]interface{}), &obj)
+	var komposisi = []KomposisiTim{}
+	jsonHandler.DecodeJson(obj.Komposisi, &komposisi)
+	for _, x := range mapKeahlian {
+		cek := false
+		for _, y := range komposisi {
+			if x.Id == y.IdKeahlian {
+				cek = true
+			}
+		}
+		if !cek {
+			komposisi = append(komposisi, KomposisiTim{x.Id, x.Nama, 0})
+		}
+	}
+	res = ResponseGet()
+	res.Data = komposisi
+	return res, nil
+}
+
+func GetBagianPendaftar(id string) (Response, error) {
+	var res Response
+	var err error
+	var arrObj = []KomposisiTim{}
+	res, err = GetAnggotaProyek(id, "1")
+	if err != nil {
+		err = errorHandle.ErrorLine(err)
+		res = ResponseError(err)
+		return res, err
+	}
+	var anggota = res.Data.([]AnggotaProyek)
+	res, err = GetKomposisiTimProyek(id)
+	if err != nil {
+		err = errorHandle.ErrorLine(err)
+		res = ResponseError(err)
+		return res, err
+	}
+	var komposisi = res.Data.([]KomposisiTim)
+	for _, x := range anggota {
+		for i, y := range komposisi {
+			if x.IdBagian == y.IdKeahlian {
+				komposisi[i].Qty -= 1
+			}
+		}
+	}
+	for _, x := range komposisi {
+		if x.Qty > 0 {
+			arrObj = append(arrObj, x)
+		}
+	}
+	res = ResponseGet()
+	res.Data = arrObj
+	return res, nil
+}
+
+func UpdateKomposisi(id, data string) (Response, error) {
+	var res Response
+	var err error
+	var arrObj []KomposisiTim
+	var obj Komposisi
+	jsonHandler.DecodeJson(data, &arrObj)
+	obj.Id, err = strconv.Atoi(id)
+	if err != nil {
+		err = errorHandle.ErrorLine(err)
+		res = ResponseError(err)
+		return res, err
+	}
+	obj.Komposisi, err = jsonHandler.EncodeJson(arrObj)
+	if err != nil {
+		err = errorHandle.ErrorLine(err)
+		res = ResponseError(err)
+		return res, err
+	}
+	_, err = dbmod.UpdatedRowAtTime(obj, table["proyek"])
+	if err != nil {
+		err = errorHandle.ErrorLine(err)
+		res = ResponseError(err)
+		return res, err
+	}
+	res = ResponseGet()
+	res.Data = "berhasil"
 	return res, nil
 }
 
@@ -565,11 +697,15 @@ func GetProyekByIdPetugas(id, status string) (Response, error) {
 	statusTab := table["status_proyek"]
 	proyekTab := table["proyek"]
 	lokasiTab := table["lokasi"]
+	asetTab := table["aset"]
 	join := namaTab + " JOIN " + proyekTab + " p ON " + namaTab + ".id_proyek = p.id"
 	join += " JOIN " + statusTab + " s ON p.id_status_proyek = s.id"
 	join += " JOIN " + jenisTab + " j ON p.id_jenis_proyek = j.id"
 	join += " JOIN " + lokasiTab + " l ON p.id_lokasi = l.id"
-	where := namaTab + ".deleted_at IS NULL AND " + namaTab + ".status_pendaftaran IN ( " + status + " ) AND " + namaTab + ".id_petugas = " + id
+	join += " JOIN " + asetTab + " b ON p.id_booth = b.id"
+	join += " JOIN " + asetTab + " pr ON p.id_print = pr.id"
+	join += " JOIN " + asetTab + " k ON p.id_kertas = k.id"
+	where := namaTab + ".deleted_at IS NULL AND " + namaTab + ".status_pendaftaran IN (" + status + ") AND " + namaTab + ".id_petugas = " + id
 	resp, err := dbmod.SelectQueryJoin(obj, namaTab, where, namaTab+".id DESC", "", "", join)
 	if err != nil {
 		err = errorHandle.ErrorLine(err)
@@ -577,6 +713,45 @@ func GetProyekByIdPetugas(id, status string) (Response, error) {
 		return res, err
 	}
 	DecodeMapStringArray(resp.([]map[string]interface{}), &arrObj)
+	res = ResponseGet()
+	res.Data = arrObj
+	return res, nil
+}
+
+func GetHistoryPointProyekByIdPetugas(id string) (Response, error) {
+	var res Response
+	var arrObj = []DaftarSkorProyek{}
+	var tmpPenilaian = []PenilaianPetugasAnggota{}
+	var err error
+	res, err = GetProyekByIdPetugas(id, "1")
+	if err != nil {
+		err = errorHandle.ErrorLine(err)
+		res = ResponseError(err)
+		return res, err
+	}
+	for _, x := range res.Data.([]DaftarProyekPetugas) {
+		if x.IdStatusProyek == 4 {
+			arrObj = append(arrObj, DaftarSkorProyek{Id: x.Id, Nama: x.Nama, Penilaian: []PenilaianPetugasAnggota{}})
+
+		}
+	}
+	// tmp := []PenilaianPetugasAnggota{}
+	for i, x := range arrObj {
+		namaTab := table["penilaian"]
+		join := namaTab + " JOIN " + table["parameter_penilaian"] + " P ON " + namaTab + ".id_penilaian = p.id"
+		// queryX := "SELECT SUM(nilai) FROM " + table["penilaian"] + " WHERE
+		where := namaTab + ".deleted_at IS NULL AND " + namaTab + ".id_proyek = " + strconv.Itoa(x.Id) + " AND " + namaTab + ".id_petugas = " + id
+		result, err := dbmod.SelectQueryJoin(PenilaianPetugasAnggota{}, namaTab, where, namaTab+".id_penilaian", "", "", join)
+		if err != nil {
+			err = errorHandle.ErrorLine(err)
+			res = ResponseError(err)
+			return res, err
+		}
+		DecodeMapStringArray(result.([]map[string]interface{}), &tmpPenilaian)
+		if len(tmpPenilaian) > 0 {
+			arrObj[i].Penilaian = tmpPenilaian
+		}
+	}
 	res = ResponseGet()
 	res.Data = arrObj
 	return res, nil
@@ -627,10 +802,32 @@ func GetAnggotaProyek(id, status string) (Response, error) {
 				for _, y := range x.Penilaian {
 					x.Skor += y.Nilai
 				}
+				if x.Kepegawaian == 1 {
+					x.Kepeg = "Junior"
+				} else {
+					x.Kepeg = "Senior"
+				}
 
 				arrObj[i] = x
 			}
 		}
+	} else if status == "0" {
+		for i, x := range arrObj {
+			tmpKeahlian := strings.Split(x.Keahlian, ",")
+			for _, y := range tmpKeahlian {
+				tmpId, _ := strconv.Atoi(y)
+				x.DaftarKeahlian = append(x.DaftarKeahlian, mapKeahlian[tmpId])
+			}
+			tmp, _ := GetAvgNilaiPetugas(strconv.Itoa(x.IdPetugas))
+
+			for _, y := range tmp {
+				x.Skor += int(y.Nilai)
+				x.Penilaian = append(x.Penilaian, PenilaianPetugasAnggota{Nama: y.Parameter, Nilai: int(y.Nilai)})
+			}
+			// fmt.Println(x.Skor)
+			arrObj[i] = x
+		}
+
 	}
 	res = ResponseGet()
 	res.Data = arrObj
@@ -829,4 +1026,151 @@ func Login(username, password string) (Response, error) {
 	res = ResponseGet()
 	res.Data = obj
 	return res, nil
+}
+
+func CountPenggunaDashboard() (Response, error) {
+	var res Response
+	var obj = Count2Var{}
+	var arrObj = []Count2Var{}
+	var objRes CountJumlahPengguna
+	query := `SELECT tipe,COUNT(id) FROM petugas WHERE deleted_at IS NULL GROUP BY tipe`
+	resp, err := dbmod.SelectQueryCustom(obj, query, "", "")
+	if err != nil {
+		err = errorHandle.ErrorLine(err)
+		res = ResponseError(err)
+		return res, err
+	}
+	DecodeMapStringArray(resp.([]map[string]interface{}), &arrObj)
+	for _, x := range arrObj {
+		if x.Id == 1 {
+			objRes.TotalPengguna = x.Total
+		} else if x.Id == 0 {
+			objRes.TotalPetugas = x.Total
+		}
+	}
+	query = `SELECT COUNT(id) FROM klien WHERE deleted_at IS NULL`
+	resp, err = dbmod.SelectQueryCustom(CountJumlah{}, query, "", "")
+	if err != nil {
+		err = errorHandle.ErrorLine(err)
+		res = ResponseError(err)
+		return res, err
+	}
+	var arrTotal = []CountJumlah{}
+	DecodeMapStringArray(resp.([]map[string]interface{}), &arrTotal)
+	if len(arrTotal) > 0 {
+		objRes.TotalKlien = arrTotal[0].Total
+	}
+	res = ResponseGet()
+	res.Data = objRes
+	return res, nil
+}
+
+func CountJenisProyek() (Response, error) {
+	var res Response
+	var obj CountTipeProyek
+	var arrObj = []CountTipeProyek{}
+	query := `SELECT
+    j.id,
+    j.nama,
+    COALESCE(COUNT(p.id), 0)
+FROM jenis_proyek j
+LEFT JOIN proyek p 
+    ON j.id = p.id_jenis_proyek 
+    AND p.deleted_at IS NULL
+WHERE j.deleted_at IS NULL
+GROUP BY j.id, j.nama`
+
+	resp, err := dbmod.SelectQueryCustom(obj, query, "", "")
+	if err != nil {
+		err = errorHandle.ErrorLine(err)
+		res = ResponseError(err)
+		return res, err
+	}
+	DecodeMapStringArray(resp.([]map[string]interface{}), &arrObj)
+	res = ResponseGet()
+	res.Data = arrObj
+	return res, nil
+}
+
+func CountPendapatanProyek() (Response, error) {
+	var res Response
+	var obj CountPendapatanBulan
+	var arrObj = []CountPendapatanBulan{}
+	query := `SELECT
+    DATE_FORMAT(p.tanggal_event, '%Y-%m') AS bulan,
+    SUM(
+        COALESCE(p.harga_booth,0) +
+        COALESCE(p.harga_print,0) * COALESCE(p.qty_print,0) +
+        COALESCE(p.harga_kertas,0) * COALESCE(p.qty_kertas,0) +
+        COALESCE(p.biaya_tambahan,0)
+    ) AS total
+FROM proyek p
+WHERE p.deleted_at IS NULL
+GROUP BY DATE_FORMAT(p.tanggal_event, '%Y-%m')
+ORDER BY bulan ASC;`
+
+	resp, err := dbmod.SelectQueryCustom(obj, query, "", "")
+	if err != nil {
+		err = errorHandle.ErrorLine(err)
+		res = ResponseError(err)
+		return res, err
+	}
+	DecodeMapStringArray(resp.([]map[string]interface{}), &arrObj)
+	res = ResponseGet()
+	res.Data = arrObj
+	return res, nil
+}
+
+func CountJumlahProyek() (Response, error) {
+	var res Response
+	var obj CountPendapatanBulan
+	var arrObj = []CountPendapatanBulan{}
+	query := `SELECT
+    DATE_FORMAT(p.tanggal_event, '%Y-%m') AS bulan,
+    COUNT(p.id) AS jumlah_event
+FROM proyek p
+WHERE p.deleted_at IS NULL
+GROUP BY DATE_FORMAT(p.tanggal_event, '%Y-%m')
+ORDER BY bulan ASC;`
+
+	resp, err := dbmod.SelectQueryCustom(obj, query, "", "")
+	if err != nil {
+		err = errorHandle.ErrorLine(err)
+		res = ResponseError(err)
+		return res, err
+	}
+	DecodeMapStringArray(resp.([]map[string]interface{}), &arrObj)
+	res = ResponseGet()
+	res.Data = arrObj
+	return res, nil
+}
+
+func GetProyekDashboard() (Response, error) {
+	var res Response
+	var err error
+	var arrJenis = []Tabel2Variable{}
+	var arrObj = []RecapProyekDashboard{}
+	res, err = Get2Variable("status_proyek")
+	if err != nil {
+		err = errorHandle.ErrorLine(err)
+		res = ResponseError(err)
+		return res, err
+	}
+	arrJenis = res.Data.([]Tabel2Variable)
+	for _, x := range arrJenis {
+		var obj ProyekDashboard
+		var arrObjProyek = []ProyekDashboard{}
+		result, err := dbmod.SelectQuery(obj, table["proyek"], " deleted_at IS NULL AND id_status_proyek = "+strconv.Itoa(x.Id), "", "", "")
+		if err != nil {
+			err = errorHandle.ErrorLine(err)
+			res = ResponseError(err)
+			return res, err
+		}
+		DecodeMapStringArray(result.([]map[string]interface{}), &arrObjProyek)
+		arrObj = append(arrObj, RecapProyekDashboard{Status: x.Nama, Proyek: arrObjProyek})
+	}
+	res = ResponseGet()
+	res.Data = arrObj
+	return res, nil
+
 }

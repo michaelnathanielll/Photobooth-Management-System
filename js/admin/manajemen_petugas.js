@@ -97,6 +97,7 @@ async function openDetail(id,kepeg,keahlian,honor) {
     });
     let count = 1;
     const detailKerja = document.getElementById("detail-kerja");
+    detailKerja.innerHTML = "";
     let totalSkor = 0;
     s.detail_skor.forEach(e =>{
         detailKerja.innerHTML += `<div id="sk${count}">${e.parameter}: ${e.nilai} / 400 </div>`
