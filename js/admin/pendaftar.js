@@ -199,9 +199,10 @@ async function confirmModal() {
         id: parseInt(getVal("id-edit")),
         id_status_pendaftaran: parseInt(getVal("tipe-edit")),
         id_bagian: parseInt(getVal("bagian-edit")),
-        skor_daftar: petugas.skor,
-        honor:parseInt(petugas.honor),
+        skor_daftar: petugas[0].skor,
+        honor:parseInt(petugas[0].honor),
     }
+    console.log(data);
     try {
 
         const response = await fetchAPI('/proyek/anggota', 'PUT', data);
@@ -213,4 +214,9 @@ async function confirmModal() {
     } catch (error) {
         console.error("Gagal mengambil data:", error);
     }
+}
+
+
+function goBack() {
+    window.history.back();
 }

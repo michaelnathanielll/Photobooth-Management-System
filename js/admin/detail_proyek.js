@@ -224,3 +224,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         });
 });
 
+
+function goBack() {
+    window.history.back();
+}

@@ -114,27 +114,30 @@ async function renderDetail() {
         ${p.skor}
         </span>
         ` : "-"}
+       
         </td>
                 <td>${p.jam_hadir.slice(0, 5) ?? "-"}</td>
-                <td>${p.ket_hadir ?? "-"}</td>
+                <td>${p.keterangan ?? "-"}</td>
                 <td>${btnNilai + btnHadir}</td>
             </tr>
             `;
-        avgK1 += p.penilaian[0].nilai;
-        avgK2 += p.penilaian[1].nilai;
-        avgK3 += p.penilaian[2].nilai;
-        avgK4 += p.penilaian[3].nilai;
+        if (p.penilaian) {
+            avgK1 += p.penilaian[0].nilai ?? 0;
+            avgK2 += p.penilaian[1].nilai ?? 0;
+            avgK3 += p.penilaian[2].nilai ?? 0;
+            avgK4 += p.penilaian[3].nilai ?? 0;
+        }
     });
     avgK1 = avgK1 / (dataPetugas.length)
     avgK2 = avgK2 / (dataPetugas.length)
     avgK3 = avgK3 / (dataPetugas.length)
     avgK4 = avgK4 / (dataPetugas.length)
-    
+
     setValInner("avgK1", avgK1)
-    setValInner("avgK2", avgK2 )
-    setValInner("avgK3", avgK3 )
+    setValInner("avgK2", avgK2)
+    setValInner("avgK3", avgK3)
     setValInner("avgK4", avgK4)
-    setValInner("avgTotal",avgK1+avgK2+avgK3+avgK4)
+    setValInner("avgTotal", avgK1 + avgK2 + avgK3 + avgK4)
     // console.log(avgK1+avgK2+avgK3+avgK4);
     new DataTable('#tabel-petugas', { pageLength: 10 });
 
@@ -146,7 +149,9 @@ async function renderDetail() {
 
 }
 
-
+function goBack() {
+    window.history.back();
+}
 document.addEventListener('DOMContentLoaded', async function () {
 
     fetch("../component/sidebar_admin.html")

@@ -169,6 +169,7 @@ type PendaftaranProyek struct {
 	Skor                int    `json:"skor" db:"skor"`
 	SkorDaftar          int    `json:"skor_daftar" db:"skor_daftar"`
 	Keterangan          string `json:"keterangan" db:"keterangan"`
+	JamHadir            string `json:"jam_hadir" db:"jam_hadir"`
 }
 
 type AnggotaProyek struct {

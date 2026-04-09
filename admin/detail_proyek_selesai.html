@@ -225,7 +225,9 @@
     <div id="isi-halaman" style="display:none">
 
         <div class="mb-3">
-            <div class="section-title mb-2">Detail Proyek</div>
+            
+            <div class="section-title mb-2"> <i class="bi bi-arrow-left me-2" style="cursor:pointer;" onclick="goBack()"></i>
+        <span>Detail Proyek</span>
             <div class="card">
                 <div class="card-body" id="detailProyek"></div>
             </div>
@@ -378,10 +380,10 @@
 
                     <div class="modal-body">
                         <label>Qty Kertas Realisasi</label>
-                        <input type="number" id="inputKertasReal" class="form-control" value="180">
+                        <input type="number" id="inputKertasReal" class="form-control" value="0">
 
                         <label class="mt-2">Qty Base Print Realisasi</label>
-                        <input type="number" id="inputBaseReal" class="form-control" value="190">
+                        <input type="number" id="inputBaseReal" class="form-control" value="0">
                     </div>
 
                     <div class="modal-footer">
