@@ -836,7 +836,7 @@ func GetAnggotaProyek(id, status string) (Response, error) {
 
 func InsertAnggotaProyek(bodyReq string, id_petuguas int) (Response, error) {
 	var res Response
-	var obj PendaftaranProyek
+	var obj InsertPendaftaranProyek
 	jsonHandler.DecodeJson(bodyReq, &obj)
 	if id_petuguas > 0 {
 		obj.IdPetugas = id_petuguas

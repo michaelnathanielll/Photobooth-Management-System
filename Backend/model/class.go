@@ -171,7 +171,22 @@ type PendaftaranProyek struct {
 	Keterangan          string `json:"keterangan" db:"keterangan"`
 	JamHadir            string `json:"jam_hadir" db:"jam_hadir"`
 }
-
+type InsertPendaftaranProyek struct {
+	Id                  int    `json:"id" db:"id" type:"pk" act:"ai"`
+	IdPetugas           int    `json:"id_petugas" db:"id_petugas"`
+	Petugas             string `json:"petugas" db:"nama" type:"join" alias:"p"`
+	IdProyek            int    `json:"id_proyek" db:"id_proyek"`
+	Proyek              string `json:"proyek" db:"nama" type:"join" alias:"pr"`
+	IdStatusPendaftaran int    `json:"id_status_pendaftaran" db:"status_pendaftaran" `
+	StatusPendaftaran   string `json:"status_pendaftaran" db:"nama" type:"join" alias:"s"`
+	IdBagian            int    `json:"id_bagian" db:"bagian"`
+	Bagian              string `json:"bagian" db:"nama" type:"join" alias:"b"`
+	Honor               int    `json:"honor" db:"honor"`
+	Skor                int    `json:"skor" db:"skor"`
+	SkorDaftar          int    `json:"skor_daftar" db:"skor_daftar"`
+	Keterangan          string `json:"keterangan" db:"keterangan"`
+	// JamHadir            string `json:"jam_hadir" db:"jam_hadir"`
+}
 type AnggotaProyek struct {
 	Id                  int                       `json:"id" db:"id" type:"pk" act:"ai"`
 	IdPetugas           int                       `json:"id_petugas" db:"id_petugas"`
