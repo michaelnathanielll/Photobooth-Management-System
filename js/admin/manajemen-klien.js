@@ -33,6 +33,7 @@ async function loadKlien() {
                 <td>${klien.nama}</td>
                 <td>${klien.kontak}</td>
                 <td>${klien.alamat}</td>
+                <td>${klien.keterangan}</td>
                 <td>
                     <button class="aksi-btn btn-detail"
                         onclick="openDetail('${klien.nama}','${klien.kontak}','${klien.alamat}')"
@@ -41,7 +42,7 @@ async function loadKlien() {
                     </button>
 
                     <button class="aksi-btn btn-edit"
-                        onclick="openUpdate('${klien.id}','${klien.nama}','${klien.kontak}','${klien.alamat}')"
+                        onclick="openUpdate('${klien.id}','${klien.nama}','${klien.kontak}','${klien.alamat}','${klien.keterangan}')"
                         data-bs-toggle="modal" data-bs-target="#modalUbah">
                         <i class="bi bi-pencil"></i>
                     </button>
@@ -107,10 +108,11 @@ document.addEventListener('DOMContentLoaded', async function () {
     // console.log("Buat Tabel");
 });
 
-function openUpdate(id, nama, kontak, alamat) {
+function openUpdate(id, nama, kontak, alamat, keterangan) {
     document.getElementById("nama-ubah").value = nama;
     document.getElementById("kontak-ubah").value = kontak;
     document.getElementById("alamat-ubah").value = alamat;
+    document.getElementById("keterangan-ubah").value = keterangan || "";
     document.getElementById("id-ubah").value = id;
 }
 
@@ -145,11 +147,12 @@ async function inputKlien() {
     const nama = document.getElementById("nama-tambah").value;
     const kontak = document.getElementById("kontak-tambah").value;
     const alamat = document.getElementById("alamat-tambah").value;
-
+    const keterangan = getVal("keterangan-tambah");
     const data = {
         nama: nama,
         kontak: kontak,
-        alamat: alamat
+        alamat: alamat,
+        keterangan: keterangan,
     }
 
     try {
@@ -178,11 +181,13 @@ async function updateKlien() {
     const kontak = document.getElementById("kontak-ubah").value;
     const alamat = document.getElementById("alamat-ubah").value;
     const id = document.getElementById("id-ubah").value;
+    const keterangan = getVal("keterangan-ubah");
     const data = {
         nama: nama,
         kontak: kontak,
         alamat: alamat,
-        id: parseInt(id)
+        id: parseInt(id),
+        keterangan: keterangan,
     }
 
     try {
@@ -211,7 +216,7 @@ async function deleteKlien() {
 
     try {
         // Kirim data ke server
-        const response = await fetchAPI('/klien/'+id, 'DELETE');
+        const response = await fetchAPI('/klien/' + id, 'DELETE');
         console.log(response)
         // Cek apakah berhasil
         if (response && response.status === 200) {

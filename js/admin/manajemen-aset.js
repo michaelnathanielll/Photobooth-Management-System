@@ -14,7 +14,8 @@ function renderTable(id, data) {
     data.forEach(d => {
         table.row.add([
             d.nama,
-            formatRupiah(d.harga),
+            formatRupiah(d.harga), 
+            d.keterangan,
             `
                 <button class="aksi-btn btn-edit" data-bs-toggle="modal" data-bs-target="#modalUbah" onclick="openUpdate('${d.id}','${d.nama}',${d.harga})"><i class="bi bi-pencil"></i></button>
                 <button class="aksi-btn btn-hapus" data-bs-toggle="modal" data-bs-target="#modalHapus" onclick="openDelete('${d.id}')"><i class="bi bi-trash"></i></button>
@@ -123,7 +124,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 });
 
-function openTambah(kategori){
+function openTambah(kategori) {
     document.getElementById("kategori-tambah").value = kategori;
 }
 
@@ -142,11 +143,12 @@ async function inputAset() {
     const nama = document.getElementById("nama-tambah").value;
     const harga = document.getElementById("harga-tambah").value;
     const kategori = document.getElementById("kategori-tambah").value;
-
+    const keterangan = getVal("keterangan-tambah");
     const data = {
         nama: nama,
         harga: parseInt(harga),
-        tipe_aset: parseInt(kategori)
+        tipe_aset: parseInt(kategori),
+        keterangan: keterangan,
     }
 
     try {
@@ -174,10 +176,12 @@ async function updateAset() {
     const nama = document.getElementById("nama-ubah").value;
     const harga = document.getElementById("harga-ubah").value;
     const id = document.getElementById("id-ubah").value;
+    const keterangan = getVal("keterangan-ubah");
     const data = {
         nama: nama,
         harga: parseInt(harga),
-        id: parseInt(id)
+        id: parseInt(id),
+        keterangan: keterangan,
     }
 
     try {

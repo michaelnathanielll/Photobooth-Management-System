@@ -7,9 +7,10 @@ function renderTable() {
     keahlianData.forEach((k, i) => {
         table.row.add([
             k.nama,
+            k.keterangan,
             `
                     <button class="aksi-btn btn-edit"
-                        onclick="openUpdate(${k.id},'${k.nama}')"
+                        onclick="openUpdate(${k.id},'${k.nama}','${k.keterangan}')"
                         data-bs-toggle="modal"
                         data-bs-target="#modalUbah">
                         <i class="bi bi-pencil"></i>
@@ -70,9 +71,9 @@ document.addEventListener('DOMContentLoaded', async function () {
         });
 });
 
-function openUpdate(id, nama) {
+function openUpdate(id, nama, keterangan) {
     document.getElementById("nama-ubah").value = nama;
-
+    setVal("keterangan-ubah", keterangan);
     document.getElementById("id-ubah").value = id;
 }
 
@@ -83,10 +84,13 @@ function openDelete(id) {
 
 async function inputKeahlian() {
     const nama = document.getElementById("nama-tambah").value;
-
+    const data = {
+        nama:nama,
+        keterangan:getVal("keterangan-tambah"),
+    }
     try {
         // Kirim data ke server
-        const response = await fetchAPI('/variable/keahlian?nama=' + nama, 'POST');
+        const response = await fetchAPI('/variable/keahlian?nama=' + nama, 'POST',data);
         console.log(response)
         // Cek apakah berhasil
         if (response && response.status === 200) {
@@ -108,11 +112,16 @@ async function inputKeahlian() {
 async function updateKeahlian() {
     const nama = document.getElementById("nama-ubah").value;
     const id = document.getElementById("id-ubah").value;
+ const data = {
+        nama:nama,
+        keterangan:getVal("keterangan-ubah"),
+        id: parseInt(id)
+    }
 
 
     try {
         // Kirim data ke server
-        const response = await fetchAPI('/variable/keahlian?nama=' + nama + '&id=' + id, 'PUT');
+        const response = await fetchAPI('/variable/keahlian?nama=' + nama + '&id=' + id, 'PUT',data);
         console.log(response)
         // Cek apakah berhasil
         if (response && response.status === 200) {

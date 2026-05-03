@@ -11,9 +11,10 @@ function renderTable() {
     honorData.forEach((h, i) => {
         table.row.add([
             rupiah(h.nama),
+            h.keterangan,
             `
                     <button class="aksi-btn btn-edit"
-                        onclick="openUpdate(${h.id},${h.nama})"
+                        onclick="openUpdate(${h.id},${h.nama},'${h.keterangan}')"
                         data-bs-toggle="modal"
                         data-bs-target="#modalUbah">
                         <i class="bi bi-pencil"></i>
@@ -76,9 +77,10 @@ document.addEventListener('DOMContentLoaded', async function () {
         });
 });
 
-function openUpdate(id, nama) {
+function openUpdate(id, nama, keterangan) {
     document.getElementById("nama-ubah").value = nama;
-
+   
+    setVal("keterangan-ubah", keterangan);
     document.getElementById("id-ubah").value = id;
 }
 
@@ -89,10 +91,14 @@ function openDelete(id) {
 
 async function inputHonor() {
     const nama = document.getElementById("nama-tambah").value;
+    const data = {
+        nama:nama,
+        keterangan:getVal("keterangan-tambah"),
+    }
 
     try {
         // Kirim data ke server
-        const response = await fetchAPI('/variable/honor?nama=' + nama, 'POST');
+        const response = await fetchAPI('/variable/honor', 'POST',data);
         console.log(response)
         // Cek apakah berhasil
         if (response && response.status === 200) {
@@ -114,11 +120,15 @@ async function inputHonor() {
 async function updateHonor() {
     const nama = document.getElementById("nama-ubah").value;
     const id = document.getElementById("id-ubah").value;
-
+ const data = {
+        nama:nama,
+        keterangan:getVal("keterangan-ubah"),
+        id: parseInt(id)
+    }
 
     try {
         // Kirim data ke server
-        const response = await fetchAPI('/variable/honor?nama=' + nama + '&id=' + id, 'PUT');
+        const response = await fetchAPI('/variable/honor' , 'PUT',data);
         console.log(response)
         // Cek apakah berhasil
         if (response && response.status === 200) {

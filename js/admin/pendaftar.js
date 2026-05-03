@@ -1,75 +1,84 @@
 let dataPendaftar = [];
 let posisiList = [];
-function tentukanPeran(p) {
-    // console.log(p)
-    // console.log("posisiList:", posisiList);
+   // bobot
+    let b = {};
+async function loadSetting(){
+    const response = await fetchAPI('/setting', 'GET');
+        console.log("Response API:", response);
+        b = response.data;
+}
 
+function normalisasi(value, config) {
+    if (!config) return 0;
+
+    if (config.tipe === "benefit") {
+        let max = config.max || 100;
+        return value / max;
+    } else {
+        let min = config.min || 1;
+        if (value === 0) value = 1;
+        return min / value;
+    }
+}
+
+function tentukanPeran(p) {
     let hasil = posisiList.map(posisi => ({
         posisi,
-        skor: hitungSkorGA(p, posisi)
+        skor: hitungSkorWSM(p, posisi)
     }));
 
     hasil.sort((a, b) => b.skor - a.skor);
-    console.log(p.petugas, hasil)
+    console.log("hasil",hasil);
     if (hasil.length > 0) {
         return {
-            ga: Math.round(hasil[0].skor),
+            skor: hasil[0].skor,
             peran: hasil[0].posisi
         };
     } else {
-        return { ga: 0, peran: "" }
+        return { skor: 0, peran: "" };
     }
-
 }
-function hitungSkorGA(p, posisi) {
-    // console.log("masuk di skor hitung")
-    // console.log(p)
+
+function hitungSkorWSM(p, posisi) {
+    if (!b || Object.keys(b).length === 0) return 0;
+
     let nilai = p.skor || 0;
+    let jumlahPenilaian = p.penilaian?.length || 1;
+    nilai = nilai / jumlahPenilaian;
 
-    // jumlah skill
     let jumlahSkill = p.daftar_keahlian?.length || 0;
+    let maxSkill = b.skill?.max || 5;
+    jumlahSkill = Math.min(jumlahSkill, maxSkill);
 
-    // jabatan
-    let jabatan = p.kepeg === "Senior" ? 100 : 70;
+    let jabatan = b.jabatan?.mapping?.[p.kepeg] ?? 0;
 
-    // kecocokan posisi
     let cocok = p.daftar_keahlian?.some(k => k.nama === posisi);
-
     let skorPosisi = cocok ? 100 : 0;
 
-    // histori (kalau belum ada, anggap 0)
-    let histori = p.jumlah_event_bulan_ini || 0;
+    let histori = p.jumlah_event_bulan_ini ?? 0;
 
-    // normalisasi
-    jumlahSkill = jumlahSkill * 20;  // max 100
-    histori = histori * 20;
+    let nNilai = normalisasi(nilai, b.nilai);
+    let nSkill = normalisasi(jumlahSkill, b.skill);
+    let nJabatan = normalisasi(jabatan, b.jabatan);
+    let nPosisi = normalisasi(skorPosisi, b.posisi);
+    let nHistori = normalisasi(histori, b.histori);
 
-    // bobot
-    const b = {
-        nilai: 0.4,
-        skill: 0.15,
-        jabatan: 0.1,
-        posisi: 0.25,
-        histori: 0.1
-    };
-
-    let skor =
-        (nilai * b.nilai / p.penilaian.length) +
-        jumlahSkill * b.skill +
-        jabatan * b.jabatan +
-        skorPosisi * b.posisi -
-        histori * b.histori;
-
-    skor += Math.random() * 2;
-    // console.log(skor)
-    return skor;
+    return (
+        nNilai * (b.nilai?.bobot || 0) +
+        nSkill * (b.skill?.bobot || 0) +
+        nJabatan * (b.jabatan?.bobot || 0) +
+        nPosisi * (b.posisi?.bobot || 0) +
+        nHistori * (b.histori?.bobot || 0)
+    );
 }
+
 function getParamId() {
     const urlParams = new URLSearchParams(window.location.search);
     return parseInt(urlParams.get("id")) || 1;
 }
 async function renderSelectBagian() {
     const id = getParamId();
+    await loadSetting();
     try {
 
         const response = await fetchAPI('/proyek/anggota/komposisi/' + id + '?status=0', 'GET');
@@ -116,7 +125,7 @@ async function renderTable() {
             p.kepeg = "Senior"
         }
         p.bagian = hasil.peran;
-        p.ga = hasil.ga;
+        p.ga = hasil.skor.toFixed(3);
         tbody.innerHTML += `
         <tr>
             <td>${p.petugas}</td>
