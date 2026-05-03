@@ -81,5 +81,9 @@ func Init() *echo.Echo {
 	v1.GET("/dashboard/jenis", controler.CountJenisProyek)
 	v1.GET("/dashboard/jumlah", controler.CountJumlahProyek)
 	v1.GET("/dashboard/pendapatan", controler.CountPendapatanProyek)
+
+	v1.GET("/setting",controler.GetSettingPenilaian)
+	v1.PUT("/setting",controler.SetSettingPenilaian)
+	
 	return e
 }

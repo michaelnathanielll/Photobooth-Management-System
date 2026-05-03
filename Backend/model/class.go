@@ -53,17 +53,19 @@ type RekapNilaiPetugas struct {
 }
 
 type Klien struct {
-	Id     int    `json:"id" db:"id" type:"pk" act:"ai"`
-	Nama   string `json:"nama" db:"nama"`
-	Kontak string `json:"kontak" db:"kontak"`
-	ALamat string `json:"alamat" db:"alamat"`
+	Id         int    `json:"id" db:"id" type:"pk" act:"ai"`
+	Nama       string `json:"nama" db:"nama"`
+	Kontak     string `json:"kontak" db:"kontak"`
+	ALamat     string `json:"alamat" db:"alamat"`
+	Keterangan string `json:"keterangan" db:"keterangan"`
 }
 
 type Aset struct {
-	Id       int    `json:"id" db:"id" type:"pk" act:"ai"`
-	Nama     string `json:"nama" db:"nama"`
-	Harga    int    `json:"harga" db:"harga"`
-	TipeAset int    `json:"tipe_aset" db:"tipe_aset"`
+	Id         int    `json:"id" db:"id" type:"pk" act:"ai"`
+	Nama       string `json:"nama" db:"nama"`
+	Harga      int    `json:"harga" db:"harga"`
+	TipeAset   int    `json:"tipe_aset" db:"tipe_aset"`
+	Keterangan string `json:"keterangan" db:"keterangan"`
 }
 
 type Paket struct {
@@ -185,7 +187,7 @@ type InsertPendaftaranProyek struct {
 	Skor                int    `json:"skor" db:"skor"`
 	SkorDaftar          int    `json:"skor_daftar" db:"skor_daftar"`
 	Keterangan          string `json:"keterangan" db:"keterangan"`
-	// JamHadir            string `json:"jam_hadir" db:"jam_hadir"`
+	JamHadir            string `json:"jam_hadir" db:"jam_hadir" act:"COALESCE" var:"string"`
 }
 type AnggotaProyek struct {
 	Id                  int                       `json:"id" db:"id" type:"pk" act:"ai"`
@@ -219,8 +221,9 @@ type PenilaianPetugasAnggota struct {
 }
 
 type Tabel2Variable struct {
-	Id   int    `json:"id" db:"id" type:"pk" act:"ai"`
-	Nama string `json:"nama" db:"nama"`
+	Id         int    `json:"id" db:"id" type:"pk" act:"ai"`
+	Nama       string `json:"nama" db:"nama"`
+	Keterangan string `json:"keterangan" db:"keterangan"`
 }
 
 type InsertPenilaianPetugas struct {
@@ -282,4 +285,28 @@ type ProyekDashboard struct {
 type RecapProyekDashboard struct {
 	Status string            `json:"status"`
 	Proyek []ProyekDashboard `json:"proyek"`
+}
+
+type PersentasePenilaian struct {
+	Nilai   float64 `json:"nilai"`
+	Skill   float64 `json:"skill"`
+	Jabatan float64 `json:"jabatan"`
+	Posisi  float64 `json:"posisi"`
+	Histori float64 `json:"histori"`
+}
+type SettingPenilaian map[string]Kriteria
+
+type TipeKriteria string
+
+const (
+	Benefit TipeKriteria = "benefit"
+	Cost    TipeKriteria = "cost"
+)
+
+type Kriteria struct {
+	Bobot   float64            `json:"bobot"`
+	Tipe    TipeKriteria       `json:"tipe"`
+	Max     *float64           `json:"max,omitempty"`
+	Min     *float64           `json:"min,omitempty"`
+	Mapping map[string]float64 `json:"mapping,omitempty"`
 }

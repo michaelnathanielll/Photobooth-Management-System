@@ -569,7 +569,8 @@ func Insert2Variable(c echo.Context) error {
 	namaFungsi := namaFungsi()
 	ip := c.RealIP()
 	bodyReq := c.Param("nama")
-	nama := c.FormValue("nama")
+	nama, _ := model.GetBodyReq(c)
+	// keterangan := c.FormValue("keterangan")
 	result, err := model.Insert2Variable(bodyReq, nama)
 	if err != nil {
 		model.InsertLogError(ip, namaFungsi, err)
@@ -584,7 +585,7 @@ func Update2Variable(c echo.Context) error {
 	namaFungsi := namaFungsi()
 	ip := c.RealIP()
 	bodyReq := c.Param("nama")
-	nama := c.FormValue("nama")
+	nama, _ := model.GetBodyReq(c)
 	id := c.FormValue("id")
 	result, err := model.Update2Variable(bodyReq, nama, id)
 	if err != nil {
@@ -693,7 +694,6 @@ func CountJumlahProyek(c echo.Context) error {
 	return c.JSON(http.StatusOK, result)
 }
 
-
 func CountPendapatanProyek(c echo.Context) error {
 	nama := namaFungsi()
 	ip := c.RealIP()
@@ -715,5 +715,30 @@ func CountJenisProyek(c echo.Context) error {
 		return c.JSON(http.StatusInternalServerError, result)
 	}
 	model.InsertLogError(ip, nama, err)
+	return c.JSON(http.StatusOK, result)
+}
+
+func GetSettingPenilaian(c echo.Context) error {
+	nama := namaFungsi()
+	ip := c.RealIP()
+	result, err := model.GetSettingPenilaian()
+	if err != nil {
+		model.InsertLogError(ip, nama, err)
+		return c.JSON(http.StatusInternalServerError, result)
+	}
+	model.InsertLogError(ip, nama, err)
+	return c.JSON(http.StatusOK, result)
+}
+func SetSettingPenilaian(c echo.Context) error {
+	namaFungsi := namaFungsi()
+	ip := c.RealIP()
+	bodyReq, _ := model.GetBodyReq(c)
+	result, err := model.SetSettingPenilaian(bodyReq)
+	if err != nil {
+		model.InsertLogError(ip, namaFungsi, err)
+		return c.JSON(http.StatusInternalServerError, map[string]string{"message": err.Error()})
+	}
+
+	model.InsertLogError(ip, namaFungsi, err)
 	return c.JSON(http.StatusOK, result)
 }

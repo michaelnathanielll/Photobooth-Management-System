@@ -1,0 +1,29 @@
+{
+  "histori": {
+    "bobot": 0.1,
+    "tipe": "cost",
+    "min": 1
+  },
+  "jabatan": {
+    "bobot": 0.1,
+    "tipe": "benefit",
+    "mapping": {
+      "Junior": 70,
+      "Senior": 100
+    }
+  },
+  "nilai": {
+    "bobot": 0.35,
+    "tipe": "benefit",
+    "max": 100
+  },
+  "posisi": {
+    "bobot": 0.3,
+    "tipe": "benefit"
+  },
+  "skill": {
+    "bobot": 0.15,
+    "tipe": "benefit",
+    "max": 5
+  }
+}

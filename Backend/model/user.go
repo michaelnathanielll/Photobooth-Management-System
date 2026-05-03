@@ -6,6 +6,11 @@ import (
 	"TemplateProject/jsonHandler"
 	"TemplateProject/middleware"
 	"database/sql"
+	"encoding/json"
+	"errors"
+	"fmt"
+	"math"
+	"os"
 	"strconv"
 	"strings"
 )
@@ -905,7 +910,7 @@ func Get2Variable(namaTab string) (Response, error) {
 func Insert2Variable(namaTab string, nama string) (Response, error) {
 	var res Response
 	var obj Tabel2Variable
-	obj.Nama = nama
+	jsonHandler.DecodeJson(nama, &obj)
 	_, err := dbmod.InsertRow(obj, table[namaTab])
 	if err != nil {
 		err = errorHandle.ErrorLine(err)
@@ -920,8 +925,7 @@ func Insert2Variable(namaTab string, nama string) (Response, error) {
 func Update2Variable(namaTab string, nama, id string) (Response, error) {
 	var res Response
 	var obj Tabel2Variable
-	obj.Id, _ = strconv.Atoi(id)
-	obj.Nama = nama
+	jsonHandler.DecodeJson(nama, &obj)
 	_, err := dbmod.UpdatedRowAtTime(obj, table[namaTab])
 	if err != nil {
 		err = errorHandle.ErrorLine(err)
@@ -1173,4 +1177,116 @@ func GetProyekDashboard() (Response, error) {
 	res.Data = arrObj
 	return res, nil
 
+}
+func SetSettingPenilaian(data string) (Response, error) {
+	var res Response
+	var obj SettingPenilaian
+
+	// decode JSON ke struct
+	if err := json.Unmarshal([]byte(data), &obj); err != nil {
+		return res, err
+	}
+
+	// VALIDASI
+	total := 0.0
+	for key, k := range obj {
+		// validasi tipe
+		if k.Tipe != Benefit && k.Tipe != Cost {
+			return res, fmt.Errorf("tipe kriteria %s tidak valid", key)
+		}
+
+		total += k.Bobot
+	}
+
+	if math.Abs(total-1) > 0.01 {
+		return res, errors.New("total bobot harus = 1")
+	}
+
+	// simpan (atomic write biar aman)
+	tmp := "model/setting_tmp.json"
+	final := "model/setting.json"
+
+	file, err := os.Create(tmp)
+	if err != nil {
+		return res, err
+	}
+
+	encoder := json.NewEncoder(file)
+	encoder.SetIndent("", "  ")
+
+	if err := encoder.Encode(obj); err != nil {
+		file.Close()
+		return res, err
+	}
+
+	file.Close()
+
+	if err := os.Rename(tmp, final); err != nil {
+		return res, err
+	}
+
+	res = ResponseGet()
+	res.Data = "berhasil"
+	return res, nil
+}
+func GetSettingPenilaian() (Response, error) {
+	var res Response
+	var obj SettingPenilaian
+
+	file, err := os.Open("model/setting.json")
+	if err != nil {
+		// kalau belum ada file → return default
+		if os.IsNotExist(err) {
+			obj = DefaultSetting()
+			res = ResponseGet()
+			res.Data = obj
+			return res, nil
+		}
+		return res, err
+	}
+	defer file.Close()
+
+	decoder := json.NewDecoder(file)
+	if err := decoder.Decode(&obj); err != nil {
+		return res, err
+	}
+
+	res = ResponseGet()
+	res.Data = obj
+	return res, nil
+}
+func DefaultSetting() SettingPenilaian {
+	max100 := 100.0
+	max5 := 5.0
+	min1 := 1.0
+
+	return SettingPenilaian{
+		"nilai": {
+			Bobot: 0.35,
+			Tipe:  Benefit,
+			Max:   &max100,
+		},
+		"skill": {
+			Bobot: 0.15,
+			Tipe:  Benefit,
+			Max:   &max5,
+		},
+		"jabatan": {
+			Bobot: 0.1,
+			Tipe:  Benefit,
+			Mapping: map[string]float64{
+				"Senior": 100,
+				"Junior": 70,
+			},
+		},
+		"posisi": {
+			Bobot: 0.3,
+			Tipe:  Benefit,
+		},
+		"histori": {
+			Bobot: 0.1,
+			Tipe:  Cost,
+			Min:   &min1,
+		},
+	}
 }

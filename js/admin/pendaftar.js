@@ -60,7 +60,6 @@ function hitungSkorGA(p, posisi) {
         skorPosisi * b.posisi -
         histori * b.histori;
 
-    // optional: efek "mutasi kecil"
     skor += Math.random() * 2;
     // console.log(skor)
     return skor;
