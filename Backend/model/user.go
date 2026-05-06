@@ -209,7 +209,7 @@ func GetAvgNilaiPetugas(id string) ([]RekapNilaiPetugas, error) {
 FROM ` + paramTab + ` p 
 LEFT JOIN ` + namaTab + ` n 
     ON n.id_penilaian = p.id 
-    AND n.id_petugas = ` + id + `
+    AND n.id_petugas = ` + id + ` AND n.deleted_at IS NULL
 GROUP BY p.id, p.nama;`
 	result, err := dbmod.SelectQueryCustom(obj, query, "", "")
 	if err != nil {
@@ -735,13 +735,14 @@ func GetHistoryPointProyekByIdPetugas(id string) (Response, error) {
 		return res, err
 	}
 	for _, x := range res.Data.([]DaftarProyekPetugas) {
-		if x.IdStatusProyek == 4 {
+		if x.IdStatusProyek == 4 || x.IdStatusProyek == 5 {
 			arrObj = append(arrObj, DaftarSkorProyek{Id: x.Id, Nama: x.Nama, Penilaian: []PenilaianPetugasAnggota{}})
 
 		}
 	}
 	// tmp := []PenilaianPetugasAnggota{}
 	for i, x := range arrObj {
+		tmpPenilaian = []PenilaianPetugasAnggota{}
 		namaTab := table["penilaian"]
 		join := namaTab + " JOIN " + table["parameter_penilaian"] + " P ON " + namaTab + ".id_penilaian = p.id"
 		// queryX := "SELECT SUM(nilai) FROM " + table["penilaian"] + " WHERE

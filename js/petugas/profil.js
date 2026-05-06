@@ -45,7 +45,7 @@ async function loadProfil() {
     setValInner("scoreSummary", `<div class="summary-item summary-total"><span>Total Skor Rata-rata</span><b>${total}</b></div>`)
     const responses = await fetchAPI('/proyek/petugas/skor', 'GET');
     const skor = responses.data;
-    // console.log(skor);
+    console.log(skor);
     const scoreListEl = document.getElementById("scoreList");
     skor.forEach(sc => {
         let toolTips = "";
