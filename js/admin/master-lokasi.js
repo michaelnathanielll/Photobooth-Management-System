@@ -11,7 +11,7 @@ function renderTable() {
             d.keterangan,
             `
                     <button class="aksi-btn btn-edit"
-                        onclick="openUpdate(${d.id},'${d.nama}',${d.keterangan})"
+                        onclick="openUpdate(${d.id},'${d.nama}','${d.keterangan}')"
                         data-bs-toggle="modal"
                         data-bs-target="#modalUbah">
                         <i class="bi bi-pencil"></i>
