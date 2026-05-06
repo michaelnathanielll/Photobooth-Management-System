@@ -39,11 +39,11 @@ async function loadProfil() {
     });
     let total = 0;
     data.detail_skor.forEach(e => {
-        let tmp = `<div class="summary-item"><span>${e.parameter}</span><b>${e.nilai}</b></div>`
+        let tmp = `<div class="summary-item"><span>${e.parameter}</span><b>${parseFloat(e.nilai).toFixed(1)}</b></div>`
         setValInner("scoreSummary", tmp)
         total += e.nilai;
     });
-    setValInner("scoreSummary", `<div class="summary-item summary-total"><span>Total Skor Rata-rata</span><b>${total}</b></div>`)
+    setValInner("scoreSummary", `<div class="summary-item summary-total"><span>Total Skor Rata-rata</span><b>${parseFloat(total).toFixed(1)}</b></div>`)
     const responses = await fetchAPI('/proyek/petugas/skor', 'GET');
     const skor = responses.data;
     console.log(skor);
@@ -60,7 +60,7 @@ async function loadProfil() {
         div.className = "score-item";
         div.innerHTML = `
         <span>${sc.nama}</span>
-        <b>${total.toFixed(1)}</b>
+        <b>${total}</b>
 
         <div class="score-tooltip">
             ${toolTips}
