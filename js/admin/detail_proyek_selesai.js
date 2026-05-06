@@ -194,6 +194,12 @@ function renderBiaya() {
         totalKertasRealisasi +
         totalFrameRealisasi;
 
+        let color= "";
+        if (totalEstimasi - totalRealisasi>0){
+            color = "#0b8457";
+        }else{
+            color ="#c0392b";
+        }
     document.getElementById("dataBiaya").innerHTML = `
   <div class="row">
 
@@ -235,14 +241,10 @@ Rp ${totalRealisasi.toLocaleString("id-ID")}
 
   <hr>
 
-<div class="total-selisih">
-Selisih : Rp ${(totalEstimasi - totalRealisasi).toLocaleString("id-ID")}
+<div class="total-selisih" style="color:${color};">
+Total Profit : Rp ${(totalEstimasi - totalRealisasi).toLocaleString("id-ID")}
 </div>
-<div class="total-selisih2">
-Selisih : Rp ${(totalEstimasi - totalRealisasi).toLocaleString("id-ID")}
-</div>
-
-  `;
+`;
 }
 
 let petugasAktif = null;

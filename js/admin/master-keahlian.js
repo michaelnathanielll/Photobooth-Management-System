@@ -95,6 +95,7 @@ async function inputKeahlian() {
         // Cek apakah berhasil
         if (response && response.status === 200) {
             alert('Data berhasil ditambahkan!');
+            loadKeahlian();
             location.reload();
         } else {
             console.error('Kesalahan pada status respons:', response.status);
@@ -126,6 +127,7 @@ async function updateKeahlian() {
         // Cek apakah berhasil
         if (response && response.status === 200) {
             alert('Data berhasil diubah!');
+            loadKeahlian();
             location.reload();
         } else {
             console.error('Kesalahan pada status respons:', response.status);
@@ -149,6 +151,7 @@ async function deleteKeahlian() {
         // Cek apakah berhasil
         if (response && response.status === 200) {
             alert('Data berhasil dihapus!');
+            loadKeahlian();
             location.reload();
         } else {
             console.error('Kesalahan pada status respons:', response.status);

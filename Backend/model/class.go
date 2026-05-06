@@ -18,6 +18,7 @@ type Pengguna struct {
 type PetugasLogin struct {
 	Id             int      `json:"id" db:"id" type:"pk" act:"ai"`
 	Nama           string   `json:"nama" db:"nama"`
+	NoHp           string   `json:"no_hp" db:"no_hp"`
 	Kepagawaian    int      `json:"kepagawaian" db:"kepegawaian"`
 	Keahlian       string   `json:"keahlian" db:"keahlian"`
 	DaftarKeahlian []string `json:"daftar_keahlian"`
@@ -108,7 +109,7 @@ type Proyek struct {
 	Keterangan     string `json:"keterangan" db:"keterangan"`
 	JumlahPetugas  int    `json:"jumlah_petugas" db:"jumlah_petugas"`
 	IdPaket        int    `json:"id_paket" db:"id_paket"`
-	// Paket string
+	Paket          string `json:"nama_paket" db:"nama" type:"join" alias:"pa"`
 }
 
 type DaftarProyek struct {

@@ -156,6 +156,7 @@ async function loadJenis() {
         data.forEach(e => {
             document.getElementById("jenis-input").innerHTML += `<option value="${e.id}">${e.nama}</option>`;
             document.getElementById("jenis-edit").innerHTML += `<option value="${e.id}">${e.nama}</option>`;
+            document.getElementById("filterJenis").innerHTML += `<option value="${e.id}">${e.nama}</option>`;
         });
 
 
@@ -288,11 +289,11 @@ function renderTable() {
     const tglSelesai = document.getElementById("filterTanggalSelesai").value;
     const statusFilter = document.getElementById("filterStatus").value;
 
-    const urutanStatus = { perencanaan: 1, pendaftaran: 2, berlangsung: 3, selesai: 4 };
-    let filteredData = [...dataEvent];
 
+    let filteredData = [...dataEvent];
+    console.log("statusFilter", statusFilter);
     if (jenisFilter !== "")
-        filteredData = filteredData.filter(ev => ev.jenis === jenisFilter);
+        filteredData = filteredData.filter(ev => ev.id_jenis_proyek === parseInt(jenisFilter));
 
     if (tglMulai !== "")
         filteredData = filteredData.filter(ev => ev.tanggal_event >= tglMulai);
@@ -302,16 +303,11 @@ function renderTable() {
 
     if (statusFilter !== "") {
         filteredData = filteredData.filter(ev => {
-
-            if (statusFilter === "pending") {
-                return ev.status === "selesai" && ev.data_lengkap === false;
-            }
-
-            return ev.status === statusFilter;
+            return ev.id_status_proyek === parseInt(statusFilter);
         });
     }
 
-    filteredData.sort((a, b) => urutanStatus[a.status] - urutanStatus[b.status]);
+    filteredData.sort((a, b) => a.id_status_proyek - b.id_status_proyek);
 
     const table = $('#tabel-proyek').DataTable();
     table.clear();
@@ -324,7 +320,7 @@ function renderTable() {
         } else {
             linkDetail = `detail_proyek.html?id=${ev.id}`;
         }
-               
+
 
         table.row.add([
             ev.nama,

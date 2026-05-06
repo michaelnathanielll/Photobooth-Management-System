@@ -14,10 +14,10 @@ function renderTable(id, data) {
     data.forEach(d => {
         table.row.add([
             d.nama,
-            formatRupiah(d.harga), 
+            formatRupiah(d.harga),
             d.keterangan,
             `
-                <button class="aksi-btn btn-edit" data-bs-toggle="modal" data-bs-target="#modalUbah" onclick="openUpdate('${d.id}','${d.nama}',${d.harga})"><i class="bi bi-pencil"></i></button>
+                <button class="aksi-btn btn-edit" data-bs-toggle="modal" data-bs-target="#modalUbah" onclick="openUpdate('${d.id}','${d.nama}','${d.harga}','${d.keterangan}')"><i class="bi bi-pencil"></i></button>
                 <button class="aksi-btn btn-hapus" data-bs-toggle="modal" data-bs-target="#modalHapus" onclick="openDelete('${d.id}')"><i class="bi bi-trash"></i></button>
                 `
         ]);
@@ -128,10 +128,11 @@ function openTambah(kategori) {
     document.getElementById("kategori-tambah").value = kategori;
 }
 
-function openUpdate(id, nama, harga) {
+function openUpdate(id, nama, harga, keterangan) {
     document.getElementById("nama-ubah").value = nama;
     document.getElementById("harga-ubah").value = harga;
     document.getElementById("id-ubah").value = id;
+    setVal("keterangan-ubah", keterangan);
 }
 
 function openDelete(id) {

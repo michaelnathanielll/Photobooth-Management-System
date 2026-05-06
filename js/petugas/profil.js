@@ -17,6 +17,7 @@ function closeModal(id) { document.getElementById(id).style.display = "none"; }
 async function loadProfil() {
     const token = localStorage.getItem('id_user');
     const response = await fetchAPI('/petugas/' + token, 'GET');
+    console.log(response);
     const data = response.data[0];
     console.log(data);
     setValInner("nama", data.nama);

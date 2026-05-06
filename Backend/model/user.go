@@ -581,6 +581,7 @@ func GetKomposisiTimProyek(id string) (Response, error) {
 		res = ResponseError(err)
 		return res, err
 	}
+	Get2Variable("keahlian")
 	DecodeMapStringV1(resp.(map[string]interface{}), &obj)
 	var komposisi = []KomposisiTim{}
 	jsonHandler.DecodeJson(obj.Komposisi, &komposisi)
@@ -673,6 +674,7 @@ func GetProyekById(id string) (Response, error) {
 	asetTab := table["aset"]
 	klienTab := table["klien"]
 	lokasiTab := table["lokasi"]
+	paketTab := table["paket"]
 	join := namaTab + " JOIN " + jenisTab + " j ON " + namaTab + ".id_jenis_proyek = j.id"
 	join += " JOIN " + statusTab + " s ON " + namaTab + ".id_status_proyek = s.id"
 	join += " JOIN " + asetTab + " b ON " + namaTab + ".id_booth = b.id"
@@ -680,6 +682,7 @@ func GetProyekById(id string) (Response, error) {
 	join += " JOIN " + asetTab + " k ON " + namaTab + ".id_kertas = k.id"
 	join += " JOIN " + klienTab + " kl ON " + namaTab + ".id_klien = kl.id"
 	join += " JOIN " + lokasiTab + " l ON " + namaTab + ".id_lokasi = l.id"
+	join += " JOIN " + paketTab + " pa ON " + namaTab + ".id_paket = pa.id"
 	where := namaTab + ".deleted_at IS NULL AND " + namaTab + ".id = " + id
 	resp, err := dbmod.SelectQueryRowJoin(obj, namaTab, join, where)
 	if err != nil {
@@ -899,9 +902,11 @@ func Get2Variable(namaTab string) (Response, error) {
 	DecodeMapStringArray(resp.([]map[string]interface{}), &arrObj)
 	tmp := table["keahlian"]
 	if namaTab == tmp {
+		mapKeahlian = map[int]Tabel2Variable{}
 		for _, x := range arrObj {
 			mapKeahlian[x.Id] = x
 		}
+		// fmt.Println(mapKeahlian)
 	}
 	res = ResponseGet()
 	res.Data = arrObj
@@ -918,6 +923,7 @@ func Insert2Variable(namaTab string, nama string) (Response, error) {
 		res = ResponseError(err)
 		return res, err
 	}
+
 	res = ResponseGet()
 	res.Data = obj
 	return res, nil

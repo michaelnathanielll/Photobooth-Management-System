@@ -45,6 +45,7 @@ async function masuk() {
             localStorage.setItem('nama', obj.nama);
             localStorage.setItem('role', JSON.stringify(obj.table_hak_akses));
             localStorage.setItem('tipe',obj.tipe);  
+            localStorage.setItem('username',username);
             // localStorage.setItem('role', obj.table_hak_akses); 
             localStorage.setItem('token', obj.token);
             if (obj.tipe === 0) {

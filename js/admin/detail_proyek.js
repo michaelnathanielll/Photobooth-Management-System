@@ -11,14 +11,14 @@ async function renderDetail() {
     const response = await fetchAPI('/proyek/' + id, 'GET');
     const ev = response.data;
     const jumlahPetugas = dataPetugas.filter(p => p.event_id === id).length;
-
+    console.log(response);
     document.getElementById("detailProyek").innerHTML = `
 <div class="detail-grid">
 
     <div>
         <div class="detail-item"><span class="detail-label">Nama Event</span>: ${ev.nama}</div>
         <div class="detail-item"><span class="detail-label">Jenis Event</span>: ${ev.jenis_proyek}</div>
-        <div class="detail-item"><span class="detail-label">Paket</span>: ${ev.paket ?? "-"}</div>
+        <div class="detail-item"><span class="detail-label">Paket</span>: ${ev.nama_paket ?? "-"}</div>
         <div class="detail-item"><span class="detail-label">Klien</span>: ${ev.klien}</div>
         <div class="detail-item"><span class="detail-label">Biaya Tambahan</span>: Rp ${ev.biaya_tambahan.toLocaleString("id-ID")}</div>
     </div>
@@ -169,7 +169,7 @@ async function simpanKomposisi() {
         console.log(response)
         // Cek apakah berhasil
         if (response && response.status === 200) {
-            alert('Data berhasil dihapus!');
+            alert('Data berhasil disimpan!');
             location.reload();
         } else {
             console.error('Kesalahan pada status respons:', response.status);
