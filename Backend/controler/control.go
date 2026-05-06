@@ -454,7 +454,7 @@ func GetProyekByIdPetugas(c echo.Context) error {
 	namaFungsi := namaFungsi()
 	ip := c.RealIP()
 	id := c.Param("id")
-	result, err := model.GetProyekByIdPetugas(id, "1")
+	result, err := model.GetProyekByIdPetugas(id, "1", "4")
 	if err != nil {
 		model.InsertLogError(ip, namaFungsi, err)
 		return c.JSON(http.StatusInternalServerError, map[string]string{"message": err.Error()})

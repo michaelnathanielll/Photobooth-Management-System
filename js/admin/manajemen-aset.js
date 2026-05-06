@@ -105,8 +105,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             document.getElementById("konten-halaman").innerHTML =
                 document.getElementById("isi-halaman").innerHTML;
 
-            /* 🔥 cukup 1 baris ini saja */
-            initSidebar("Manajemen Aset");
+            initSidebar("Manajemen Barang");
 
             /* ================= DATATABLE ================= */
 

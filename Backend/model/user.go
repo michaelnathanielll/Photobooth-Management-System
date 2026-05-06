@@ -552,7 +552,7 @@ func GetProyekPetuguasPendaftaran(req ReqFormValue, id int) (Response, error) {
 		return res, err
 	}
 	DecodeMapStringArray(resp.([]map[string]interface{}), &arrObj)
-	respon, err := GetProyekByIdPetugas(strconv.Itoa(id), "0,1")
+	respon, err := GetProyekByIdPetugas(strconv.Itoa(id), "0,1,2", "")
 	if err != nil {
 		err = errorHandle.ErrorLine(err)
 		res = ResponseError(err)
@@ -697,7 +697,7 @@ func GetProyekById(id string) (Response, error) {
 	return res, nil
 }
 
-func GetProyekByIdPetugas(id, status string) (Response, error) {
+func GetProyekByIdPetugas(id, status, statusEvent string) (Response, error) {
 	var res Response
 	var obj DaftarProyekPetugas
 	var arrObj = []DaftarProyekPetugas{}
@@ -714,7 +714,10 @@ func GetProyekByIdPetugas(id, status string) (Response, error) {
 	join += " JOIN " + asetTab + " b ON p.id_booth = b.id"
 	join += " JOIN " + asetTab + " pr ON p.id_print = pr.id"
 	join += " JOIN " + asetTab + " k ON p.id_kertas = k.id"
-	where := namaTab + ".deleted_at IS NULL AND " + namaTab + ".status_pendaftaran IN (" + status + ") AND " + namaTab + ".id_petugas = " + id + " AND p.id_status_proyek >=4"
+	where := namaTab + ".deleted_at IS NULL AND " + namaTab + ".status_pendaftaran IN (" + status + ") AND " + namaTab + ".id_petugas = " + id
+	if statusEvent != "" {
+		where += " AND p.id_status_proyek >= 4"
+	}
 	resp, err := dbmod.SelectQueryJoin(obj, namaTab, where, namaTab+".id DESC", "", "", join)
 	if err != nil {
 		err = errorHandle.ErrorLine(err)
@@ -732,7 +735,7 @@ func GetHistoryPointProyekByIdPetugas(id string) (Response, error) {
 	var arrObj = []DaftarSkorProyek{}
 	var tmpPenilaian = []PenilaianPetugasAnggota{}
 	var err error
-	res, err = GetProyekByIdPetugas(id, "1")
+	res, err = GetProyekByIdPetugas(id, "1", "4")
 	if err != nil {
 		err = errorHandle.ErrorLine(err)
 		res = ResponseError(err)
@@ -851,25 +854,40 @@ func CheckPendaftaranAnggota(idPetugas, idProyek int) error {
 		return err
 	}
 	data := res.Data.(Proyek)
+	fmt.Println(data.WaktuMulai, data.WaktuSelesai, data.TanggalEvent, idPetugas, idProyek)
 	jam_mulai := data.WaktuMulai
 	jam_selesai := data.WaktuSelesai
 	tanggal := data.TanggalEvent
-	query := ` UPDATE pendaftaran p
+	query := `UPDATE pendaftaran p
 JOIN proyek pr ON p.id_proyek = pr.id
 SET p.status_pendaftaran = 2
 WHERE p.id_petugas = ` + strconv.Itoa(idPetugas) + `
   AND p.status_pendaftaran = 0
-  AND pr.tanggal_event = '` + tanggal + `'
   AND (
-        '` + jam_mulai + `' <= pr.waktu_selesai
-    AND '` + jam_selesai + `' >= pr.waktu_mulai
-  );`
+        -- START input
+        CONCAT('` + tanggal + `', ' ', '` + jam_mulai + `') <
+        CASE 
+            WHEN pr.waktu_selesai < pr.waktu_mulai 
+            THEN CONCAT(DATE_ADD(DATE(pr.tanggal_event), INTERVAL 1 DAY),' ',pr.waktu_selesai)
+            ELSE CONCAT(DATE(pr.tanggal_event),' ',pr.waktu_selesai)
+        END
+    AND
+        -- END input (auto handle lintas tengah malam)
+        CASE
+            WHEN '` + jam_selesai + `' < '` + jam_mulai + `'
+            THEN CONCAT(DATE_ADD('` + tanggal + `', INTERVAL 1 DAY),' ','` + jam_selesai + `')
+            ELSE CONCAT('` + tanggal + `',' ','` + jam_selesai + `')
+        END
+        >
+        CONCAT(DATE(pr.tanggal_event),' ',pr.waktu_mulai)
+      );`
+	fmt.Println(query)
 	con, err := db.DbConnection()
 	if err != nil {
 		err = errorHandle.ErrorLine(err)
 		return err
 	}
-	db.DbClose(con)
+	defer db.DbClose(con)
 	_, err = con.Exec(query)
 	if err != nil {
 		err = errorHandle.ErrorLine(err)
@@ -891,7 +909,7 @@ func InsertAnggotaProyek(bodyReq string, id_petuguas int) (Response, error) {
 		res = ResponseError(err)
 		return res, err
 	}
-	CheckPendaftaranAnggota(obj.IdPetugas, obj.IdProyek)
+
 	res = ResponseGet()
 	res.Data = "berhasil"
 	return res, nil
@@ -902,6 +920,12 @@ func UpdateAnggotaProyek(bodyReq string) (Response, error) {
 	var obj PendaftaranProyek
 	jsonHandler.DecodeJson(bodyReq, &obj)
 	_, err := dbmod.UpdatedRowAtTime(obj, table["pendaftaran"])
+	if err != nil {
+		err = errorHandle.ErrorLine(err)
+		res = ResponseError(err)
+		return res, err
+	}
+	err = CheckPendaftaranAnggota(obj.IdPetugas, obj.IdProyek)
 	if err != nil {
 		err = errorHandle.ErrorLine(err)
 		res = ResponseError(err)

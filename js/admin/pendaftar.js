@@ -170,13 +170,16 @@ async function renderTable() {
                 icon.style.borderColor = "#27ae60";
                 icon.style.color = "#27ae60";
                 icon.innerHTML = '<i class="bi bi-check-lg"></i>';
-                teks.innerText = "Terima petugas ini ke dalam proyek?";
+                teks.innerText = "Terima petugas ini ke dalam proyek?"; 
+                document.getElementById("bagian-edit").style.display = "block";
+            
             } else {
                 setVal("tipe-edit", "2");
                 icon.style.borderColor = "#e74c3c";
                 icon.style.color = "#e74c3c";
                 icon.innerHTML = '<i class="bi bi-x-lg"></i>';
                 teks.innerText = "Tolak petugas ini dari proyek?";
+                document.getElementById("bagian-edit").style.display = "none";
             }
         });
     });
@@ -202,13 +205,21 @@ fetch("../component/sidebar_admin.html")
 async function confirmModal() {
     const petugas = dataPendaftar.filter(item =>
         item.id === parseInt(getVal("id-edit")));
-    console.log(petugas);
+    // console.log(petugas);
+    // console.log(parseInt(getVal("bagian-edit")), getVal("bagian-edit"));
+    if (parseInt(getVal("bagian-edit")) === 0 ||getVal("bagian-edit")==='' ){
+        alert("Peran Harus Terisi!")
+        location.reload();
+        return
+    }
     let data = {
         id: parseInt(getVal("id-edit")),
         id_status_pendaftaran: parseInt(getVal("tipe-edit")),
         id_bagian: parseInt(getVal("bagian-edit")),
         skor_daftar: petugas[0].skor,
         honor:parseInt(petugas[0].honor),
+        id_petugas:parseInt(petugas[0].id_petugas),
+        id_proyek: parseInt(getParamId()),
     }
     console.log(data);
     try {
