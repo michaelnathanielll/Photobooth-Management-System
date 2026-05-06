@@ -83,7 +83,7 @@ async function renderDetail() {
             <td>${p.no_hp}</td>
             <td>${kepeg}</td>
             <td>${p.bagian}</td>
-            <td>Rp ${p.honor.toLocaleString("id-ID")}</td>
+            <td>Rp ${parseInt(p.honor).toLocaleString("id-ID")}</td>
             <td>${p.skor}</td>
         `;
 

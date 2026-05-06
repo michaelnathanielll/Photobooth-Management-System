@@ -60,7 +60,7 @@ async function loadProfil() {
         div.className = "score-item";
         div.innerHTML = `
         <span>${sc.nama}</span>
-        <b>${total}</b>
+        <b>${total.toFixed(1)}</b>
 
         <div class="score-tooltip">
             ${toolTips}

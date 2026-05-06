@@ -714,7 +714,7 @@ func GetProyekByIdPetugas(id, status string) (Response, error) {
 	join += " JOIN " + asetTab + " b ON p.id_booth = b.id"
 	join += " JOIN " + asetTab + " pr ON p.id_print = pr.id"
 	join += " JOIN " + asetTab + " k ON p.id_kertas = k.id"
-	where := namaTab + ".deleted_at IS NULL AND " + namaTab + ".status_pendaftaran IN (" + status + ") AND " + namaTab + ".id_petugas = " + id
+	where := namaTab + ".deleted_at IS NULL AND " + namaTab + ".status_pendaftaran IN (" + status + ") AND " + namaTab + ".id_petugas = " + id + " AND p.id_status_proyek >=4"
 	resp, err := dbmod.SelectQueryJoin(obj, namaTab, where, namaTab+".id DESC", "", "", join)
 	if err != nil {
 		err = errorHandle.ErrorLine(err)
