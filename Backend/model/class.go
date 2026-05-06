@@ -110,6 +110,7 @@ type Proyek struct {
 	JumlahPetugas  int    `json:"jumlah_petugas" db:"jumlah_petugas"`
 	IdPaket        int    `json:"id_paket" db:"id_paket"`
 	Paket          string `json:"nama_paket" db:"nama" type:"join" alias:"pa"`
+	Harga          int    `json:"harga_paket" db:"harga" type:"join" alias:"pa"`
 }
 
 type DaftarProyek struct {

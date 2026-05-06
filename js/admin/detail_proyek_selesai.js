@@ -27,7 +27,7 @@ async function renderDetail() {
     <div>
         <div class="detail-item"><span class="detail-label">Nama Event</span>: ${ev.nama}</div>
         <div class="detail-item"><span class="detail-label">Jenis Event</span>: ${ev.jenis_proyek}</div>
-        <div class="detail-item"><span class="detail-label">Paket</span>: ${ev.paket ?? "-"}</div>
+        <div class="detail-item"><span class="detail-label">Paket</span>: ${ev.nama_paket ?? "-"}</div>
         <div class="detail-item"><span class="detail-label">Klien</span>: ${ev.klien}</div>
         <div class="detail-item"><span class="detail-label">Biaya Tambahan</span>: Rp ${ev.biaya_tambahan.toLocaleString("id-ID")}</div>
     </div>
@@ -50,7 +50,7 @@ async function renderDetail() {
 </div>
 `;
 
-
+    
     const tbody = document.getElementById("tbodyPetugas");
     tbody.innerHTML = "";
     try {
@@ -195,11 +195,14 @@ function renderBiaya() {
         totalFrameRealisasi;
 
         let color= "";
-        if (totalEstimasi - totalRealisasi>0){
+        if (dataEvent.harga_paket - totalRealisasi>0){
             color = "#0b8457";
         }else{
             color ="#c0392b";
         }
+
+        setVal("inputKertasReal",dataEvent.realisasi_kertas)
+        setVal("inputBaseReal",dataEvent.realisasi_print)
     document.getElementById("dataBiaya").innerHTML = `
   <div class="row">
 
@@ -240,9 +243,11 @@ Rp ${totalRealisasi.toLocaleString("id-ID")}
   </div>
 
   <hr>
-
+<div class="total-selisih">
+Harga Paket : Rp ${(dataEvent.harga_paket).toLocaleString("id-ID")}
+</div>
 <div class="total-selisih" style="color:${color};">
-Total Profit : Rp ${(totalEstimasi - totalRealisasi).toLocaleString("id-ID")}
+Total Profit : Rp ${(dataEvent.harga_paket - totalRealisasi).toLocaleString("id-ID")}
 </div>
 `;
 }

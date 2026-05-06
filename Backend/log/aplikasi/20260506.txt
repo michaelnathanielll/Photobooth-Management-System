@@ -1138,3 +1138,9 @@
 {<2026-05-06 20:33:29>;Ip:::1;Nama API:TemplateProject/controler.GetAnggotaProyek;error:;}
 {<2026-05-06 20:33:41>;Ip:::1;Nama API:TemplateProject/controler.GetProyekById;error:;}
 {<2026-05-06 20:33:41>;Ip:::1;Nama API:TemplateProject/controler.GetAnggotaProyek;error:;}
+{<2026-05-06 22:42:43>;Ip:::1;Nama API:TemplateProject/controler.GetProyekById;error:;}
+{<2026-05-06 22:42:43>;Ip:::1;Nama API:TemplateProject/controler.GetAnggotaProyek;error:;}
+{<2026-05-06 22:43:01>;Ip:::1;Nama API:TemplateProject/controler.GetProyekById;error:;}
+{<2026-05-06 22:43:01>;Ip:::1;Nama API:TemplateProject/controler.GetAnggotaProyek;error:;}
+{<2026-05-06 22:43:18>;Ip:::1;Nama API:TemplateProject/controler.GetProyekById;error:;}
+{<2026-05-06 22:43:18>;Ip:::1;Nama API:TemplateProject/controler.GetAnggotaProyek;error:;}

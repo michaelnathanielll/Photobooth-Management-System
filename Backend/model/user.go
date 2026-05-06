@@ -1,6 +1,7 @@
 package model
 
 import (
+	"TemplateProject/db"
 	"TemplateProject/dbmod"
 	"TemplateProject/errorHandle"
 	"TemplateProject/jsonHandler"
@@ -843,6 +844,40 @@ func GetAnggotaProyek(id, status string) (Response, error) {
 	return res, nil
 }
 
+func CheckPendaftaranAnggota(idPetugas, idProyek int) error {
+	res, err := GetProyekById(strconv.Itoa(idProyek))
+	if err != nil {
+		err = errorHandle.ErrorLine(err)
+		return err
+	}
+	data := res.Data.(Proyek)
+	jam_mulai := data.WaktuMulai
+	jam_selesai := data.WaktuSelesai
+	tanggal := data.TanggalEvent
+	query := ` UPDATE pendaftaran p
+JOIN proyek pr ON p.id_proyek = pr.id
+SET p.status_pendaftaran = 2
+WHERE p.id_petugas = ` + strconv.Itoa(idPetugas) + `
+  AND p.status_pendaftaran = 0
+  AND pr.tanggal_event = '` + tanggal + `'
+  AND (
+        '` + jam_mulai + `' <= pr.waktu_selesai
+    AND '` + jam_selesai + `' >= pr.waktu_mulai
+  );`
+	con, err := db.DbConnection()
+	if err != nil {
+		err = errorHandle.ErrorLine(err)
+		return err
+	}
+	db.DbClose(con)
+	_, err = con.Exec(query)
+	if err != nil {
+		err = errorHandle.ErrorLine(err)
+		return err
+	}
+	return nil
+}
+
 func InsertAnggotaProyek(bodyReq string, id_petuguas int) (Response, error) {
 	var res Response
 	var obj InsertPendaftaranProyek
@@ -856,6 +891,7 @@ func InsertAnggotaProyek(bodyReq string, id_petuguas int) (Response, error) {
 		res = ResponseError(err)
 		return res, err
 	}
+	CheckPendaftaranAnggota(obj.IdPetugas, obj.IdProyek)
 	res = ResponseGet()
 	res.Data = "berhasil"
 	return res, nil
