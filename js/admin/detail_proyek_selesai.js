@@ -50,7 +50,7 @@ async function renderDetail() {
 </div>
 `;
 
-    
+
     const tbody = document.getElementById("tbodyPetugas");
     tbody.innerHTML = "";
     try {
@@ -171,6 +171,13 @@ document.addEventListener('DOMContentLoaded', async function () {
 });
 
 
+function bukaPanduan() {
+    const modal = new bootstrap.Modal(
+        document.getElementById('modalPanduan')
+    );
+
+    modal.show();
+}
 
 function renderBiaya() {
     const honorEstimasi = dataPetugas.length * 150000;
@@ -192,17 +199,18 @@ function renderBiaya() {
         honorRealisasi +
         dataEvent.harga_booth +
         totalKertasRealisasi +
-        totalFrameRealisasi;
+        totalFrameRealisasi+ dataEvent.biaya_transportasi;
 
-        let color= "";
-        if (dataEvent.harga_paket - totalRealisasi>0){
-            color = "#0b8457";
-        }else{
-            color ="#c0392b";
-        }
+    let color = "";
+    if (dataEvent.harga_paket - totalRealisasi > 0) {
+        color = "#0b8457";
+    } else {
+        color = "#c0392b";
+    }
 
-        setVal("inputKertasReal",dataEvent.realisasi_kertas)
-        setVal("inputBaseReal",dataEvent.realisasi_print)
+    setVal("inputKertasReal", dataEvent.realisasi_kertas)
+    setVal("inputBaseReal", dataEvent.realisasi_print)
+    setVal("inputTransport", dataEvent.biaya_transportasi)
     document.getElementById("dataBiaya").innerHTML = `
   <div class="row">
 
@@ -231,7 +239,8 @@ Rp ${totalEstimasi.toLocaleString("id-ID")}
       Kertas : ${dataEvent.realisasi_kertas} pcs × Rp ${dataEvent.harga_kertas.toLocaleString("id-ID")} = 
       Rp ${totalKertasRealisasi.toLocaleString("id-ID")}<br>
       Base Print : ${dataEvent.realisasi_print} pcs × Rp ${dataEvent.harga_print.toLocaleString("id-ID")} = 
-      Rp ${totalFrameRealisasi.toLocaleString("id-ID")}<br><br>
+      Rp ${totalFrameRealisasi.toLocaleString("id-ID")}<br>
+      Biaya Transportasi : Rp ${dataEvent.biaya_transportasi.toLocaleString("id-ID")} <br><br>
 
 <div class="total-realisasi">
 Total Realisasi :<br>
@@ -295,7 +304,8 @@ async function simpanQtyRealisasi() {
     let data = {
         id: parseInt(getParamId()),
         realisasi_kertas: parseInt(document.getElementById("inputKertasReal").value),
-        realisasi_print: parseInt(document.getElementById("inputBaseReal").value)
+        realisasi_print: parseInt(document.getElementById("inputBaseReal").value),
+        biaya_transportasi : parseInt(document.getElementById("inputTransport").value),
     }
     try {
 

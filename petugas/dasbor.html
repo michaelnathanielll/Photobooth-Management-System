@@ -16,6 +16,33 @@
             background: #fafafa;
         }
 
+        .event-status {
+            margin-top: 10px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .status-menunggu {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-diterima {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-ditolak {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
         .konten-petugas {
             padding: 18px;
         }
@@ -127,8 +154,8 @@
 
     <div class="konten-petugas">
 
-        <div class="greeting">
-            Hi, Michael Nathanael! 👋
+        <div id="greet" class="greeting">
+           
         </div>
 
         <div class="summary-row">
@@ -166,79 +193,9 @@
         </div>
 
     </div>
+    <script src="../js/fetchAPI.js"></script>
+    <script src="../js/petugas/dasbor.js"></script>
 
-    <script>
-        fetch("../component/navbar_petugas.html")
-            .then(r => r.text())
-            .then(html => {
-                document.getElementById("navbar-petugas").innerHTML = html;
-                document.getElementById("navbarTitle").innerText = "Dashboard Petugas";
-
-                const menuToggle = document.getElementById("menuToggle");
-                const sidebar = document.getElementById("sidebarPetugas");
-                const overlay = document.getElementById("overlayPetugas");
-                const sidebarClose = document.getElementById("sidebarClose");
-
-                function openSidebar() {
-                    sidebar.classList.add("show");
-                    overlay.classList.add("show");
-                }
-                function closeSidebar() {
-                    sidebar.classList.remove("show");
-                    overlay.classList.remove("show");
-                }
-
-                menuToggle.addEventListener("click", openSidebar);
-                sidebarClose.addEventListener("click", closeSidebar);
-                overlay.addEventListener("click", closeSidebar);
-            });
-
-        const dashboardData = [
-            { id: 1, nama: "Wedding Expo Jakarta", tanggal: "2026-02-10", waktu: "10:00 - 20:00", status: "pendaftaran", honor: 1500000 },
-            { id: 2, nama: "Corporate Gathering Bandung", tanggal: "2026-03-05", waktu: "18:00 - 22:00", status: "berlangsung", honor: 1200000 },
-            { id: 3, nama: "Birthday Party Aurel", tanggal: "2026-01-28", waktu: "15:00 - 19:00", status: "berlangsung", honor: 1000000 },
-            { id: 4, nama: "Private Event Bali", tanggal: "2026-02-15", waktu: "16:00 - 23:00", status: "selesai", honor: 1300000 }
-        ];
-
-        function renderDashboard() {
-            const listPendaftaran = document.getElementById("listPendaftaran");
-            const listBerlangsung = document.getElementById("listBerlangsung");
-            const listSelesai = document.getElementById("listSelesai");
-
-            listPendaftaran.innerHTML = "";
-            listBerlangsung.innerHTML = "";
-            listSelesai.innerHTML = "";
-
-            const pendaftaran = dashboardData.filter(e => e.status === "pendaftaran");
-            const berlangsung = dashboardData.filter(e => e.status === "berlangsung");
-            const selesai = dashboardData.filter(e => e.status === "selesai");
-
-            document.getElementById("countPendaftaran").innerText = pendaftaran.length + " Event";
-            document.getElementById("countBerlangsung").innerText = berlangsung.length + " Event";
-            document.getElementById("countSelesai").innerText = selesai.length + " Event";
-
-            document.getElementById("totalAvailable").innerText = pendaftaran.length + " Event";
-
-            let totalHonor = dashboardData.reduce((sum, e) => sum + e.honor, 0);
-            document.getElementById("totalHonor").innerText = "Rp " + totalHonor.toLocaleString("id-ID");
-
-            dashboardData.forEach(ev => {
-                const card = document.createElement("div");
-                card.className = "event-card";
-                card.innerHTML = `
-                    <div class="event-name">${ev.nama}</div>
-                    <div class="event-info">${ev.tanggal}</div>
-                    <div class="event-info">${ev.waktu}</div>
-                `;
-
-                if (ev.status === "pendaftaran") listPendaftaran.appendChild(card);
-                if (ev.status === "berlangsung") listBerlangsung.appendChild(card);
-                if (ev.status === "selesai") listSelesai.appendChild(card);
-            });
-        }
-
-        renderDashboard();
-    </script>
 
 </body>
 

@@ -98,16 +98,12 @@ document.addEventListener('DOMContentLoaded', async function () {
         .then(res => res.text())
         .then(html => {
 
-            /* inject layout */
             document.getElementById("layout-admin").innerHTML = html;
 
-            /* inject konten */
             document.getElementById("konten-halaman").innerHTML =
                 document.getElementById("isi-halaman").innerHTML;
 
             initSidebar("Manajemen Barang");
-
-            /* ================= DATATABLE ================= */
 
             new DataTable('#tabel-booth', { pageLength: 5 });
             new DataTable('#tabel-kertas', { pageLength: 5 });

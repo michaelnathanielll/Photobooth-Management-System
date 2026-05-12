@@ -59,6 +59,7 @@ async function loadData() {
     console.log(response)
     honorData = response.data;
 }
+
 fetch("../component/navbar_petugas.html")
     .then(r => r.text())
     .then(async html => {

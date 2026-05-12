@@ -494,7 +494,7 @@ func GetProyek(req ReqFormValue) (Response, error) {
 	join += " JOIN " + asetTab + " k ON " + namaTab + ".id_kertas = k.id"
 	where := namaTab + ".deleted_at IS NULL "
 	if req.TanggalAwal != "" && req.TanggalAkhir != "" {
-		where += " AND " + namaTab + ".tanggal_event BETWEEN " + req.TanggalAwal + " AND " + req.TanggalAkhir
+		where += " AND " + namaTab + ".tanggal_event BETWEEN '" + req.TanggalAwal + "' AND '" + req.TanggalAkhir+"'"
 	}
 	if req.Jenis != "" {
 		where += " AND " + namaTab + ".id_jenis_proyek = " + req.Jenis
@@ -534,13 +534,14 @@ func GetProyekPetuguasPendaftaran(req ReqFormValue, id int) (Response, error) {
 	join += " JOIN " + asetTab + " k ON " + namaTab + ".id_kertas = k.id"
 	where := namaTab + ".deleted_at IS NULL "
 	if req.TanggalAwal != "" && req.TanggalAkhir != "" {
-		where += " AND " + namaTab + ".tanggal_event BETWEEN " + req.TanggalAwal + " AND " + req.TanggalAkhir
+		where += " AND " + namaTab + ".tanggal_event BETWEEN '" + req.TanggalAwal + "' AND '" + req.TanggalAkhir+"'"
+	
 	}
 	if req.Jenis != "" {
 		where += " AND " + namaTab + ".id_jenis_proyek = " + req.Jenis
 	}
 	if req.Status != "" {
-		where += " AND " + namaTab + ".id_status_proyek = " + req.Status
+		where += " AND " + namaTab + ".id_status_proyek IN (" + req.Status + ")"
 	}
 	if req.Tipe != "" {
 		where += " AND " + namaTab + ".tipe_event = " + req.Tipe

@@ -225,212 +225,248 @@
     <div id="isi-halaman" style="display:none">
 
         <div class="mb-3">
-            
-            <div class="section-title mb-2"> <i class="bi bi-arrow-left me-2" style="cursor:pointer;" onclick="goBack()"></i>
-        <span>Detail Proyek</span>
-            <div class="card">
-                <div class="card-body" id="detailProyek"></div>
-            </div>
-        </div>
 
-        <div class="section-title mb-2">Petugas Dalam Proyek</div>
-        <div class="row g-2 mb-3" id="rekapNilai">
-            <div class="col-md">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <div class="section-title">Knowledge & Skill</div>
-                        <div id="avgK1"></div>
+            <div class="section-title mb-2"> <i class="bi bi-arrow-left me-2" style="cursor:pointer;"
+                    onclick="goBack()"></i>
+                <span>Detail Proyek</span>
+                <div class="card">
+                    <div class="card-body" id="detailProyek"></div>
+                </div>
+            </div>
+
+            <div class="section-title mb-2">Petugas Dalam Proyek</div>
+            <div class="row g-2 mb-3" id="rekapNilai">
+                <div class="col-md">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <div class="section-title">Knowledge & Skill</div>
+                            <div id="avgK1"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <div class="section-title">Communication & Teamwork</div>
+                            <div id="avgK2"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <div class="section-title">Attitude & Work Time</div>
+                            <div id="avgK3"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <div class="section-title">Problem Solving</div>
+                            <div id="avgK4"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="card text-center border-primary">
+                        <div class="card-body">
+                            <div class="section-title">Total Skor Proyek</div>
+                            <div id="avgTotal"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <div class="section-title">Communication & Teamwork</div>
-                        <div id="avgK2"></div>
-                    </div>
+
+            <table id="tabel-petugas" class="table table-striped align-middle w-100">
+                <thead>
+                    <tr>
+                        <th>Nama</th>
+                        <th>No HP</th>
+                        <th>Kepegawaian</th>
+                        <th>Peran</th>
+                        <th>Honor</th>
+                        <th>Skor Proyek</th>
+                        <th>Jam Hadir</th>
+                        <th>Keterangan</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tbodyPetugas"></tbody>
+            </table>
+
+            <div class="mt-4">
+                <div class="header-biaya">
+                    <div class="section-title">Data Biaya Proyek</div>
+
+                    <button class="btn btn-utama" data-bs-toggle="modal" data-bs-target="#modalQtyRealisasi">
+                        Input Qty Realisasi
+                    </button>
                 </div>
-            </div>
-            <div class="col-md">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <div class="section-title">Attitude & Work Time</div>
-                        <div id="avgK3"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <div class="section-title">Problem Solving</div>
-                        <div id="avgK4"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md">
-                <div class="card text-center border-primary">
-                    <div class="card-body">
-                        <div class="section-title">Total Skor Proyek</div>
-                        <div id="avgTotal"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <table id="tabel-petugas" class="table table-striped align-middle w-100">
-            <thead>
-                <tr>
-                    <th>Nama</th>
-                    <th>No HP</th>
-                    <th>Kepegawaian</th>
-                    <th>Peran</th>
-                    <th>Honor</th>
-                    <th>Skor Proyek</th>
-                    <th>Jam Hadir</th>
-                    <th>Keterangan</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-
-            <tbody id="tbodyPetugas"></tbody>
-        </table>
-
-        <div class="mt-4">
-            <div class="header-biaya">
-                <div class="section-title">Data Biaya Proyek</div>
-
-                <button class="btn btn-utama" data-bs-toggle="modal" data-bs-target="#modalQtyRealisasi">
-                    Input Qty Realisasi
-                </button>
+                <div class="box-biaya" id="dataBiaya"></div>
             </div>
 
-            <div class="box-biaya" id="dataBiaya"></div>
-        </div>
-
-        <div class="modal fade" id="modalNilai" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content p-3 modal-form">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Nilai Petugas</h5>
-                        <button class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-
-                    <div class="modal-body">
-                        <input id="id-nilai" hidden>
-                        <div class="slider-box">
-                            <div class="slider-title">Knowledge & Skill : <span id="valK1">80</span></div>
-                            <div class="slider-row">
-                                <button onclick="stepSlider('rangeK1',-1)">−</button>
-                                <input type="range" min="0" max="100" value="80" id="rangeK1"
-                                    oninput="updateSlider(this,'valK1')">
-                                <button onclick="stepSlider('rangeK1',1)">+</button>
-                            </div>
+            <div class="modal fade" id="modalNilai" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content p-3 modal-form">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Nilai Petugas</h5>
+                            <button class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
 
-                        <div class="slider-box">
-                            <div class="slider-title">Communication & Teamwork : <span id="valK2">80</span></div>
-                            <div class="slider-row">
-                                <button onclick="stepSlider('rangeK2',-1)">−</button>
-                                <input type="range" min="0" max="100" value="80" id="rangeK2"
-                                    oninput="updateSlider(this,'valK2')">
-                                <button onclick="stepSlider('rangeK2',1)">+</button>
+                        <div class="modal-body">
+
+                            <div class="mb-3 text-end">
+                                <button class="btn btn-sm btn-outline-secondary" onclick="bukaPanduan()">
+                                    <i class="bi bi-image"></i>
+                                    Lihat Panduan
+                                </button>
                             </div>
+                            <input id="id-nilai" hidden>
+                            <div class="slider-box">
+                                <div class="slider-title">Knowledge & Skill : <span id="valK1">80</span></div>
+                                <div class="slider-row">
+                                    <button onclick="stepSlider('rangeK1',-1)">−</button>
+                                    <input type="range" min="0" max="100" value="80" id="rangeK1"
+                                        oninput="updateSlider(this,'valK1')">
+                                    <button onclick="stepSlider('rangeK1',1)">+</button>
+                                </div>
+                            </div>
+
+                            <div class="slider-box">
+                                <div class="slider-title">Communication & Teamwork : <span id="valK2">80</span></div>
+                                <div class="slider-row">
+                                    <button onclick="stepSlider('rangeK2',-1)">−</button>
+                                    <input type="range" min="0" max="100" value="80" id="rangeK2"
+                                        oninput="updateSlider(this,'valK2')">
+                                    <button onclick="stepSlider('rangeK2',1)">+</button>
+                                </div>
+                            </div>
+
+                            <div class="slider-box">
+                                <div class="slider-title">Attitude & Work Time : <span id="valK3">80</span></div>
+                                <div class="slider-row">
+                                    <button onclick="stepSlider('rangeK3',-1)">−</button>
+                                    <input type="range" min="0" max="100" value="80" id="rangeK3"
+                                        oninput="updateSlider(this,'valK3')">
+                                    <button onclick="stepSlider('rangeK3',1)">+</button>
+                                </div>
+                            </div>
+
+                            <div class="slider-box">
+                                <div class="slider-title">Problem Solving & Responsibility : <span id="valK4">80</span>
+                                </div>
+                                <div class="slider-row">
+                                    <button onclick="stepSlider('rangeK4',-1)">−</button>
+                                    <input type="range" min="0" max="100" value="80" id="rangeK4"
+                                        oninput="updateSlider(this,'valK4')">
+                                    <button onclick="stepSlider('rangeK4',1)">+</button>
+                                </div>
+                            </div>
+
                         </div>
 
-                        <div class="slider-box">
-                            <div class="slider-title">Attitude & Work Time : <span id="valK3">80</span></div>
-                            <div class="slider-row">
-                                <button onclick="stepSlider('rangeK3',-1)">−</button>
-                                <input type="range" min="0" max="100" value="80" id="rangeK3"
-                                    oninput="updateSlider(this,'valK3')">
-                                <button onclick="stepSlider('rangeK3',1)">+</button>
-                            </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-utama w-100" id="btnSimpanNilai" data-bs-dismiss="modal"
+                                onclick="simpanNilai()">
+                                Simpan
+                            </button>
                         </div>
 
-                        <div class="slider-box">
-                            <div class="slider-title">Problem Solving & Responsibility : <span id="valK4">80</span>
-                            </div>
-                            <div class="slider-row">
-                                <button onclick="stepSlider('rangeK4',-1)">−</button>
-                                <input type="range" min="0" max="100" value="80" id="rangeK4"
-                                    oninput="updateSlider(this,'valK4')">
-                                <button onclick="stepSlider('rangeK4',1)">+</button>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="modal-footer">
-                        <button class="btn btn-utama w-100" id="btnSimpanNilai" data-bs-dismiss="modal" onclick="simpanNilai()">
-                            Simpan
-                        </button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="modalQtyRealisasi" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content p-3">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Input Qty Realisasi</h5>
-                        <button class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-
-                    <div class="modal-body">
-                        <label>Qty Kertas Realisasi</label>
-                        <input type="number" id="inputKertasReal" class="form-control" value="0">
-
-                        <label class="mt-2">Qty Base Print Realisasi</label>
-                        <input type="number" id="inputBaseReal" class="form-control" value="0">
-                    </div>
-
-                    <div class="modal-footer">
-                        <button class="btn btn-utama w-100" onclick="simpanQtyRealisasi()" data-bs-dismiss="modal">
-                            Simpan
-                        </button>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="modal fade" id="modalKehadiran" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content p-3">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Ubah Kehadiran Petugas</h5>
-                        <button class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
+            <div class="modal fade" id="modalPanduan" tabindex="-1">
 
-                    <div class="modal-body">
-                        <label>Jam Hadir</label>
-                        <input type="time" id="inputJamHadir" class="form-control">
-                        <input id="id-edit" hidden>
-                        <label class="mt-2">Keterangan</label>
-                        <textarea id="inputKetHadir" class="form-control" rows="2"
-                            placeholder="Contoh: Terlambat karena macet"></textarea>
-                    </div>
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
 
-                    <div class="modal-footer">
-                        <button class="btn btn-utama w-100" onclick="simpanKehadiran()" data-bs-dismiss="modal">
-                            Simpan
-                        </button>
+                        <div class="modal-header">
+                            <h5 class="modal-title">
+                                Panduan Penilaian
+                            </h5>
+
+                            <button class="btn-close" data-bs-dismiss="modal">
+                            </button>
+                        </div>
+
+                        <div class="modal-body text-center">
+
+                            <!-- GANTI DENGAN LOKASI GAMBAR -->
+                            <img src="../aset/panduan.png" class="img-fluid rounded shadow-sm">
+
+                        </div>
+
                     </div>
                 </div>
             </div>
-        </div>
+            <div class="modal fade" id="modalQtyRealisasi" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content p-3">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Input Qty Realisasi</h5>
+                            <button class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
 
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/datatables.net@1.13.8/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/datatables.net-bs5@1.13.8/js/dataTables.bootstrap5.min.js"></script>
+                        <div class="modal-body">
+                            <label>Qty Kertas Realisasi</label>
+                            <input type="number" id="inputKertasReal" class="form-control" value="0">
 
-        <script src="../js/fetchAPI.js"></script>
-        <script src="../js/admin/detail_proyek_selesai.js"></script>
-        <script>
-          
-        </script>
+                            <label class="mt-2">Qty Base Print Realisasi</label>
+                            <input type="number" id="inputBaseReal" class="form-control" value="0">
+                             <label class="mt-2">Biaya Transportasi</label>
+                            <input type="number" id="inputTransport" class="form-control" value="0" placeholder="Rp.">
+                        </div>
+
+                        <div class="modal-footer">
+                            <button class="btn btn-utama w-100" onclick="simpanQtyRealisasi()" data-bs-dismiss="modal">
+                                Simpan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="modalKehadiran" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content p-3">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Ubah Kehadiran Petugas</h5>
+                            <button class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <label>Jam Hadir</label>
+                            <input type="time" id="inputJamHadir" class="form-control">
+                            <input id="id-edit" hidden>
+                            <label class="mt-2">Keterangan</label>
+                            <textarea id="inputKetHadir" class="form-control" rows="2"
+                                placeholder="Contoh: Terlambat karena macet"></textarea>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button class="btn btn-utama w-100" onclick="simpanKehadiran()" data-bs-dismiss="modal">
+                                Simpan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/datatables.net@1.13.8/js/jquery.dataTables.min.js"></script>
+            <script
+                src="https://cdn.jsdelivr.net/npm/datatables.net-bs5@1.13.8/js/dataTables.bootstrap5.min.js"></script>
+
+            <script src="../js/fetchAPI.js"></script>
+            <script src="../js/admin/detail_proyek_selesai.js"></script>
+            <script>
+
+            </script>
 
 </body>
 
