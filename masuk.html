@@ -15,7 +15,7 @@
         body {
             margin: 0;
             min-height: 100vh;
-            background: url("../aset/bg_login.png") no-repeat center center fixed;
+            background: url("aset/bg_login.png") no-repeat center center fixed;
             background-size: cover;
             display: flex;
             justify-content: center;
@@ -24,15 +24,18 @@
         }
 
         .kartu-login {
-            width: 360px;
-            padding: 32px;
-            border-radius: 18px;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(12px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-            text-align: center;
-        }
+    		width: 360px;
+    		padding: 32px;
+    		border-radius: 18px;
+    		background: rgba(40, 40, 40, 0.45);
+    		backdrop-filter: blur(12px);
+    		-webkit-backdrop-filter: blur(12px);
 
+    		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+
+    		text-align: center;
+    		border: 1px solid rgba(255,255,255,0.12);
+	}
         .logo {
             width: 90px;
             height: 90px;
@@ -67,6 +70,10 @@
             outline: none;
         }
 
+	.form-group input::placeholder {
+   		color: rgba(255, 255, 255, 0.45);
+	}
+
         .opsi {
             display: flex;
             justify-content: space-between;
@@ -94,9 +101,9 @@
 
         .pemisah {
             text-align: center;
-            margin: 18px 0;
+            margin: 5px 0;
             font-size: 13px;
-            opacity: 0.85;
+            opacity: 0;
         }
 
         .login-petugas {
@@ -118,7 +125,7 @@
 <body>
 
     <div class="kartu-login">
-        <img src="../aset/logo.jpeg" alt="Logo" class="logo">
+        <img src="aset/logo.jpeg" alt="Logo" class="logo">
 
         <h2>Masuk Sebagai Admin</h2>
 
