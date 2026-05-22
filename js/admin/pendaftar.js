@@ -22,6 +22,7 @@ function normalisasi(value, config) {
 }
 
 function tentukanPeran(p) {
+    console.log("data pendaftar : \n",p)
     let hasil = posisiList.map(posisi => ({
         posisi,
         skor: hitungSkorWSM(p, posisi)
@@ -40,6 +41,7 @@ function tentukanPeran(p) {
 }
 
 function hitungSkorWSM(p, posisi) {
+    console.log("Perhitungan ",p.nama," dengan posisi ",posisi);
     if (!b || Object.keys(b).length === 0) return 0;
 
     let nilai = p.skor || 0;
@@ -58,11 +60,16 @@ function hitungSkorWSM(p, posisi) {
     let histori = p.jumlah_event_bulan_ini ?? 0;
 
     let nNilai = normalisasi(nilai, b.nilai);
+    console.log("normalisasi Nilai :",nNilai);
     let nSkill = normalisasi(jumlahSkill, b.skill);
+    console.log("normalisasi Skill :",nSkill);
     let nJabatan = normalisasi(jabatan, b.jabatan);
+    console.log("normalisasi Jabatan :",nJabatan);
     let nPosisi = normalisasi(skorPosisi, b.posisi);
+    console.log("normalisasi Posisi :",nPosisi);
     let nHistori = normalisasi(histori, b.histori);
-
+    // console.log("normalisasi Nilai :",nNilai);
+    console.log("Setting WSM : \n",b)
     return (
         nNilai * (b.nilai?.bobot || 0) +
         nSkill * (b.skill?.bobot || 0) +
@@ -119,6 +126,7 @@ async function renderTable() {
     await renderSelectBagian();
     dataPendaftar.forEach(p => {
         const hasil = tentukanPeran(p);
+        console.log("hasil WSM : \n",hasil)
         if (p.kepegawaian === 1) {
             p.kepeg = "Junior"
         } else {
