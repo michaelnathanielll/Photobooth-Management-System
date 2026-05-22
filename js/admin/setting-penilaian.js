@@ -73,7 +73,7 @@ async function simpanData() {
             skill: {
                 bobot: parseFloat(document.getElementById("skill-bobot").value) || 0,
                 tipe: document.getElementById("skill-tipe").value,
-                max: 5
+                max: 3
             },
             jabatan: {
                 bobot: parseFloat(document.getElementById("jabatan-bobot").value) || 0,
