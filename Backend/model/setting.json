@@ -24,6 +24,6 @@
   "skill": {
     "bobot": 0.15,
     "tipe": "benefit",
-    "max": 5
+    "max": 3
   }
 }
