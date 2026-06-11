@@ -752,7 +752,7 @@ func GetHistoryPointProyekByIdPetugas(id string) (Response, error) {
 	for i, x := range arrObj {
 		tmpPenilaian = []PenilaianPetugasAnggota{}
 		namaTab := table["penilaian"]
-		join := namaTab + " JOIN " + table["parameter_penilaian"] + " P ON " + namaTab + ".id_penilaian = p.id"
+		join := namaTab + " JOIN " + table["parameter_penilaian"] + " p ON " + namaTab + ".id_penilaian = p.id"
 		// queryX := "SELECT SUM(nilai) FROM " + table["penilaian"] + " WHERE
 		where := namaTab + ".deleted_at IS NULL AND " + namaTab + ".id_proyek = " + strconv.Itoa(x.Id) + " AND " + namaTab + ".id_petugas = " + id
 		result, err := dbmod.SelectQueryJoin(PenilaianPetugasAnggota{}, namaTab, where, namaTab+".id_penilaian", "", "", join)
@@ -802,7 +802,7 @@ func GetAnggotaProyek(id, status string) (Response, error) {
 		for i, x := range arrObj {
 			// tmp := []PenilaianPetugasAnggota{}
 			namaTab = table["penilaian"]
-			join = namaTab + " JOIN " + table["parameter_penilaian"] + " P ON " + namaTab + ".id_penilaian = p.id"
+			join = namaTab + " JOIN " + table["parameter_penilaian"] + " p ON " + namaTab + ".id_penilaian = p.id"
 			// queryX := "SELECT SUM(nilai) FROM " + table["penilaian"] + " WHERE
 			where = namaTab + ".deleted_at IS NULL AND " + namaTab + ".id_proyek = " + strconv.Itoa(x.IdProyek) + " AND " + namaTab + ".id_petugas = " + strconv.Itoa(x.IdPetugas)
 			result, err := dbmod.SelectQueryJoin(PenilaianPetugasAnggota{}, namaTab, where, namaTab+".id_penilaian", "", "", join)
@@ -865,22 +865,43 @@ SET p.status_pendaftaran = 2
 WHERE p.id_petugas = ` + strconv.Itoa(idPetugas) + `
   AND p.status_pendaftaran = 0
   AND (
-        -- START input
-        CONCAT('` + tanggal + `', ' ', '` + jam_mulai + `') <
+        DATE_SUB(
+            CONCAT('` + tanggal + `', ' ', '` + jam_mulai + `'),
+            INTERVAL 4 HOUR
+        )
+        <
         CASE 
             WHEN pr.waktu_selesai < pr.waktu_mulai 
-            THEN CONCAT(DATE_ADD(DATE(pr.tanggal_event), INTERVAL 1 DAY),' ',pr.waktu_selesai)
-            ELSE CONCAT(DATE(pr.tanggal_event),' ',pr.waktu_selesai)
+            THEN CONCAT(
+                    DATE_ADD(DATE(pr.tanggal_event), INTERVAL 1 DAY),
+                    ' ',
+                    pr.waktu_selesai
+                 )
+            ELSE CONCAT(
+                    DATE(pr.tanggal_event),
+                    ' ',
+                    pr.waktu_selesai
+                 )
         END
     AND
-        -- END input (auto handle lintas tengah malam)
-        CASE
-            WHEN '` + jam_selesai + `' < '` + jam_mulai + `'
-            THEN CONCAT(DATE_ADD('` + tanggal + `', INTERVAL 1 DAY),' ','` + jam_selesai + `')
-            ELSE CONCAT('` + tanggal + `',' ','` + jam_selesai + `')
-        END
+        DATE_ADD(
+            CASE
+                WHEN '` + jam_selesai + `' < '` + jam_mulai + `'
+                THEN CONCAT(
+                        DATE_ADD('` + tanggal + `', INTERVAL 1 DAY),
+                        ' ',
+                        '` + jam_selesai + `'
+                     )
+                ELSE CONCAT(
+                        '` + tanggal + `',
+                        ' ',
+                        '` + jam_selesai + `'
+                     )
+            END,
+            INTERVAL 4 HOUR
+        )
         >
-        CONCAT(DATE(pr.tanggal_event),' ',pr.waktu_mulai)
+        CONCAT(DATE(pr.tanggal_event), ' ', pr.waktu_mulai)
       );`
 	fmt.Println(query)
 	con, err := db.DbConnection()

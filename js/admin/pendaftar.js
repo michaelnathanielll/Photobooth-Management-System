@@ -41,7 +41,8 @@ function tentukanPeran(p) {
 }
 
 function hitungSkorWSM(p, posisi) {
-    console.log("Perhitungan ",p.nama," dengan posisi ",posisi);
+
+    console.log("Perhitungan ",p.petugas," dengan posisi ",posisi);
     if (!b || Object.keys(b).length === 0) return 0;
 
     let nilai = p.skor || 0;
@@ -53,7 +54,6 @@ function hitungSkorWSM(p, posisi) {
     jumlahSkill = Math.min(jumlahSkill, maxSkill);
 
     let jabatan = b.jabatan?.mapping?.[p.kepeg] ?? 0;
-
     let cocok = p.daftar_keahlian?.some(k => k.nama === posisi);
     let skorPosisi = cocok ? 100 : 0;
 
@@ -125,13 +125,15 @@ async function renderTable() {
     }
     await renderSelectBagian();
     dataPendaftar.forEach(p => {
-        const hasil = tentukanPeran(p);
-        console.log("hasil WSM : \n",hasil)
+       
+       
         if (p.kepegawaian === 1) {
             p.kepeg = "Junior"
         } else {
             p.kepeg = "Senior"
         }
+ 	const hasil = tentukanPeran(p);
+ 	console.log("hasil WSM : \n",hasil)
         p.bagian = hasil.peran;
         p.ga = hasil.skor.toFixed(3);
         tbody.innerHTML += `

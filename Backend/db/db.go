@@ -12,10 +12,10 @@ import (
 )
 
 const (
-	username = "root"
-	password = "root"
+	username = "admin"
+	password = "xyz13juli"
 	hostname = "localhost"
-	port     = "3307"
+	port     = "43580"
 	dbname   = "photobooth"
 )
 

@@ -1,6 +1,5 @@
 const urlBase = "https://skripsi.crossnet.co.id:2682/photobooth/api/v1"
-// const urlBase = "http://localhost:2682/photobooth/api/v1"
-// apiService.js
+// const urlBase = "http://localhost:2682/photobooth/api/v1"// apiService.js
 window.fetchAPI = async function (url, method = 'GET', body = null) {
     url = urlBase + url;
     const token = localStorage.getItem('token');

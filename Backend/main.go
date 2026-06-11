@@ -3,6 +3,8 @@ package main
 import (
 	"TemplateProject/model"
 	"TemplateProject/route"
+	"crypto/tls"
+	"net/http"
 
 	// "crypto/tls"
 	"fmt"
@@ -103,24 +105,23 @@ func main() {
 	}))
 
 	go func() {
-		// s := http.Server{
-		// 	Addr:      ":2682",
-		// 	Handler:   e, // set Echo as handler
-		// 	TLSConfig: &tls.Config{
-		// 		//Certificates: nil, // <-- s.ListenAndServeTLS will populate this field
-		// 		// GetCertificate: autoTLSManager.GetCertificate,
-		// 		// NextProtos:     []string{acme.ALPNProto},
-		// 	},
-		// 	//ReadTimeout: 30 * time.Second, // use custom timeouts
-		// }
-		// if err := s.ListenAndServeTLS("/etc/letsencrypt/live/ppm-rajasorong.com/fullchain.pem", "/etc/letsencrypt/live/ppm-rajasorong.com/privkey.pem"); err != http.ErrServerClosed {
-		// 	e.Logger.Fatal(err)
-		// }
-		log.Println("Service Start...")
-		if err := e.Start(":2682"); err != nil {
-			log.Fatalf("Echo start error: %v", err)
+		s := http.Server{
+			Addr:      ":2682",
+			Handler:   e, // set Echo as handler
+			TLSConfig: &tls.Config{
+				//Certificates: nil, // <-- s.ListenAndServeTLS will populate this field
+				// GetCertificate: autoTLSManager.GetCertificate,
+				// NextProtos:     []string{acme.ALPNProto},
+			},
+			//ReadTimeout: 30 * time.Second, // use custom timeouts
 		}
-
+		if err := s.ListenAndServeTLS("/etc/letsencrypt/live/skripsi.crossnet.co.id/fullchain.pem", "/etc/letsencrypt/live/skripsi.crossnet.co.id/privkey.pem"); err != http.ErrServerClosed {
+			e.Logger.Fatal(err)
+		}
+		// log.Println("Service Start...")
+		// if err := e.Start(":2682"); err != nil {
+		// 	log.Fatalf("Echo start error: %v", err)
+		// }
 	}()
 	sigChan := make(chan os.Signal, 1)
 	signal.Notify(sigChan, syscall.SIGINT, syscall.SIGTERM)
