@@ -15,7 +15,7 @@ async function loadPaket() {
 
         paketData = data;
 
-        // console.log(boothData);
+
 
     } catch (error) {
         console.error("Gagal mengambil data:", error);
@@ -98,7 +98,6 @@ async function simpanData() {
         return;
     }
 
-    // ===== VALIDASI BOBOT =====
     let total = 0;
 
     for (let key in setting) {

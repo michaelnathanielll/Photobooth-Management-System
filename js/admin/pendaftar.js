@@ -68,7 +68,7 @@ function hitungSkorWSM(p, posisi) {
     let nPosisi = normalisasi(skorPosisi, b.posisi);
     console.log("normalisasi Posisi :",nPosisi);
     let nHistori = normalisasi(histori, b.histori);
-    // console.log("normalisasi Nilai :",nNilai);
+    console.log("normalisasi Histori :",nHistori);
     console.log("Setting WSM : \n",b)
     return (
         nNilai * (b.nilai?.bobot || 0) +

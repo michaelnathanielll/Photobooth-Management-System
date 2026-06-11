@@ -204,15 +204,9 @@
         fetch("../component/sidebar_admin.html")
             .then(res => res.text())
             .then(html => {
-
-                /* inject layout */
                 document.getElementById("layout-admin").innerHTML = html;
-
-                /* inject konten */
                 document.getElementById("konten-halaman").innerHTML =
                     document.getElementById("isi-halaman").innerHTML;
-
-                /* 🔥 cukup 1 baris saja */
                 initSidebar("Profil");
 
             })

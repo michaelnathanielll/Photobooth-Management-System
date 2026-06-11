@@ -185,22 +185,17 @@ fetch("../component/sidebar_admin.html")
     .then(res => res.text())
     .then(async html => {
 
-        /* inject sidebar */
         document.getElementById("layout-admin").innerHTML = html;
 
-        /* inject konten */
         document.getElementById("konten-halaman").innerHTML =
             document.getElementById("isi-halaman").innerHTML;
 
-        /* 🔥 cukup 1 baris */
         initSidebar("Manajemen Pengguna");
         await getPengguna();
-        /* DataTable */
         new DataTable('#tabel-user', {
             pageLength: 10
         });
 
-        /* Status modal */
         document.querySelectorAll(".btn-status").forEach(btn => {
             btn.addEventListener("click", function () {
 

@@ -324,21 +324,17 @@ fetch("../component/sidebar_admin.html")
         await getPetugas();
         await loadKeahlian();
         await loadHonor();
-        /* 1. inject layout sidebar */
         document.getElementById("layout-admin").innerHTML = html;
 
-        /* 2. inject konten */
         document.getElementById("konten-halaman").innerHTML =
             document.getElementById("isi-halaman").innerHTML;
 
-        /* 3. init sidebar SETELAH ADA DI DOM */
         initSidebar("Manajemen Petugas");
 
-        /* 4. datatable */
         new DataTable('#tabel-petugas', {
             pageLength: 10
         });
- /* Status modal */
+
         document.querySelectorAll(".btn-status").forEach(btn => {
             btn.addEventListener("click", function () {
 
